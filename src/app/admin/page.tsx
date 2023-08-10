@@ -1,0 +1,9 @@
+import React from "react";
+import Login from "../../common/components/organisms/Login";
+import Router from "next/router";
+
+const Admin = ({}) => {
+  return <Login />;
+};
+
+export default Admin;
