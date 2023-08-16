@@ -3,7 +3,8 @@ import Login from "../../common/components/organisms/Login";
 import Router from "next/router";
 
 const Admin = ({}) => {
-  return <Login />;
+  return 0;
+  // return <Login />;
 };
 
 export default Admin;

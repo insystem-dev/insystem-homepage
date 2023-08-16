@@ -43,7 +43,7 @@ const Drawer = ({
           onClick={toggleHandler}
           style={closeButtonStyle}
           role="button"
-          tabIndex="0"
+          tabIndex={0}
           onKeyPress={() => { }}
         >
           {closeButton}
@@ -55,7 +55,7 @@ const Drawer = ({
         style={{ display: 'inline-block' }}
         onClick={toggleHandler}
         role="button"
-        tabIndex="0"
+        tabIndex={0}
         onKeyPress={() => { }}
       >
         {drawerHandler}

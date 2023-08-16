@@ -4,9 +4,9 @@ import React from 'react';
 import { LinkWrapper } from './Link.style';
 
 export type Link_props = {
-  children: any
-  href: any | string
-  className: string | any
+  children?: any
+  href?: any | string
+  className?: string | any
 }
 
 const Link = ({

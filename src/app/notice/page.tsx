@@ -11,9 +11,7 @@ const Notice = (session: any) => {
         <>
             <SessionProvider session = {session}>
                 <PageHeader title="공지사항" subTitle="NOTICE" variant="notice" />
-                <NoticePage>
-                    <BoardPage />
-                </NoticePage>
+                <NoticePage />
             </SessionProvider> 
         </>
     )

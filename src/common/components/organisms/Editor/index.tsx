@@ -9,10 +9,10 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import "react-quill/dist/quill.snow.css";
 import * as yup from "yup";
-import Box from "../Box";
+// import Box from "../../";
 import * as B from "../../atoms/Button";
-import Heading from "../../atoms/Heading";
-import Container from "../UI/Container";
+import { Heading } from "../../atoms/Heading";
+import { ContainerWrapper } from "../../molecules/Container/index";
 import CheckBoxWrapper from "../../atoms/CheckBox/checkBox.style";
 import InputWrapper from "../../atoms/Input/input.style";
 import InputSetWrapper from "../../atoms/InputSet/inputSet.style";
@@ -213,12 +213,12 @@ const Editor = ({
 
   return (
     <EditorWrapper>
-      <Container>
-        <Box className="editor-wrap" {...editorWrap}>
-          <Box {...editorHeadWrap}>
+      <ContainerWrapper>
+        {/* <Box className="editor-wrap" {...editorWrap}>
+          <Box {...editorHeadWrap}> */}
             <Heading content="게시글 작성" {...editorHeading} />
             <div className="editor-header-divider" />
-          </Box>
+          {/* </Box> */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputSetWrapper className="input-wrap">
               <InputWrapper>
@@ -244,15 +244,15 @@ const Editor = ({
               formats={formats}
               forwardedRef={quillRef}
             />
-            <Box className="row checkbox">
+            {/* <Box className="row checkbox"> */}
               <CheckBoxWrapper>
                 <input id="fixed" type="checkbox" {...register("fixed")} />
                 <label htmlFor="fixed">
                   중요공지 등록<span></span>
                 </label>
               </CheckBoxWrapper>
-            </Box>
-            <Box className="row btn">
+            {/* </Box> */}
+            {/* <Box className="row btn"> */}
               <B.AskSection_btn
                 title="게시글 등록"
                 variant="filled"
@@ -267,10 +267,10 @@ const Editor = ({
                   {...btnEditor}
                 ></B.AskSection_btn>
               </Link>
-            </Box>
+            {/* </Box> */}
           </form>
-        </Box>
-      </Container>
+        {/* </Box> */}
+      </ContainerWrapper>
     </EditorWrapper>
   );
 };

@@ -31,7 +31,7 @@ const TableGrid = ({ data }: data_ty) => {
             })}
           {!data && (
             <tr>
-              <td colSpan="5" className="tr-nodata">
+              <td colSpan={5} className="tr-nodata">
                 등록된 공지사항이 없습니다.
               </td>
             </tr>

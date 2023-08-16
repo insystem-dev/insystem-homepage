@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
 import * as yup from "yup";
-import * as X from "../../molecules/Box";
+// import * as X from "../../molecules/Box";
 import * as B from "../../atoms/Button";
 import CustomPasswordInput from "../../atoms/CustomPasswordInput";
 import CustomTextInput from "../../atoms/CustomTextInput";
@@ -85,7 +85,7 @@ const Login = ({
     <LoginWrapper>
       <C.NavbarContainer {...loginWrap}>
         <form onSubmit={handleSubmit(onSubmit, onError)}>
-          <X.InquiryBox className="login-box" {...loginBox}>
+          {/* <X.InquiryBox className="login-box" {...loginBox}> */}
             <H.Heading
               className="login-tit"
               content="관리자 로그인"
@@ -110,7 +110,7 @@ const Login = ({
             <B.AskSection_btn {...loginBtn} type="submit" variant="filled">
               로그인
             </B.AskSection_btn>
-          </X.InquiryBox>
+          {/* </X.InquiryBox> */}
         </form>
       </C.NavbarContainer>
     </LoginWrapper>

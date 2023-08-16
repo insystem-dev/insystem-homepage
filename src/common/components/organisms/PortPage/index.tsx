@@ -13,10 +13,8 @@ const PortPage = ({
     className
 }: port_props) => {
     return (
-        <S.PortWrapper
-            className={className}
-        >
-            {children}
+        <S.PortWrapper>
+            
         </S.PortWrapper>
     );
 }

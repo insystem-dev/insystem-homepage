@@ -61,7 +61,7 @@ const Post = ({
             <table className="post-head">
               <thead>
                 <tr>
-                  <th colSpan="4">{data.title}</th>
+                  <th colSpan={4}>{data.title}</th>
                 </tr>
                 <tr>
                   <td>

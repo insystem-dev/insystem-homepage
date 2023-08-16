@@ -22,7 +22,7 @@ const NavMenu = ({ navmenus, wrapperStyle, deptmenus, children }: NavMenu_ty) =>
             <NavMenuWrapper {...wrapperStyle}>
                 {navmenus.map((navmenu: any) => {
                     return (
-                        <li className={`${pathname.includes(navmenu.path) ? "active" : "inactive"}`} key={`navmenu-${navmenu.id}`}>
+                        <li className={`${pathname?.includes(navmenu.path) ? "active" : "inactive"}`} key={`navmenu-${navmenu.id}`}>
                             <Link legacyBehavior
                                 href={navmenu.path}>
                                 <a> {navmenu.label} </a>
@@ -39,7 +39,7 @@ const NavMenu = ({ navmenus, wrapperStyle, deptmenus, children }: NavMenu_ty) =>
             <DeptMenuWrapper {...wrapperStyle}>
                 {deptmenus.map((deptmenu: any) => {
                     return (
-                        <li className={`${pathname.includes(deptmenu.path) ? "active" : "inactive"} `} key={`deptmenu-${deptmenu.id}`}>
+                        <li className={`${pathname?.includes(deptmenu.path) ? "active" : "inactive"} `} key={`deptmenu-${deptmenu.id}`}>
                             <Link legacyBehavior
                                 href={deptmenu.path}>
                                 <a> {deptmenu.label} </a>

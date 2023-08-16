@@ -27,7 +27,7 @@ const Logo = ({
   return (
     <>
       {withAnchor ? (
-        <Link legacyBehavior >
+        <Link>
           <a {...anchorProps}>
             {logoSrc ? (
               <Image src={logoSrc.src} alt={title} width={width} />
@@ -39,7 +39,7 @@ const Logo = ({
       ) : (
         <>
           {logoSrc ? (
-            <Link href={href} className={className} passHref legacyBehavior>
+            <Link href={href} className={className}>
               <Image src={logoSrc.src} alt={title} width={width} />
             </Link>
           ) : (
