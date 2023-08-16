@@ -1,9 +1,8 @@
+import { request } from "@/lib/api";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { request } from "../../../../lib/api";
 
-
-async function refreshAccessToken(tokenObject:any) {
+async function refreshAccessToken(tokenObject: any) {
   try {
     // console.log("refreshAccessToken", tokenObject);
     const headers = { Authorization: `Bearer ${tokenObject.refreshToken}` };
@@ -48,14 +47,14 @@ export default NextAuth({
           }
           return data;
         } catch (error) {
-          const response :any= error;
+          const response: any = error;
           throw new Error(response.message);
         }
       },
     }),
   ],
   callbacks: {
-    async session({ session, token }:any) {
+    async session({ session, token }: any) {
       if (token) {
         session.userId = token.userId;
         session.userName = token.userName;
@@ -66,7 +65,7 @@ export default NextAuth({
       }
       return Promise.resolve(session);
     },
-    async jwt({ token, user }:any) {
+    async jwt({ token, user }: any) {
       if (user) {
         token.userId = user.userId;
         token.userName = user.userName;
