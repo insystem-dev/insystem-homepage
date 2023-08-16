@@ -13,7 +13,7 @@ const AuthGuard = ({ children }: any) => {
   }, [data]);
 
   if (status === "loading") {
-    return <div>페이지를 불러오는 중입니다.</div>;
+    return <div></div>;
   }
 
   return <>{children}</>;
