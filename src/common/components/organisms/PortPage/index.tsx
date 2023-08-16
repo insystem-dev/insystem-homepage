@@ -17,94 +17,98 @@ const PortPage = () => {
                     <S.PortHead> 항만 물류 운송관리 시스템 </S.PortHead>
                     <div className='section-header-divider-two' />
                     <S.PortTextBox>
-                        <S.PortContext> 건강 토큰 서비스는 스마트 디바이스(스마트 워치, 스마트 슈즈 등)를 활용한 </S.PortContext>
-                        <S.PortContext> 디지털 헬스케어 플랫폼으로, 디바이스를 통해 수집된 건강활동량을 </S.PortContext>
                         <S.PortContextBox className='section-two-text'>
-                            <S.PortContext> 건강토큰으로 변환하여 제공하는 &nbsp; </S.PortContext>
-                            <S.PortPointContext> 블록체인 기반의 리워드 시스템 </S.PortPointContext>
-                            <S.PortContext className='second-text'> 입니다. </S.PortContext>
+                            <S.PortContext> 항만 내 물류 운송의 업무 생산성 향상과 &nbsp; </S.PortContext>
+                            <S.PortPointContext> 물류의 디지털 트렌스포메이션(Digital Transformation) </S.PortPointContext>
+                            <S.PortContext> 을 통한 </S.PortContext>
                         </S.PortContextBox>
+                        <S.PortContext> 운송 프로세스의 가시성 확보를 위한 항만간 물류 및 운송 프로세스 관리 솔루션입니다. </S.PortContext>
+                        <S.PortPointContext> 단순 배차관리 뿐만 아니라 셔틀의 수입/수출 단계 관리 및 정산관리 기능을 탑재하여 보다 </S.PortPointContext>
+                        <S.PortContext className='second-text'> 세부적으로 분화된 단계에서의 관리가 가능합니다. </S.PortContext>
                     </S.PortTextBox>
                     <S.PortTextBox className='sectionTwo'>
-                        <S.PortContext> 특정 데이터제공 시 별도의 추가 인센티브 보상을 제공하는 등의 활용을 통해 </S.PortContext>
-                        <S.PortContext> 건강활동 데이터베이스 구축에 유리한 환경을 제공합니다. </S.PortContext>
+                        <S.PortContext> GPS기반 운송 이동경로 추적 및 기사별 운송단계의 실시간 파악이 </S.PortContext>
+                        <S.PortContext> 가능한 기사용 어플리케이션을 개발 및 웹 플랫폼과 연동하여 </S.PortContext>
+                        <S.PortContext> 물류 운송의 실시간 현황 파악의 편의성을 더욱 증대시켜 </S.PortContext>
+                        <S.PortContextBox className='section-two-text'>
+                            <S.PortContext> 하나의 플랫폼을 통한 &nbsp; </S.PortContext>
+                            <S.PortPointContext> 항만간 물류 운송 전단계 관리에 더욱 용이 </S.PortPointContext>
+                            <S.PortContext> 한 시스템입니다. </S.PortContext>
+                        </S.PortContextBox>
                     </S.PortTextBox>
                 </ContainerWrapper>
             </S.PortSection_2>
-            <S.PortDivider_2>
+            <S.PortDivider>
                 <ContainerWrapper className='row'>
                     <S.PortContent>
-                        <S.PortPointContext className='pointWord'> Report </S.PortPointContext>
-                        <S.PortContext className='point'> 개인맞춤형 분석 제공 </S.PortContext>
-                        <S.PortContext> 스마트 슈즈를 활용한 활동정보 및 </S.PortContext>
-                        <S.PortContext> 건강활동량 데이터 수집 및 관리 </S.PortContext>
+                        <S.PortPointContext className='pointWord'> Evaluation </S.PortPointContext>
+                        <S.PortContext className='point'> 안정성 평가 실시 </S.PortContext>
+                        <S.PortContext> 시범 서비스 제공을 통한 </S.PortContext>
+                        <S.PortContext> 사용자 피드백 적극 수렴 및 </S.PortContext>
+                        <S.PortContext> 운송관리 시나리오에 따른 안정성 평가 실시 </S.PortContext>
                     </S.PortContent>
                     <S.PortContent>
-                        <S.PortPointContext className='pointWord' > Platform </S.PortPointContext>
-                        <S.PortContext className='point'> 개인건강관리 플랫폼 </S.PortContext>
-                        <S.PortContext> 신체 활동 정보에 기반한 개인건강관리 </S.PortContext>
-                        <S.PortContext> 서비스 제공 및 리워드 시스템 구축 </S.PortContext>
+                        <S.PortPointContext className='pointWord' > App Platform </S.PortPointContext>
+                        <S.PortContext className='point'> 실시간 운송 현황 관리 </S.PortContext>
+                        <S.PortContext> APP 플랫폼을 활용한 </S.PortContext>
+                        <S.PortContext> 기사 개인별 운송경로 추적기능과 </S.PortContext>
+                        <S.PortContext> 관리자용 WEB 플랫폼 간 연동을 통한 </S.PortContext>
+                        <S.PortContext> 실시간 운송 현황관리 서비스 </S.PortContext>
                     </S.PortContent>
                     <S.PortContent>
-                        <S.PortPointContext className='pointWord'> Personal </S.PortPointContext>
-                        <S.PortContext className='point'> 건강 모니터링 </S.PortContext>
-                        <S.PortContext> 수집된 데이터는 건강토큰 어플리케이션과 </S.PortContext>
-                        <S.PortContext>  연동되어 사용자가 언제든 모니터링하고 활용 가능 </S.PortContext>
+                        <S.PortPointContext className='pointWord'> Manage </S.PortPointContext>
+                        <S.PortContext className='point'> 물류운송 전단계 관리 </S.PortContext>
+                        <S.PortContext> 배차 및 기사지정 단계부터 </S.PortContext>
+                        <S.PortContext>  정산까지 물류운송 전단계 관리 가능 </S.PortContext>
                     </S.PortContent>
                 </ContainerWrapper>
-                <ContainerWrapper className='row-two'>
-                    <S.PortContent>
-                        <S.PortPointContext className='pointWord'> Reword </S.PortPointContext>
-                        <S.PortContext className='point'> 건강활동 동기강화 </S.PortContext>
-                        <S.PortContext> 리워드와 함께 건강활동을 촉진할 수 있는 </S.PortContext>
-                        <S.PortContext> 동기부여 메세지 전달 등 동기강화 시스템 도입 </S.PortContext>
-                    </S.PortContent>
-                    <S.PortContent>
-                        <S.PortPointContext className='pointWord' > Business </S.PortPointContext>
-                        <S.PortContext className='point'> 새로운 수익모델 </S.PortContext>
-                        <S.PortContext> 기업제휴를 통해 건강토큰 거래 등 활용처의 </S.PortContext>
-                        <S.PortContext> 다양화를 통한 부차적인 수익모델 창출 가능 </S.PortContext>
-                    </S.PortContent>
-                </ContainerWrapper>
-            </S.PortDivider_2>
+            </S.PortDivider>
             <S.PortSection_1>
                 <ContainerWrapper>
-                    <S.PortHead> 개인 맞춤형 당뇨병 예방・관리 플랫폼 </S.PortHead>
+                    <S.PortHead> 검역관리 시스템 </S.PortHead>
                     <ContainerWrapper className='section-header-divider' />
                     <S.PortTextBox>
-                        <S.PortContext> 개인 맞춤형 당뇨병 예방・관리 플랫폼은 연속혈당 분석을 통해 개인별 당뇨병 원인을 파악하고, </S.PortContext>
+                        <S.PortContext> 검역관리 시스템은 기존 아날로그 방식으로 처리되었던 포워딩 업무의 프로그램 전산화를 통해 </S.PortContext>
+                        <S.PortContext> 인력의 실수로 인한 오류를 감소시키고, 서면상으로 진행되는 세관업무 및 검역관리를 </S.PortContext>
+                        <S.PortContext> 하나의 플랫폼에서 손쉽게 처리할 수 있도록 함으로써 </S.PortContext>
                         <S.PortContextBox className='row'>
-                            <S.PortPointContext> 결과 리포트 형식의 개인 맞춤형 처방 </S.PortPointContext>
-                            <S.PortContext className='second-text'>을 통해 치료 중심에서 예방중심으로 변화하고 있는</S.PortContext>
+                            <S.PortContext> 검역에 필요한 &nbsp; </S.PortContext>
+                            <S.PortPointContext> 데이터 및 서류 관리의 편의성 증대 </S.PortPointContext>
+                            <S.PortContext className='second-text'>를 위해 개발되었습니다.</S.PortContext>
                         </S.PortContextBox>
-                        <S.PortContext> 보건의료 패러다임에 부합하는 당뇨 분야의 디지털 헬스케어 서비스입니다. </S.PortContext>
                     </S.PortTextBox>
                     <S.PortTextBox>
-                        <S.PortContext> 데이터 수집 및 관리 등을 위한 웹 플랫폼과 함께 일상생활 속에서 </S.PortContext>
-                        <S.PortContext> 손쉽게 혈당관리를 위한 사용자용 어플리케이션 플랫폼을 </S.PortContext>
-                        <S.PortContext> 별도로 구축하여 사용자 편의성을 확보하였습니다. </S.PortContext>
+                        <S.PortContext> 반응형 웹 플랫폼으로 제작되어 다양한 기기와 호환이 가능하며, </S.PortContext>
+                        <S.PortContextBox>
+                            <S.PortContext> 추후 물류운송관리 시스템과의 연계를 통해 </S.PortContext>
+                            <S.PortPointContext> 해외 포워딩 대행업무 및 검역 관련 통합 관리 </S.PortPointContext>
+                            <S.PortContext> 가 </S.PortContext>
+                        </S.PortContextBox>
+                        <S.PortContext> 가능하도록 시스템의 기능 고도화 작업 예정입니다. </S.PortContext>
                     </S.PortTextBox>
                 </ContainerWrapper>
             </S.PortSection_1>
             <S.PortDivider>
                 <ContainerWrapper className='row'>
                     <S.PortContent>
-                        <S.PortPointContext className='pointWord'> Report </S.PortPointContext>
-                        <S.PortContext className='point'> 개인맞춤형 분석 제공 </S.PortContext>
-                        <S.PortContext> 임상정보/식이패턴/혈당모델링/연속혈당 기반 </S.PortContext>
-                        <S.PortContext> 당뇨병 예측 결과 리포트 제공 </S.PortContext>
+                        <S.PortPointContext className='pointWord'> Manage </S.PortPointContext>
+                        <S.PortContext className='point'> 검역 서류 간편등록 </S.PortContext>
+                        <S.PortContext> PDF 파일 내 텍스트 자동 감지를 통한 </S.PortContext>
+                        <S.PortContext> 검역 서류 간편등록 관리 </S.PortContext>
                     </S.PortContent>
                     <S.PortContent>
-                        <S.PortPointContext className='pointWord' > Platform </S.PortPointContext>
-                        <S.PortContext className='point'> 빅데이터 플랫폼 </S.PortContext>
-                        <S.PortContext> 수집된 건강데이터를 통한 만성질환 관련 </S.PortContext>
-                        <S.PortContext> 건강 빅데이터 플랫폼 구축의 기반 마련 </S.PortContext>
+                        <S.PortPointContext className='pointWord' > Digital </S.PortPointContext>
+                        <S.PortContext className='point'> 업무의 디지털화 </S.PortContext>
+                        <S.PortContext> 세관업무 및 검역관리 업무의 디지털화를 통한 </S.PortContext>
+                        <S.PortContext> 필수 데이터 누락 최소화, </S.PortContext>
+                        <S.PortContext> 효율적인 서류 및 데이터 관리 기능 </S.PortContext>
                     </S.PortContent>
                     <S.PortContent>
-                        <S.PortPointContext className='pointWord'> Prevention </S.PortPointContext>
-                        <S.PortContext className='point'> 사전예방 솔루션 </S.PortContext>
-                        <S.PortContext> 당뇨병의 조기발견 및 발병위험 안내를 통한 </S.PortContext>
-                        <S.PortContext> 건강이상 사전예방 가능 </S.PortContext>
+                        <S.PortPointContext className='pointWord'> Flatform </S.PortPointContext>
+                        <S.PortContext className='point'> 간편처리 플랫폼 </S.PortContext>
+                        <S.PortContext> 하나의 플랫폼을 통한 해외 포워딩 </S.PortContext>
+                        <S.PortContext> 대행업무 및 세관업무 </S.PortContext>
+                        <S.PortContext> 일괄 간편처리 기능 </S.PortContext>
                     </S.PortContent>
                 </ContainerWrapper>
             </S.PortDivider>

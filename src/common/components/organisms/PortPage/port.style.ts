@@ -16,10 +16,11 @@ export const PortSection_1 = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 918px;
+    height: 1032px;
     
-    background: url(${ PortBgOne?.src }), #FFFFFF;
-    background-size: 100% 100%;
+    background: url(${ PortBgTwo?.src }), #FFFFFF;
+    background-size: 1043px 785px;
+    background-position: right bottom;
     background-repeat: no-repeat;
 
     .section-header-divider {
@@ -32,14 +33,14 @@ export const PortSection_1 = styled.div`
 
 export const PortSection_2 = styled.div`
     display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 970px;
+    flex-direction: column;
     padding-bottom: 250px;
     
-    background: url(${ PortBgTwo?.src }), #FFFFFF;
-    background-size: 950px 700px;
-    background-position: left top;
+    background: url(${ PortBgOne?.src }), #FFFFFF;
+    background-size: 1395px 650px;
+    background-position: left bottom;
     background-repeat: no-repeat;
     
     .section-header-divider-two {
@@ -82,8 +83,9 @@ export const PortDivider = styled.div`
     background: #F2F3F7;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 
     .row {
         display: flex;
@@ -93,34 +95,10 @@ export const PortDivider = styled.div`
     }
 `
 
-export const PortDivider_2 = styled.div`
-    width: 100%;
-    padding: 60px 0;
-    background: #F2F3F7;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .row-two {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-`
-
 export const PortContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     text-align: center;
 
@@ -132,7 +110,7 @@ export const PortContent = styled.div`
     .point {
         font-size: 2.4rem;
         font-weight: bold;
-        margin: 10px 0;
+        margin: 0 0 10px 0;
     }
 `
 

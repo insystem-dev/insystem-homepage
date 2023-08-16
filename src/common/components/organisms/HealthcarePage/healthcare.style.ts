@@ -20,7 +20,7 @@ export const HealthCareSection_1 = styled.div`
     height: 918px;
     
     background: url(${ HealthCareBgOne?.src }), #FFFFFF;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 
     .section-header-divider {
@@ -35,11 +35,11 @@ export const HealthCareSection_2 = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 850px;
     padding-bottom: 250px;
     
     background: url(${ HealthCareBgTwo?.src }), #FFFFFF;
-    background-size: 950px 700px;
+    background-size: container;
     background-position: left top;
     background-repeat: no-repeat;
     
@@ -133,7 +133,7 @@ export const HealthCareContent = styled.div`
     .point {
         font-size: 2.4rem;
         font-weight: bold;
-        margin: 10px 0;
+        margin: 0 0 10px 0;
     }
 `
 
