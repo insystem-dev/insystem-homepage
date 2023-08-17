@@ -45,7 +45,7 @@ export const HealthCarePage = () => {
                     </S.HealthCareContent>
                     <S.HealthCareContent>
                         <ServiceText content='Prevention' color='primary' fontWeight={600} className='pointWord' /> 
-                        <ServiceText content='사전예방 솔루션' className='point' />   
+                        <ServiceText content='사전예방 솔루션' fontWeight='bold' className='point' />   
                          <ServiceText content='당뇨병의 조기발견 및 발병위험 안내를 통한 건강이상 사전예방 가능' />
                     </S.HealthCareContent>
                 </ContainerWrapper>
