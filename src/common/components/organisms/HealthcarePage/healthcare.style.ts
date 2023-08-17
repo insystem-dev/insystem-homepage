@@ -56,6 +56,16 @@ export const HealthCareSection_2 = styled.div`
         float: right;
         text-align: end;
     }
+
+    .leftBox {
+        width: 500px;
+        margin-left: auto;
+    }
+`
+
+export const HealthCareBox = styled.div`
+    width: 620px;
+    word-break: keep-all;
 `
 
 export const HealthCareTextBox = styled.div`
@@ -102,6 +112,7 @@ export const HealthCareDivider_2 = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 
     .row {
         display: flex;
@@ -119,46 +130,20 @@ export const HealthCareDivider_2 = styled.div`
 `
 
 export const HealthCareContent = styled.div`
+    width: 330px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-flow: column wrap;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    word-break: keep-all;
 
     .pointWord {
         font-size: 2rem;
-        font-weight: 700;
     }
 
     .point {
         font-size: 2.4rem;
-        font-weight: bold;
         margin: 0 0 10px 0;
     }
-`
-
-export const HealthcareHead = styled.p`
-    font-size: 4rem;
-    font-weight: bold;
-    letter-spacing: -1px;
-    color: #6093F4;
-    margin-top: 126px;
-    margin-bottom: 0;
-`
-
-export const HealthCareContext = styled.p`
-    font-size: 1.8rem;
-    letter-spacing: -1px;
-    color: #000000;
-    margin-bottom: 0;
-    margin-top: 0;
-`
-
-export const HealthCarePointContext = styled.p`
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: -1px;
-    color: #6093F4;
-    margin-bottom: 0;
-    margin-top: 0;
 `

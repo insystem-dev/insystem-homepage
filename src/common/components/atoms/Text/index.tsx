@@ -122,3 +122,24 @@ export const LogoText = ({
     </S.LogoText_style>
   )
 };
+
+export const ServiceText = ({
+  children,
+  content,
+  color,
+  fontWeight,
+  className
+}: Text_props) => {
+  console.log(fontWeight);
+  
+  return (
+    <S.ServiceText_style
+      color={color}
+      fontWeight={fontWeight}
+      className={className}
+    >
+      {children}
+      {content}
+    </S.ServiceText_style>
+  )
+}

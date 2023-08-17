@@ -19,7 +19,7 @@ export const PortSection_1 = styled.div`
     height: 1032px;
     
     background: url(${ PortBgTwo?.src }), #FFFFFF;
-    background-size: 1043px 785px;
+    background-size: 1005px 734px;
     background-position: right bottom;
     background-repeat: no-repeat;
 
@@ -34,12 +34,11 @@ export const PortSection_1 = styled.div`
 export const PortSection_2 = styled.div`
     display: flex;
     width: 100%;
-    height: 970px;
+    height: 900px;
     flex-direction: column;
-    padding-bottom: 250px;
     
     background: url(${ PortBgOne?.src }), #FFFFFF;
-    background-size: 1395px 650px;
+    background-size: 1200px 650px;
     background-position: left bottom;
     background-repeat: no-repeat;
     
@@ -56,12 +55,22 @@ export const PortSection_2 = styled.div`
         float: right;
         text-align: end;
     }
+
+    .leftBox {
+        margin-left: auto;
+    }
+`
+
+export const PortBox = styled.div`
+    width: 800px;
+    word-break: keep-all;
 `
 
 export const PortTextBox = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    word-break: keep-all;
 
     .section-two-text {
         margin-left: auto;
@@ -96,46 +105,20 @@ export const PortDivider = styled.div`
 `
 
 export const PortContent = styled.div`
+    width: 300px;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
+    word-break: keep-all;
 
     .pointWord {
         font-size: 2rem;
-        font-weight: 700;
     }
 
     .point {
         font-size: 2.4rem;
-        font-weight: bold;
         margin: 0 0 10px 0;
     }
-`
-
-export const PortHead = styled.p`
-    font-size: 4rem;
-    font-weight: bold;
-    letter-spacing: -1px;
-    color: #6093F4;
-    margin-top: 126px;
-    margin-bottom: 0;
-`
-
-export const PortContext = styled.p`
-    font-size: 1.8rem;
-    letter-spacing: -1px;
-    color: #000000;
-    margin-bottom: 0;
-    margin-top: 0;
-`
-
-export const PortPointContext = styled.p`
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: -1px;
-    color: #6093F4;
-    margin-bottom: 0;
-    margin-top: 0;
 `

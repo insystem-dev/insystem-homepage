@@ -112,3 +112,40 @@ export const LogoText_style = styled.p<Text_props>`
     line-height: inherit;
     white-space: nowrap;
 `
+
+export const ServiceText_style = styled.p<Text_props>`
+    font-size: 1.8rem;
+
+    color: ${(props) => {
+        if (props.color == "primary") {
+            return props.theme.colors.primary;
+        } else {
+            return props.theme.colors.black;
+        }
+    }};
+
+    font-weight: ${(props) => {
+        if (props.fontWeight == "bold") {
+            return 'bold'
+        } else if (props.fontWeight == 600) {
+            return 600
+        }
+    }};
+
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    ${(props) => {
+        if (props.className == 'head') {
+            return css(
+                {fontSize: '4rem'},
+                {fontWeight: 'bold'},
+                {letterSpacing: '-1px'},
+                {color: '#6093F4'},
+                {marginTop: '126px'},
+                {marginBottom: '0'},
+            )
+        }
+    }};
+`

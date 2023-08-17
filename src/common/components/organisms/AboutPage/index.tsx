@@ -60,17 +60,19 @@ const AboutPage = () => {
                 </Fade>
             </S.AboutPageBox>
             <ContainerWrapper>
-                <Fade direction='up'>
-                    <S.AboutPageBox className="about-history">
-                        <S.AboutPageBox className="section-header">
+                <S.AboutPageBox className="about-history">
+                    <S.AboutPageBox className="section-header">
+                        <Fade direction='up'>
                             <Heading content="회사연혁" />
                             <div className="section-header-divider" />
-                        </S.AboutPageBox>
-                        <S.AboutPageBox className="section-content">
-                            <NextImage src={HistoryImg} alt="회사연혁" />
-                        </S.AboutPageBox>
+                        </Fade>
                     </S.AboutPageBox>
-                </Fade>
+                    <S.AboutPageBox className="section-content">
+                        <Fade direction='up' big={true} >
+                            <NextImage src={HistoryImg} alt="회사연혁" />
+                        </Fade>
+                    </S.AboutPageBox>
+                </S.AboutPageBox>
             </ContainerWrapper>
         </S.AboutPageWrapper>
     );
