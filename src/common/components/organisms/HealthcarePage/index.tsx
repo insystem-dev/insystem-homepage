@@ -46,7 +46,7 @@ export const HealthCarePage = () => {
                     <S.HealthCareContent>
                         <ServiceText content='Prevention' color='primary' fontWeight={600} className='pointWord' /> 
                         <ServiceText content='사전예방 솔루션' fontWeight='bold' className='point' />   
-                         <ServiceText content='당뇨병의 조기발견 및 발병위험 안내를 통한 건강이상 사전예방 가능' />
+                        <ServiceText content='당뇨병의 조기발견 및 발병위험 안내를 통한 건강이상 사전예방 가능' />
                     </S.HealthCareContent>
                 </ContainerWrapper>
             </S.HealthCareDivider>
@@ -74,29 +74,29 @@ export const HealthCarePage = () => {
                     <S.HealthCareContent>
                         <ServiceText content='Report' color='primary' fontWeight={600} className='pointWord' />  
                         <ServiceText content='개인맞춤형 분석 제공' fontWeight='bold' className='point' />   
-                         <ServiceText content='스마트 슈즈를 활용한 활동정보 및 건강활동량 데이터 수집 및 관리' />
+                        <ServiceText content='스마트 슈즈를 활용한 활동정보 및 건강활동량 데이터 수집 및 관리' />
                     </S.HealthCareContent>
                     <S.HealthCareContent>
                         <ServiceText content='Platform' color='primary' fontWeight={600} className='pointWord' />
                         <ServiceText content='개인건강관리 플랫폼' fontWeight='bold' className='point' />   
-                         <ServiceText content='신체 활동 정보에 기반한 개인건강관리 서비스 제공 및 리워드 시스템 구축' />
+                        <ServiceText content='신체 활동 정보에 기반한 개인건강관리 서비스 제공 및 리워드 시스템 구축' />
                     </S.HealthCareContent>
                     <S.HealthCareContent>
                         <ServiceText content='Personal' color='primary' fontWeight={600} className='pointWord' />
                         <ServiceText content='건강 모니터링' fontWeight='bold' className='point' />   
-                         <ServiceText content='수집된 데이터는 건강토큰 어플리케이션과 연동되어 사용자가 언제든 모니터링하고 활용 가능' />
+                        <ServiceText content='수집된 데이터는 건강토큰 어플리케이션과 연동되어 사용자가 언제든 모니터링하고 활용 가능' />
                     </S.HealthCareContent>
                 </ContainerWrapper>
                 <ContainerWrapper className='row-two'>
                     <S.HealthCareContent>
                         <ServiceText content='Reword' color='primary' fontWeight={600} className='pointWord' />
                         <ServiceText content='건강활동 동기강화' fontWeight='bold' className='point' />   
-                         <ServiceText content='리워드와 함께 건강활동을 촉진할 수 있는 동기부여 메세지 전달 등 동기강화 시스템 도입' />
+                        <ServiceText content='리워드와 함께 건강활동을 촉진할 수 있는 동기부여 메세지 전달 등 동기강화 시스템 도입' />
                     </S.HealthCareContent>
                     <S.HealthCareContent>
                         <ServiceText content='Business' color='primary' fontWeight={600} className='pointWord' />
                         <ServiceText content='새로운 수익모델' fontWeight='bold' className='point' />   
-                         <ServiceText content='기업제휴를 통해 건강토큰 거래 등 활용처의 다양화를 통한 부차적인 수익모델 창출 가능' />
+                        <ServiceText content='기업제휴를 통해 건강토큰 거래 등 활용처의 다양화를 통한 부차적인 수익모델 창출 가능' />
                     </S.HealthCareContent>
                 </ContainerWrapper>
             </S.HealthCareDivider_2>

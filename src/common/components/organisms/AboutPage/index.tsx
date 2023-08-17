@@ -67,8 +67,9 @@ const AboutPage = () => {
                             <div className="section-header-divider" />
                         </Fade>
                     </S.AboutPageBox>
+                    <br />
                     <S.AboutPageBox className="section-content">
-                        <Fade direction='up' big={true} >
+                        <Fade direction='down' big={true}>
                             <NextImage src={HistoryImg} alt="회사연혁" />
                         </Fade>
                     </S.AboutPageBox>
