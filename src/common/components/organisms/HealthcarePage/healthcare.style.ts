@@ -130,7 +130,7 @@ export const HealthCareDivider_2 = styled.div`
 `
 
 export const HealthCareContent = styled.div`
-    width: 330px;
+    width: 350px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
