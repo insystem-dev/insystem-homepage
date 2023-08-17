@@ -58,13 +58,13 @@ export const HealthCareSection_2 = styled.div`
     }
 
     .leftBox {
-        width: 500px;
+        width: 550px;
         margin-left: auto;
     }
 `
 
 export const HealthCareBox = styled.div`
-    width: 620px;
+    width: 650px;
     word-break: keep-all;
 `
 

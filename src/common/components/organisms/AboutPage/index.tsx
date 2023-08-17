@@ -69,7 +69,7 @@ const AboutPage = () => {
                     </S.AboutPageBox>
                     <br />
                     <S.AboutPageBox className="section-content">
-                        <Fade direction='down' big={true}>
+                        <Fade direction='down' big={true} >
                             <NextImage src={HistoryImg} alt="회사연혁" />
                         </Fade>
                     </S.AboutPageBox>
