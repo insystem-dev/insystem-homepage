@@ -23,6 +23,7 @@
     "@types/styled-components": "^5.1.26",
     "@types/styled-system": "^5.1.16",
     "@types/styled-system__theme-get": "^5.0.2",
+    "@types/swiper": "^6.0.0",
     "@types/uuid": "^9.0.2",
     "axios": "^1.4.0",
     "babel-preset-gatsby": "^3.11.0",
@@ -54,6 +55,7 @@
     "sequelize-auto": "^0.8.8",
     "styled-components": "^6.0.2",
     "styled-system": "^5.1.5",
+    "swiper": "^6.8.4",
     "typescript": "5.1.6",
     "uuid": "^9.0.0",
     "yup": "^1.2.0"
