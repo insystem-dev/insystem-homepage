@@ -5,6 +5,7 @@ import React, { ReactElement, useEffect, useRef, useState } from "react";
 import SwiperCore, { Navigation, Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
+import * as S from "./advertise.style";
 
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
@@ -29,7 +30,7 @@ const advertisement = () => {
   }, [swiperSetting]);
 
   return (
-    <>
+    <S.SwiperWrapper>
       {swiperSetting && (
         <Swiper {...swiperSetting}>
           {adItems.map((item, idx) => {
@@ -38,14 +39,18 @@ const advertisement = () => {
             return (
               <SwiperSlide key={idx}>
                 <a href={item.src} target="_blank">
-                  <img src={image.src} alt={item.name} style={{ width: 400 }} />
+                  <img
+                    src={image.src}
+                    alt={item.name}
+                    style={{ width: "60vw", height: "95vh" }}
+                  />
                 </a>
               </SwiperSlide>
             );
           })}
         </Swiper>
       )}
-    </>
+    </S.SwiperWrapper>
   );
 };
 
