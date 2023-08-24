@@ -2,20 +2,19 @@
 
 import React from "react";
 import Sticky from "react-stickynode";
-import "../common/assets/css/flaticon.css";
-import ResetCSS from "../common/assets/css/style";
-import Navbar from "../common/components/organisms/Navbar";
-import { DrawerProvider } from "../common/contexts/DrawerContext";
-import { GlobalStyle } from "../common/assets/css/global.style";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
-import Footer from "../common/components/organisms/Footer";
-import { SessionProvider } from "next-auth/react";
-import AuthGuard from "../common/components/templates/AuthGuard";
-import { theme } from "../common/assets/css/theme";
-import { ThemeProvider } from "styled-components";
-import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
+import { SessionProvider } from "next-auth/react";
+import { ThemeProvider } from "styled-components";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Navbar from "../common/components/organisms/Navbar";
+import Footer from "../common/components/organisms/Footer";
+import { DrawerProvider } from "../common/contexts/DrawerContext";
+import AuthGuard from "../common/components/templates/AuthGuard";
+import "../styles/css/flaticon.css";
+import { theme } from "../styles/css/theme";
+import { GlobalStyle } from "../styles/css/global.style";
+import ResetCSS from "../styles/css/style";
 
 const queryClient = new QueryClient({
   defaultOptions: {

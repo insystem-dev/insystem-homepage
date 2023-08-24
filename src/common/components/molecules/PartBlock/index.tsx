@@ -1,70 +1,41 @@
-'use client'
+"use client";
 
-import React, { Fragment } from 'react';
-import { Icon } from '../../atoms/Icon/index';
-import {
-  PartBlock_style,
-  ContentWrapper,
-} from './partBlock.style';
-import { BusinessBtn } from '../../atoms/Button';
+import React from "react";
+import { Icon } from "../../atoms/Icon/index";
+import { BusinessBtn } from "../../atoms/Button";
+import * as S from "./partBlock.style";
 
-export type partblock_ty = {
-  children?: any
-  className: string,
-  id?: any,
-  icon: any,
-  title: any,
-  button: any,
-  description: any,
-  additionalContent?: any,
-  wrapperStyle?: any,
-  contentStyle: any,
-  btnWrapperStyle?: any,
-}
-
+export type partblockProps = {
+  id?: any;
+  icon: any;
+  title: any;
+  subtitle?: string;
+  titleend?: string;
+  button: any;
+  description: any;
+};
 
 const PartBlock = ({
-  children,
-  className,
   icon,
   title,
+  subtitle,
+  titleend,
   button,
   description,
-  additionalContent,
-  wrapperStyle,
-  contentStyle,
-  btnWrapperStyle,
-  id,
-  ...props
-}: partblock_ty) => {
-  // Add all classs to an array
-  const addAllClasses = ['block__block'];
-
-  // className prop checking
-  if (className) {
-    addAllClasses.push(className);
-  }
-
+}: partblockProps) => {
   return (
-    <PartBlock_style
-      className={addAllClasses.join(' ')}
-      {...wrapperStyle}
-    >
-      {children}
-      <Icon icon={icon}/>
-      <Fragment>
-        <ContentWrapper className="content__wrapper" {...contentStyle}>
-          <span>{title}</span>
-          {description}
-        </ContentWrapper>
-        {button && (
-          <BusinessBtn className="button__wrapper" {...btnWrapperStyle}>
-            {button}
-          </BusinessBtn>
-        )}
-        {additionalContent}
-      </Fragment>
-    </PartBlock_style>
+    <S.PartBlockBox>
+      <Icon icon={icon} />
+      <S.ContentWrapper className="content__wrapper">
+        <S.ContentTitBox>
+          {title}
+          <span>{subtitle && subtitle}</span>
+          {titleend && titleend}
+        </S.ContentTitBox>
+        <S.ContentTxtBox>{description}</S.ContentTxtBox>
+      </S.ContentWrapper>
+      {button}
+    </S.PartBlockBox>
   );
 };
 

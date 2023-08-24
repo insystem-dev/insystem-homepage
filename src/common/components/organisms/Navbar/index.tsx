@@ -1,15 +1,13 @@
-'use client'
+"use client";
 
-import React, { useContext, useState } from 'react';
-import * as S from './navbar.style';
-import { NavbarContainer } from '../../molecules/Container/index';
-import Logo from '../../atoms/Logo';
-import NavMenu from '../../molecules/NavMenu';
-import LogoImage from '../../../assets/image/agency/logo.png';
-import { DrawerContext } from '../../../contexts/DrawerContext';
-import { data, menuData } from '../../../data/index';
-
-
+import React, { useContext, useState } from "react";
+import * as S from "./navbar.style";
+import { NavbarContainer } from "../../molecules/Container/index";
+import Logo from "../../atoms/Logo";
+import NavMenu from "../../molecules/NavMenu";
+import LogoImage from "../../../../styles/assets/image/logo.png";
+import { DrawerContext } from "../../../contexts/DrawerContext";
+import { data, menuData } from "../../../data/index";
 
 const Navbar = ({ logoStyle }: any) => {
   const [open, setOpen] = useState(false);
@@ -18,7 +16,7 @@ const Navbar = ({ logoStyle }: any) => {
   // mouseover drawer
   const hoverHandler = () => {
     dispatch({
-      type: 'MOUSEOVER',
+      type: "MOUSEOVER",
     });
   };
 
@@ -30,13 +28,15 @@ const Navbar = ({ logoStyle }: any) => {
           logoSrc={LogoImage}
           className="logolink"
           title="(주)인시스템 메인화면 이동"
-          width='navLogo'
+          width="navLogo"
         />
-        
-        <div className={`nav-wrap ${open ? 'open' : 'close'}`}
+
+        <div
+          className={`nav-wrap ${open ? "open" : "close"}`}
           onMouseEnter={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
-          style={{ display: 'flex', alignItems: 'center' }}>
+          style={{ display: "flex", alignItems: "center" }}
+        >
           <NavMenu navmenus={data.menus} />
           <div className="nav-sub-wrap">
             <ul className="nav-sub-list">
@@ -55,7 +55,7 @@ const Navbar = ({ logoStyle }: any) => {
             </ul>
           </div>
         </div>
-        <div className={`nav-sub-background ${open ? 'open' : 'close'}`} />
+        <div className={`nav-sub-background ${open ? "open" : "close"}`} />
       </NavbarContainer>
     </S.NavbarWrapper>
   );

@@ -1,15 +1,8 @@
-import React from 'react';
-import TagWrapper from './postTag.style';
+import React from "react";
+import * as S from "./postTag.style";
 
-const PostTag = ({
-    type
-}: any) => {
-    return (
-        <TagWrapper>
-            {type === 'new' &&
-                'NEW'}
-        </TagWrapper>
-    )
+const PostTag = ({ type }: any) => {
+  return <S.TagBox>{type === "new" && "NEW"}</S.TagBox>;
 };
 
 export default PostTag;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from "styled-components";
 import {
   display,
   alignItems,
@@ -11,8 +11,7 @@ import {
   borderRadius,
   width,
   height,
-} from 'styled-system';
-
+} from "styled-system";
 
 const NavbarStyle = styled.nav`
   /* Navbar default style goes here */
@@ -78,7 +77,7 @@ const NavbarStyle = styled.nav`
           max-width: 970px;
         }
         @media (min-width: 1200px) {
-          max-width: 1270px;
+          max-width: 1240px;
         }
       }
     }
@@ -92,7 +91,7 @@ const NavbarStyle = styled.nav`
       height: calc(100vh - 70px);
       top: 70px;
       left: 0;
-      background: rgba(0,0,0,.6);
+      background: rgba(0, 0, 0, 0.6);
     }
 
     &.close {
@@ -114,6 +113,6 @@ const NavbarStyle = styled.nav`
   ${borderRadius}
 `;
 
-NavbarStyle.displayName = 'NavbarStyle';
+NavbarStyle.displayName = "NavbarStyle";
 
 export default NavbarStyle;

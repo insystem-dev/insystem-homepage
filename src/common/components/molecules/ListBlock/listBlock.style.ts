@@ -1,58 +1,76 @@
-'use client'
+"use client";
 
-import styled from 'styled-components';
-import Aboutus1 from '../../../assets/image/agency/aboutus/about-img01.webp';
-import Aboutus2 from '../../../assets/image/agency/aboutus/about-img02.webp';
-import Aboutus3 from '../../../assets/image/agency/aboutus/about-img03.webp';
-import { listBlock_ty } from '.';
+import styled from "styled-components";
+import Aboutus1 from "../../../../styles/assets/image/aboutus/about-img01.webp";
+import Aboutus2 from "../../../../styles/assets/image/aboutus/about-img02.webp";
+import Aboutus3 from "../../../../styles/assets/image/aboutus/about-img03.webp";
+import { listBlock_ty } from ".";
+export const ColumnListBlock = styled.li`
+  overflow: hidden;
+  width: 1050px;
+  padding: 50px;
+  text-align: right;
+  line-height: 30px;
+  font-size: 2.4rem;
+  letter-spacing: -1px;
+  background: ${(props) => props.theme.colors.white};
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 40px 0 40px 0;
+  box-shadow: ${(props) => props.theme.shadow.navigation};
 
-const ListBlockWrapper = styled.div<listBlock_ty>`
-    &.list__block-col {
-        overflow: hidden;
-        background: #fff;
-        border-radius: 40px 0 40px 0;
-        box-shadow: 0px 2px 10px 0px rgba(0,0,0,.15);
+  &.about01 {
+    background-image: url(${Aboutus1?.src});
+  }
 
-        .about01 {
-            background-image: url(${Aboutus1?.src});
-        }
+  &.about02 {
+    background-image: url(${Aboutus2?.src});
+  }
 
-        .about02 {
-            background-image: url(${Aboutus2?.src});
-        }
+  &.about03 {
+    background-image: url(${Aboutus3?.src});
+  }
 
-        .about03 {
-            background-image: url(${Aboutus3?.src});
-        }
-
-        .about01, .about02, .about03 {
-            width: 1050px;
-            height: 130px;
-            padding: 50px;
-            text-align: right;
-            line-height: 30px;
-            font-size: 2.4rem;
-            letter-spacing: -1px;
-            background-size: cover;
-            background-repeat: no-repeat;
-
-            span {
-                color: #6093F4;
-                font-weight: 500;
-            }
-        }
-    }
-
-    &.list__block-row {
-        display: flex;
-        width: 400px;
-        flex-direction: column;
-        align-items: center;
-    }
+  span {
+    color: ${(props) => props.theme.colors.primary};
+    font-weight: 500;
+  }
 `;
 
-// Icon wrapper style
-const IconWrapper = styled.div`
+export const RowListBlock = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .list__block-tit {
+    font-family: "Roboto";
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .list__block-label {
+    margin-top: 4px;
+    font-family: "Roboto";
+    color: ${(props) => props.theme.colors.primary};
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .list__block-cont {
+    height: 80px;
+    margin-top: 14px;
+    padding: 0 20px;
+    color: ${(props) => props.theme.colors.darkTxt};
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: -0.05rem;
+    line-height: 2.4rem;
+  }
+`;
+
+export const IconWrapper = styled.div`
   display: flex;
   width: 100px;
   height: 100px;
@@ -68,6 +86,3 @@ const IconWrapper = styled.div`
     object-fit: contain;
   }
 `;
-
-export { IconWrapper };
-export default ListBlockWrapper;

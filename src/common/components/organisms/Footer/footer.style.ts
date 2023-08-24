@@ -1,98 +1,64 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const FooterWrapper = styled.footer`
-    padding: 60px 0;
-    background: #FAFAFD;
-
-        .container {
-            display: flex;
-
-            .col {
-                button {
-                    padding: 0 0 2px;
-                    color: #686868;
-                    font-size: 1.7rem;
-                    font-weight: 600;
-                    border: none;
-                    border-bottom: 1px solid #fafafd;
-                    background: none;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        color: #000;
-                        border-bottom: 1px solid #000;
-                        transition: all 0.3s ease;
-                    }
-
-                    &+ button {
-                        margin-left: 30px;
-                    }
-                }
-            }
-        }
+export const Footer = styled.footer`
+  display: flex;
+  padding: 60px 0;
+  background: ${(props) => props.theme.colors.footerBg};
+  align-items: center;
+  justify-content: center;
 `;
 
 export const FooterBox = styled.div`
-  margin-right: 50px;
-  .col {
-    max-width: 400px;
-    height: auto;
-    min-height: 400px;
-    background-color: #ffffff
-    .colOne {
-      margin-right: 80px;
-    }
-  }
-  
-  button {
-    padding: 0 0 2px;
-    color: #686868;
-    font-size: 1.7rem;
-    font-weight: 600;
-    border: none;
-    border-bottom: 1px solid #fafafd;
-    background: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    &:hover {
-      color: #000;
-      border-bottom: 1px solid #000;
-      transition: all 0.3s ease;
-    }
-    &+ button {
-      margin-left: 30px;
-    }
-  }
+  display: grid;
+  width: 1240px;
+  grid-template-columns: 295px auto;
 
-  .row {
-    gap: 20px;
+  a {
+    height: 40px;
   }
-`
-
-export const List = styled.ul`
-    display: flex;
-    max-width: 960px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-    gap: 5px 15px;
 `;
 
-export const ListItem = styled.li`
-    color: #686868;
-    font-size: 1.5rem;
+export const FooterInfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 
-    &+ li {
-        display: flex;
-        align-items: center;
+export const FooterBtnBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+`;
 
-        &::before {
-            content: '';
-            display: block;
-            width: 1px;
-            height: 12px;
-            margin-right: 15px;
-            background: #686868;
-        }
+export const FooterInfoList = styled.ul`
+  display: flex;
+  max-width: 960px;
+  flex-wrap: wrap;
+  gap: 5px 20px;
+`;
+
+export const FooterInfoItem = styled.li`
+  color: ${(props) => props.theme.colors.footerTxt};
+  font-size: 1.6rem;
+  letter-spacing: -0.05rem;
+
+  & + li {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 14px;
+      margin-right: 20px;
+      background: ${(props) => props.theme.colors.footerTxt};
     }
+  }
+`;
+
+export const FooterCopy = styled.p`
+  color: ${(props) => props.theme.colors.footerTxt};
+  font-size: 1.4rem;
+  letter-spacing: 0rem;
 `;

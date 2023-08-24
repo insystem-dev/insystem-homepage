@@ -1,75 +1,38 @@
-import React, { Fragment } from 'react';
-import FeatureBlockWrapper, {
-  ContentWrapper,
-} from './featureBlock.style';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import * as S from "./featureBlock.style";
 
-export type FeatureBlock_ty = {
-  className: string,
-  icon?: any,
-  title?: Element | any,
-  description?: Element | Object,
-  wrapperStyle?: Object,
-  iconStyle?: Object,
-  contentStyle?: Object,
-  btnWrapperStyle?: Object,
-  link?: any
-  bottom?: any
-}
+export type FeatureBlockProps = {
+  areas?: string;
+  icon?: any;
+  title?: Element | any;
+  description?: Element | Object;
+  link?: any;
+};
 
 const FeatureBlock = ({
-  className,
+  areas,
   icon,
   title,
   description,
-  wrapperStyle,
-  iconStyle,
-  contentStyle,
-  btnWrapperStyle,
   link,
-  bottom,
-  ...props
-}: FeatureBlock_ty) => {
-  // Add all classs to an array
-  const addAllClasses = ['feature__block'];
-
-  // className prop checking
-  if (className) {
-    addAllClasses.push(className);
-  }
-
-
+}: FeatureBlockProps) => {
   return (
-    <FeatureBlockWrapper
-      className={addAllClasses.join(' ')}
-      {...wrapperStyle}
-      {...props}
-    >
-      {title || description || bottom || link ? (
-        <Fragment>
-          {link !== undefined &&
-            <Link href={link} legacyBehavior>
-              <ContentWrapper className="content__wrapper" {...contentStyle}>
-                <span>{title}</span>
-                <div className="content-divider" />
-                {description}
-                {icon}
-              </ContentWrapper>
-            </Link>
-          }
-          {link === undefined &&
-            <ContentWrapper className="content__wrapper" {...contentStyle}>
-              {title}
-              <div className="content-divider" />
-              {description}
-              {icon}
-            </ContentWrapper>
-          }
-        </Fragment>
-      ) : (
-        ''
+    <S.FeatureBox areas={areas}>
+      {link !== undefined && (
+        <Link href={link} legacyBehavior>
+          <S.FeatureContentBox>
+            <S.ContentTitBox>{title}</S.ContentTitBox>
+            <S.ContentDivider />
+            <S.ContentTxtBox>
+              <>{description}</>
+            </S.ContentTxtBox>
+            <S.ContentArrows>{icon}</S.ContentArrows>
+          </S.FeatureContentBox>
+        </Link>
       )}
-    </FeatureBlockWrapper>
+      {link === undefined && <S.FeatureContentBox />}
+    </S.FeatureBox>
   );
 };
 

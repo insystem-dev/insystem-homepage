@@ -1,60 +1,60 @@
-import React, { Fragment, ButtonHTMLAttributes } from 'react';
-import * as S from './button.style';
+import React, { ButtonHTMLAttributes } from "react";
+import * as S from "./button.style";
+import IconArrow from "../../../../styles/assets/svg/icon-arrow.svg";
 
-export interface Button_props extends ButtonHTMLAttributes<HTMLButtonElement> {
-    children?: React.ReactElement | any
-    type?: "button" | "submit" | "reset",
-    title?: string,
-    variant?: string,
-    disabled?: any,
-    value?: any,
-    onClick?: any,
-    className?: string,
-    color?: string,
-    fontSize?: string,
-    background?: string | object,
-    border?: string
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children?: React.ReactElement | any;
+  type?: "button" | "submit" | "reset";
+  title?: string;
+  variant?: string;
+  disabled?: any;
+  value?: any;
+  onClick?: any;
+  className?: string;
+  color?: string;
+  fontSize?: string;
+  background?: string | object;
+  border?: string;
 }
 
-export const AskSection_btn = ({
+export const AskSectionBtn = ({
   children,
   type,
   title,
-  variant,
   onClick,
-  color,
-  fontSize,
-  border,
-  background
-}: Button_props) => {
+}: ButtonProps) => {
   return (
-    <S.AskSection_btn_style
-      type={type}
-      onClick={onClick}
-      variant = {variant}
-      color = {color}
-      fontSize= {fontSize}
-      border = {border}
-      background={background}
-    >
+    <S.AskSectionBtn type={type} onClick={onClick}>
       <>
         {children}
         {title}
       </>
-    </S.AskSection_btn_style>
+    </S.AskSectionBtn>
   );
 };
 
-export const BusinessBtn = ({
-  className,
-  children,
-}: Button_props) => {
+export const BusinessBtn = ({ type, onClick, title }: ButtonProps) => {
   return (
-    <S.BusinessBtn_style 
-      className = {className}>
-      {children}
-    </S.BusinessBtn_style>
-  )
+    <S.BusinessBtn type={type} onClick={onClick}>
+      {title}
+    </S.BusinessBtn>
+  );
+};
+
+export const NoticeBtn = ({ type, onClick }: ButtonProps) => {
+  return (
+    <S.NoticeBtn type={type} onClick={onClick}>
+      <IconArrow width={34} height={34} viewBox="0 0 24 24" />
+    </S.NoticeBtn>
+  );
+};
+
+export const FooterBtn = ({ type, onClick, title }: ButtonProps) => {
+  return (
+    <S.FooterBtn type={type} onClick={onClick}>
+      {title}
+    </S.FooterBtn>
+  );
 };
 
 export const InquiryBtn = ({
@@ -65,7 +65,7 @@ export const InquiryBtn = ({
   color,
   background,
   border,
-}: Button_props) => {
+}: ButtonProps) => {
   return (
     <S.inquiryBtn_style
       variant={variant}
@@ -77,5 +77,5 @@ export const InquiryBtn = ({
       {children}
       {title}
     </S.inquiryBtn_style>
-  )
-}
+  );
+};
