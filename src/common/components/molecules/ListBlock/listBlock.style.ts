@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Aboutus1 from "../../../../styles/assets/image/aboutus/about-img01.webp";
 import Aboutus2 from "../../../../styles/assets/image/aboutus/about-img02.webp";
 import Aboutus3 from "../../../../styles/assets/image/aboutus/about-img03.webp";
-import { listBlock_ty } from ".";
+
 export const ColumnListBlock = styled.li`
   overflow: hidden;
   width: 1050px;
@@ -12,6 +12,7 @@ export const ColumnListBlock = styled.li`
   text-align: right;
   line-height: 30px;
   font-size: 2.4rem;
+  font-weight: 500;
   letter-spacing: -1px;
   background: ${(props) => props.theme.colors.white};
   background-size: cover;
@@ -33,7 +34,7 @@ export const ColumnListBlock = styled.li`
 
   span {
     color: ${(props) => props.theme.colors.primary};
-    font-weight: 500;
+    font-weight: 600;
   }
 `;
 

@@ -1,124 +1,88 @@
 "use client";
 
-import styled from "styled-components";
-import PortBgOne from "../../../../styles/assets/image/port/port-1.png";
-import PortBgTwo from "../../../../styles/assets/image/port/port-2.png";
-import { port_props } from ".";
+import styled, { css } from "styled-components";
+import PortBg01 from "../../../../styles/assets/image/port/port-1.png";
+import PortBg02 from "../../../../styles/assets/image/port/port-2.png";
 
-export const PortWrapper = styled.div<port_props>`
+export type PortProps = {
+  section?: string;
+};
+
+export const PortPage = styled.div`
+  min-height: calc(100vh - 680px);
+`;
+
+export const PortSection = styled.section<PortProps>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-`;
+  justify-content: center;
 
-export const PortSection_1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 1032px;
+  ${(props) =>
+    props.section === "port" &&
+    css`
+      background-image: url(${PortBg01?.src});
+      background-size: 60%;
+      background-position: right bottom;
+      background-repeat: no-repeat;
 
-  background: url(${PortBgTwo?.src}), #ffffff;
-  background-size: 1005px 734px;
-  background-position: right bottom;
-  background-repeat: no-repeat;
+      & > div {
+        padding: 126px 0 130px;
+      }
+    `}
 
-  .section-header-divider {
-    width: 90px;
-    height: 6px;
-    margin: 30px 0 40px;
-    background-color: #6093f4;
-  }
-`;
+  ${(props) =>
+    props.section === "quarantine" &&
+    css`
+      padding: 0;
 
-export const PortSection_2 = styled.div`
-  display: flex;
-  width: 100%;
-  height: 900px;
-  flex-direction: column;
+      & > div {
+        & > div {
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+          gap: 20px;
+        }
+      }
 
-  background: url(${PortBgOne?.src}), #ffffff;
-  background-size: 1200px 650px;
-  background-position: left bottom;
-  background-repeat: no-repeat;
+      h3 {
+        display: flex;
+        padding: 126px 0;
+        text-align: right;
+        flex-direction: column;
+        align-items: flex-end;
 
-  .section-header-divider-two {
-    width: 90px;
-    height: 6px;
-    margin: 30px 0 40px;
-    margin-left: auto;
-    justify-content: end;
-    background-color: #6093f4;
-  }
+        p {
+          text-align: right;
+        }
+      }
+    `}
 
-  .section-two {
-    float: right;
-    text-align: end;
-  }
-
-  .leftBox {
-    margin-left: auto;
-  }
+    ${(props) =>
+    props.section === "list" &&
+    css`
+      background: ${(props) => props.theme.colors.aboutBg};
+    `}
 `;
 
 export const PortBox = styled.div`
-  width: 800px;
-  word-break: keep-all;
+  width: 1240px;
 `;
 
-export const PortTextBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-  word-break: keep-all;
-
-  .section-two-text {
-    margin-left: auto;
-  }
-`;
-
-export const PortContextBox = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  .second-text {
-    padding-left: 0px;
-  }
-`;
-
-export const PortDivider = styled.div`
+export const PortSectionImg = styled.div`
   width: 100%;
-  padding: 60px 0;
-  background: #f2f3f7;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+  height: 100%;
+  background-image: url(${PortBg02?.src});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
-export const PortContent = styled.div`
-  width: 300px;
+export const PortList = styled.ul`
   display: flex;
-  flex-flow: column wrap;
+  width: 1240px;
+  padding: 80px 0;
+  flex-wrap: wrap;
+  align-items; center;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  word-break: keep-all;
-
-  .pointWord {
-    font-size: 2rem;
-  }
-
-  .point {
-    font-size: 2.4rem;
-    margin: 0 0 10px 0;
-  }
+  gap: 80px 50px;
 `;

@@ -20,20 +20,6 @@ export interface Text_props
   contentend?: string | any;
 }
 
-export const AskText = ({ content, children, color }: Text_props) => (
-  <S.AskText_style color={color}>
-    {content}
-    {children ? children : ""}
-  </S.AskText_style>
-);
-
-export const AboutText = ({ content, children }: Text_props) => (
-  <S.AboutText_style>
-    {content}
-    {children ? children : ""}
-  </S.AboutText_style>
-);
-
 export const HeadText = ({ children, content, color }: Text_props) => {
   return (
     <S.HeadText_style color={color}>

@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
 import { Heading } from "../../atoms/Heading";
 import ListBlock from "../../molecules/ListBlock";
 import { aboutPageData } from "../../../data";
 import * as S from "./aboutPage.style";
 import HistoryImg from "../../../../styles/assets/image/aboutus/about-history.png";
-import Image from "next/image";
 
 const AboutPage = () => {
   return (

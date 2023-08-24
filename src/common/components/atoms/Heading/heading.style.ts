@@ -54,6 +54,11 @@ export const HeadingContentBox = styled.p`
     props.color == "white"
       ? props.theme.colors.white
       : props.theme.colors.darkTxt};
+
+  span {
+    color: ${(props) => props.theme.colors.primary};
+    font-weight: 500;
+  }
 `;
 
 export const PageHeadDividerBox = styled.div`

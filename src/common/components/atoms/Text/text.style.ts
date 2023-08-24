@@ -1,10 +1,6 @@
 import styled, { css } from "styled-components";
 import { Text_props } from ".";
 
-export const AskText_style = styled.p<Text_props>``;
-
-export const AboutText_style = styled.p<Text_props>``;
-
 export const HeadText_style = styled.p<Text_props>`
   color: #fff;
   font-size: 2.2rem;

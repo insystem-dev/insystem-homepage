@@ -35,7 +35,7 @@ const advertisement = () => {
         <Swiper {...swiperSetting}>
           {adItems.map((item, idx) => {
             const image =
-              require(`@/common/assets/image/ads/${item.name}.gif`).default;
+              require(`@/styles/assets/image/ads/${item.name}.gif`).default;
             return (
               <SwiperSlide key={idx}>
                 <a href={item.src} target="_blank">

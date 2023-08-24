@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Footer = styled.footer`
   display: flex;
+  height: 260px;
   padding: 60px 0;
   background: ${(props) => props.theme.colors.footerBg};
   align-items: center;

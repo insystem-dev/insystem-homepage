@@ -1,148 +1,87 @@
 "use client";
 
-import styled from "styled-components";
-import HealthCareBgOne from "../../../../styles/assets/image/healthcare/healthcare-1.png";
-import HealthCareBgTwo from "../../../../styles/assets/image/healthcare/healthcare-2.png";
-import { HealthCareProps } from ".";
+import styled, { css } from "styled-components";
+import HealthCareBg01 from "../../../../styles/assets/image/healthcare/healthcare-1.png";
+import HealthCareBg02 from "../../../../styles/assets/image/healthcare/healthcare-2.png";
 
-export const HealthCareWrapper = styled.div`
+export type HealthCareProps = {
+  section?: string;
+};
+
+export const HealthCarePage = styled.div`
+  min-height: calc(100vh - 680px);
+`;
+
+export const HealthCareSection = styled.section<HealthCareProps>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-`;
+  justify-content: center;
 
-export const HealthCareSection_1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 918px;
+  ${(props) =>
+    props.section === "diabetes" &&
+    css`
+      background-image: url(${HealthCareBg01?.src});
+      background-size: cover;
+      background-position: right top;
+      background-repeat: no-repeat;
 
-  background: url(${HealthCareBgOne?.src}), #ffffff;
-  background-size: cover;
-  background-repeat: no-repeat;
+      & > div {
+        padding: 126px 0 240px;
+      }
+    `}
 
-  .section-header-divider {
-    width: 90px;
-    height: 6px;
-    margin: 30px 0 40px;
-    background-color: #6093f4;
-  }
-`;
+  ${(props) =>
+    props.section === "smartshoes" &&
+    css`
+      padding: 0;
 
-export const HealthCareSection_2 = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 850px;
-  padding-bottom: 250px;
+      & > div {
+        & > div {
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+        }
+      }
 
-  background: url(${HealthCareBgTwo?.src}), #ffffff;
-  background-size: container;
-  background-position: left top;
-  background-repeat: no-repeat;
+      h3 {
+        display: flex;
+        padding: 126px 0;
+        text-align: right;
+        flex-direction: column;
+        align-items: flex-end;
 
-  .section-header-divider-two {
-    width: 90px;
-    height: 6px;
-    margin: 30px 0 40px;
-    margin-left: auto;
-    justify-content: end;
-    background-color: #6093f4;
-  }
+        p {
+          text-align: right;
+        }
+      }
+    `}
 
-  .section-two {
-    float: right;
-    text-align: end;
-  }
-
-  .leftBox {
-    width: 550px;
-    margin-left: auto;
-  }
+    ${(props) =>
+    props.section === "list" &&
+    css`
+      background: ${(props) => props.theme.colors.aboutBg};
+    `}
 `;
 
 export const HealthCareBox = styled.div`
-  width: 650px;
-  word-break: keep-all;
+  width: 1240px;
 `;
 
-export const HealthCareTextBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-
-  .section-two-text {
-    margin-left: auto;
-  }
-`;
-
-export const HealthCareContextBox = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  .second-text {
-    padding-left: 0px;
-  }
-`;
-
-export const HealthCareDivider = styled.div`
+export const HealthCareSectionImg = styled.div`
   width: 100%;
-  padding: 60px 0;
-  background: #f2f3f7;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+  height: 100%;
+  background-image: url(${HealthCareBg02?.src});
+  background-size: 120%;
+  background-position: left;
+  background-repeat: no-repeat;
 `;
 
-export const HealthCareDivider_2 = styled.div`
-  width: 100%;
-  padding: 60px 0;
-  background: #f2f3f7;
+export const HealthCareList = styled.ul`
   display: flex;
-  flex-direction: column;
+  width: 1240px;
+  padding: 80px 0;
+  flex-wrap: wrap;
+  align-items; center;
   justify-content: center;
-  align-items: center;
-  gap: 50px;
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  .row-two {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-`;
-
-export const HealthCareContent = styled.div`
-  width: 350px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  word-break: keep-all;
-
-  .pointWord {
-    font-size: 2rem;
-  }
-
-  .point {
-    font-size: 2.4rem;
-    margin: 0 0 10px 0;
-  }
+  gap: 80px 50px;
 `;

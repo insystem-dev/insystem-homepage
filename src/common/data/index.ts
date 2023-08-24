@@ -16,7 +16,7 @@ const data = {
     {
       id: 2,
       label: "사업분야",
-      path: "/service",
+      path: "/service/healthcare",
       offset: "67",
     },
     {
