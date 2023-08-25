@@ -3,15 +3,15 @@ import * as S from "./modal.style";
 import * as B from "../Button";
 
 export type modal_ty = {
-  open?: any,
-  modal?: any,
-  setShow?: any,
-  title?: any,
-  content?: any,
-  edit?: any,
-  clickBtn?: any,
-  onClick?: any,
-}
+  open?: any;
+  modal?: any;
+  setShow?: any;
+  title?: any;
+  content?: any;
+  edit?: any;
+  clickBtn?: any;
+  onClick?: any;
+};
 
 const Modal = ({
   open,
@@ -29,18 +29,18 @@ const Modal = ({
         <span className="modal-content">{content}</span>
         {edit ? (
           <div className="modal-btn-set">
-            <B.InquiryBtn variant="filled" onClick={() => onClick()}>
+            <B.PostBtn variant="filled" onClick={() => onClick()}>
               {clickBtn}
-            </B.InquiryBtn>
-            <B.InquiryBtn variant="lined" onClick={() => setShow(false)}>
+            </B.PostBtn>
+            <B.PostBtn variant="lined" onClick={() => setShow(false)}>
               닫기
-            </B.InquiryBtn>
+            </B.PostBtn>
           </div>
         ) : (
           <div className="modal-btn-set">
-            <B.InquiryBtn variant="lined" onClick={() => setShow(false)}>
+            <B.PostBtn variant="lined" onClick={() => setShow(false)}>
               닫기
-            </B.InquiryBtn>
+            </B.PostBtn>
           </div>
         )}
       </S.ModalBox>

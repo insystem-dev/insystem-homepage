@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { InquiryBtn } from "../../atoms/Button";
+import { PostBtn } from "../../atoms/Button";
 import CustomFileInput from "../../atoms/CustomFileInput";
 import CustomPhoneInput from "../../atoms/CustomPhoneInput";
 import CustomTextAreaInput from "../../atoms/CustomTextAreaInput";
@@ -18,16 +18,12 @@ import Router from "next/router";
 import { InputSet } from "../../atoms/InputSet";
 
 export type inQuiryPage_ty = {
-  form?: Object,
-  formSubmitTxt?: Object,
-  btnForm?: Object,
-}
+  form?: Object;
+  formSubmitTxt?: Object;
+  btnForm?: Object;
+};
 
-const InquiryPage = ({
-  form,
-  formSubmitTxt,
-  btnForm,
-}: inQuiryPage_ty) => {
+const InquiryPage = ({ form, formSubmitTxt, btnForm }: inQuiryPage_ty) => {
   const initialState = {
     company: "",
     incharge: "",
@@ -104,7 +100,8 @@ const InquiryPage = ({
           <S.InquiryBox className="form">
             <S.InquiryBox className="formWrap">
               <Heading content="기본정보 입력" />
-              <InquiryText className="formDescription"
+              <InquiryText
+                className="formDescription"
                 content="원활한 문의 답변을 위해 아래의 기본정보를 입력해 주세요."
               />
               <S.InquiryBox className="row">
@@ -233,20 +230,12 @@ const InquiryPage = ({
               </S.InquiryBox>
               <S.InquiryBox className="row btn">
                 <div className="row_btn">
-                  <InquiryBtn
+                  <PostBtn
                     title="작성완료"
                     type="submit"
                     color="white"
-                    background="blue"
-                    border="blue"
-                  ></InquiryBtn>
-                  <InquiryBtn
-                    title="초기화"
-                    type="button"
-                    color="blue"
-                    background="white"
-                    border="white"
-                  ></InquiryBtn>
+                  ></PostBtn>
+                  <PostBtn title="초기화" type="button" color="blue"></PostBtn>
                 </div>
                 <InquiryText
                   content="※ 제출된 문의사항은 내용 수정이 불가합니다."

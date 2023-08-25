@@ -1,27 +1,28 @@
-'use client'
+"use client";
 
-import { signOut, useSession } from "next-auth/react";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { AskSection_btn }from "../../atoms/Button";
-import TableGrid from "../../molecules/TableGrid";
-import { ContainerWrapper } from "../../molecules/Container";
-import * as S from "./NoticePage.style";
-import { notice } from "../../../data";
+import Link from "next/link";
 import { useRecoilState } from "recoil";
+import { signOut, useSession } from "next-auth/react";
 import { Paging } from "../../atoms/Paging";
-import { useBoardFetch } from "../../../../hooks/api/notice";
+import TableGrid from "../../molecules/TableGrid";
 import { setUserId } from "../../../../lib/api";
 import { selectedUser } from "../../../../states/user";
+import { useBoardFetch } from "../../../../hooks/api/notice";
+import { notice } from "../../../data";
+import * as S from "./NoticePage.style";
+import { PostBtn } from "../../atoms/Button";
+import { useRouter } from "next/navigation";
 
 const NoticePage = () => {
+  const Router = useRouter();
   // 데이터 input
   const { status, data: userData } = useSession();
   const { data, isLoading } = useBoardFetch();
   const [user, setUser] = useRecoilState(selectedUser);
 
   const [items, setItems] = useState([]);
-  const [notice, setNotice] = useState([]);
+  // const [notice, setNotice] = useState([]);
   const [modedNotice, setModedNotice] = useState<any>({
     orderedData: [],
     fixedPost: [],
@@ -37,10 +38,11 @@ const NoticePage = () => {
   const [currentPost, setCurrentPost] = useState(0);
 
   useEffect(() => {
-    if (data) {
-      setNotice(data);
-      const orderedData = data?.sort(
-        (a: any, b: any ) => new Date(b.insert_date).getTime() - new Date(a.insert_date).getTime()
+    if (notice) {
+      // setNotice(data);
+      const orderedData = notice?.sort(
+        (a: any, b: any) =>
+          new Date(b.insert_date).getTime() - new Date(a.insert_date).getTime()
       );
       const fixedPost = orderedData?.filter((data: any) => data.fixed === 1);
       const unfixedPost = orderedData?.filter((data: any) => data.fixed === 0);
@@ -88,33 +90,33 @@ const NoticePage = () => {
   }
 
   return (
-    <S.NoticeWrapper>
-      <ContainerWrapper>
-        <S.NoticeBlock_box className="grid">
-          {status === "authenticated" && (
-            <div className="notice-edit">
-              {/* <AskSection_btn variant="edit-primary">
-                <Link href="/notice/write" legacyBehavior>
-                  글쓰기
-                </Link>
-              </AskSection_btn>
-              <AskSection_btn
-                onClick={onClickLogout}
-                variant="edit-primary"
-              >
-                로그아웃
-              </AskSection_btn> */}
-            </div>
-          )}
-          {currentPost && notice.length > 0 ? (
+    <S.NoticeSection>
+      <S.NoticeBox>
+        {status === "authenticated" && (
+          <S.NoticeBtnBox>
+            <PostBtn
+              title="글쓰기"
+              type="button"
+              onClick={() => Router.push("/notice/write")}
+            />
+            <PostBtn
+              title="로그아웃"
+              type="button"
+              color="secondary"
+              onClick={onClickLogout}
+            />
+          </S.NoticeBtnBox>
+        )}
+        <S.NoticeGridBox>
+          {notice && notice.length > 0 ? (
             <TableGrid data={currentPost} />
           ) : (
-            ""
+            <TableGrid nodata={true} />
           )}
-          <Paging page={currentPage} count={count} setPage={setPage} />
-        </S.NoticeBlock_box>
-      </ContainerWrapper>
-    </S.NoticeWrapper>
+        </S.NoticeGridBox>
+        <Paging page={currentPage} count={count} setPage={setPage} />
+      </S.NoticeBox>
+    </S.NoticeSection>
   );
 };
 

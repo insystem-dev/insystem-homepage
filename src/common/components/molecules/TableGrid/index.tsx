@@ -2,42 +2,40 @@
 
 import React, { useEffect, useState } from "react";
 import TableTr from "../TableTr";
-import TableGridWrapper from "./tableGrid.style";
+import * as S from "./tableGrid.style";
 
-type data_ty = {
-    data: any,
-    item?: string,
-    idx?: number,
-}
+type noticeProps = {
+  data?: any;
+  nodata?: boolean;
+};
 
-
-const TableGrid = ({ data }: data_ty) => {
+const TableGrid = ({ data, nodata }: noticeProps) => {
   return (
     <>
-      <TableGridWrapper>
+      <S.TableBox>
         <thead>
-          <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>날짜</th>
-            <th>작성자</th>
-            <th>조회수</th>
-          </tr>
+          <S.Tr>
+            <S.Th>번호</S.Th>
+            <S.Th>제목</S.Th>
+            <S.Th>날짜</S.Th>
+            <S.Th>작성자</S.Th>
+            <S.Th>조회수</S.Th>
+          </S.Tr>
         </thead>
         <tbody>
           {data &&
-            data.map((item: data_ty, idx: data_ty) => {
+            data.map((item: any, idx: number) => {
               return <TableTr key={idx} item={item} />;
             })}
-          {!data && (
-            <tr>
-              <td colSpan={5} className="tr-nodata">
+          {nodata && (
+            <S.NodataTr>
+              <S.NodataTd colSpan={5} className="tr-nodata">
                 등록된 공지사항이 없습니다.
-              </td>
-            </tr>
+              </S.NodataTd>
+            </S.NodataTr>
           )}
         </tbody>
-      </TableGridWrapper>
+      </S.TableBox>
     </>
   );
 };

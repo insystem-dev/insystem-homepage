@@ -1,81 +1,48 @@
-'use client'
+"use client";
 
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-export const NoticeWrapper = styled.section`
-    .container {
-        padding: 70px 0;
+export const NoticeSection = styled.section`
+  display: flex;
+  min-height: calc(100vh - 680px);
+  padding: 70px 0;
+  align-items: center;
+  justify-content: center;
 
-        .notice-edit {
-            display: flex;
-            width: 100%;
-            max-width: 1170px;
-            margin: 0 auto 10px;
-            justify-content: flex-end;
-        }
-    }
-`
+  .container {
+    padding: 70px 0;
 
-export const NoticeBlock_box = styled.div`
-  ${(props) => {
-    if (props.className == "notice-info-wrap") {
-      return css(
-        {display: 'flex'},
-        {width: '210px'},
-        {height: '200px'},
-        {padding: '30px 35px'},
-        {background: '#fff'},
-        {flexDirection: 'column'},
-        {justifyContent: 'space-between'},
-        {cursor: 'pointer'},
-      )
-    }
-  }};
-
-  &:hover {
-    .notice-info-title {
-      margin-bottom: 7px;
-      font-weight: 600;
-      letter-spacing: -.9px;
-      border-bottom: 1px solid #000;
-    }
-    
-    .notice-info-content {
-      font-weight: 500;
-      letter-spacing: -.9px;
+    .notice-edit {
+      display: flex;
+      width: 100%;
+      max-width: 1170px;
+      margin: 0 auto 10px;
+      justify-content: flex-end;
     }
   }
+`;
 
-  .notice-info-title {
-    overflow: hidden;
-    margin-bottom: 8px;
-    font-size: 1.8rem;
-    font-weight: 500;
-    letter-spacing: -.8px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+export const NoticeBox = styled.div`
+  display: flex;
+  width: 1240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+`;
 
-  .notice-info-content {
-    display: -webkit-box;
-    overflow: hidden;
-    color: #3B3B3B;
-    font-size: 1.3rem;
-    letter-spacing: -.8px;
-    text-overflow: ellipsis;
-    white-space: normal;
-    word-wrap: break-word;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+export const NoticeBtnBox = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 5px;
+`;
 
-  .notice-info-date {
-    margin-top: 5px;
-    color: #888888;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: -.8px;
-    text-align: right;
-  }
+export const NodataBox = styled.div`
+  width: 100%;
+  font-size: 2rem;
+`;
 
-`
+export const NoticeGridBox = styled.div`
+  width: 100%;
+`;

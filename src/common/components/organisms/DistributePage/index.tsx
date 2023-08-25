@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import * as S from "./si.style";
+import * as S from "./distributePage.style";
 
 export type DistributeProps = {};
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 import { ButtonProps } from ".";
 
 export const AskSectionBtn = styled.button`
@@ -86,31 +87,29 @@ export const FooterBtn = styled.button`
   }
 `;
 
-export const inquiryBtn_style = styled.button<ButtonProps>`
-  width: 190px;
-  height: 50px;
-  font-size: 1.8rem;
+export const PostBtn = styled.button<ButtonProps>`
+  height: 30px;
+  padding: 0 10px;
+  font-size: 1.4rem;
   border-radius: 60px;
-  color: ${(props) => {
-    if (props.color == "blue") {
-      return props.theme.colors.headingTitle;
-    } else {
-      return props.theme.colors.white;
-    }
-  }};
-  background: ${(props) => {
-    if (props.background == "blue") {
-      return props.theme.colors.aboutBg;
-    } else {
-      return props.theme.colors.none;
-    }
-  }};
-  border: ${(props) => {
-    console.log(props);
-    if (props.border == "white") {
-      return "1px solid " + props.theme.colors.headingTitle;
-    } else {
-      return props.theme.colors.none;
-    }
-  }};
+  color: ${(props) => props.theme.colors.white};
+  background: ${(props) =>
+    props.color ? props.theme.colors[props.color] : props.theme.colors.primary};
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${(props) =>
+      props.color
+        ? props.theme.colors[props.color + "Hover"]
+        : props.theme.colors.primaryHover};
+  }
+
+  ${(props) =>
+    props.color === "disabled" &&
+    css`
+      cursor: default;
+    `}
 `;

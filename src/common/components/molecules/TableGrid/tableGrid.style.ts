@@ -1,6 +1,26 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const TableGridWrapper = styled.table`
+export const TableBox = styled.table`
+  width: 100%;
+  font-size: 1.6rem;
+  border-collapse: collapse;
+  border-top: 1px solid ${(props) => props.theme.colors.tableBorder};
+  border-bottom: 1px solid ${(props) => props.theme.colors.tableBorder};
+`;
+
+export const Tr = styled.tr``;
+
+export const Th = styled.th`
+  height: 50px;
+  background: ${(props) => props.theme.colors.tableHeaderBg};
+  border-bottom: 1px solid ${(props) => props.theme.colors.tableInnerBorder};
+`;
+
+export const NodataTr = styled.tr``;
+
+export const NodataTd = styled.td``;
+
+export const TableGridWrapper = styled.table`
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
@@ -8,29 +28,4 @@ const TableGridWrapper = styled.table`
     letter-spacing: -.5px;
     border-top 1px solid #000;
     border-bottom: 1px solid #000;
-    border-collapse: collapse;
-
-    tr {
-        height: 45px;
-
-        &+ tr {
-            border-top: 1px solid #d9d9d9;
-        }
-
-        .tr-nodata {
-            height: 250px;
-            text-align: center;
-        }
-    }
-
-    thead {
-        background: #F5F5F5;
-        border-bottom: 1px solid #D9D9D9;
-
-        th {
-            font-weight: 500;
-        }
-    }
 `;
-
-export default TableGridWrapper;

@@ -22,9 +22,12 @@ export const theme: DefaultTheme = {
     primary: "#6194F4",
     primaryHover: "#4077dd",
     secondary: "#0e2859",
+    secondaryHover: "#0e2859",
     white: "#ffffff",
     whiteActive: "#F6F7FA",
     black: "#000000",
+    disabled: "#DDDDDD",
+    delete: "#45536F",
 
     // TEXT
     titleTxt: "#2E397C",
@@ -42,11 +45,13 @@ export const theme: DefaultTheme = {
     commonTxt: "#3B3B3B",
     dateTxt: "#888888",
     footerTxt: "#686868",
+    labelTxt: "#7c7c7c",
 
     // BORDER
     linkBtnBorder: "#F2F3FC",
     divideBorder: "#EDEEF3",
     itemExpborder: "#F2F3FC",
+    postBorder: "#060606",
 
     // BACKGROUND
     aboutBg: "#F2F3F7",
@@ -58,7 +63,11 @@ export const theme: DefaultTheme = {
     skeleton: "#e5e5e5",
     none: "none",
 
-    // LAYOUT
+    // GRID
+    tableHeaderBg: "#F5F5F5",
+    tableBorder: "#060606",
+    tableInnerBorder: "#D9D9D9",
+    tableTrHover: "#f6f6fc",
 
     // INPUT
     labelTxt: "#797979",

@@ -1,73 +1,85 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const PostWrapper = styled.section`
-    .container {
-        padding: 70px 0;
-
-        .post-edit {
-            display: flex;
-            max-width: 1170px;
-            margin: 0 auto;
-            justify-content: flex-end;
-        }
-
-        .post-wrap {
-            margin: 0 auto;
-            width: 100%
-            max-width: 1170px;
-
-            .post-body {
-                font-size: 1.6rem;
-                border-top: 1px solid #000;
-                border-bottom: 1px solid #000;
-                min-height: 300px;
-                padding: 30px;
-            }
-        }
-
-        .post-button {
-            display: flex;
-            width: 100%;
-            max-width: 1170px;
-            margin: 10px auto 0;
-            justify-content: space-between;
-        }
-    }
+export const PostDetailSection = styled.section`
+  display: flex;
+  width: 100vw;
+  min-height: calc(100vh - 680px);
+  padding: 70px 0;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const PostBox = styled.div`
-    .post-head {
-        width: 100%;
+export const PostDetailBox = styled.div`
+  display: flex;
+  width: 1240px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+`;
 
-        tr {
+export const PostTopBtnBox = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+`;
 
-            th {
-                font-size: 2.8rem;
-                font-weight: 600;
-                text-align: left;
-                letter-spacing: -.5px;
-            }
+export const PostBottomBtnBox = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 
-            td {
-                height: 45px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+`;
 
-                &.td-sm {
-                    width: 12%;
-                    text-align: right;
-                }
+export const PostContentBox = styled.div`
+  width: 100%;
+`;
 
-                .label {
-                    margin-right: 10px;
-                    color: #7C7C7C;
-                    font-size: 1.4rem;
-                    font-weight: 400;
-                }
+export const PostInfoGrid = styled.table`
+  width: 100%;
+`;
 
-                .post-info {
-                    font-size: 1.4rem;
-                    font-weight: 500;
-                }
-            }
-        }
-    }
-`
+export const InfoTr = styled.tr``;
+
+export const InfoTh = styled.th`
+  font-family: Noto Sans KR;
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: -0.5px;
+`;
+
+export const InfoTd = styled.td`
+  height: 45px;
+  font-family: Noto Sans KR;
+
+  &.td-sm {
+    width: 12%;
+    text-align: right;
+  }
+
+  .label {
+    margin-right: 10px;
+    color: ${(props) => props.theme.colors.labelTxt};
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  .post-info {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+`;
+
+export const PostBodyBox = styled.div`
+  padding: 30px;
+  border-top: 1px solid ${(props) => props.theme.colors.postBorder};
+  border-bottom: 1px solid ${(props) => props.theme.colors.postBorder};
+`;

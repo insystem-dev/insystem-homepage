@@ -6,15 +6,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactElement | any;
   type?: "button" | "submit" | "reset";
   title?: string;
-  variant?: string;
   disabled?: any;
-  value?: any;
   onClick?: any;
-  className?: string;
   color?: string;
-  fontSize?: string;
-  background?: string | object;
-  border?: string;
 }
 
 export const AskSectionBtn = ({
@@ -57,25 +51,10 @@ export const FooterBtn = ({ type, onClick, title }: ButtonProps) => {
   );
 };
 
-export const InquiryBtn = ({
-  children,
-  title,
-  variant,
-  type,
-  color,
-  background,
-  border,
-}: ButtonProps) => {
+export const PostBtn = ({ title, type, color, onClick }: ButtonProps) => {
   return (
-    <S.inquiryBtn_style
-      variant={variant}
-      type={type}
-      color={color}
-      background={background}
-      border={border}
-    >
-      {children}
+    <S.PostBtn type={type} color={color} onClick={onClick}>
       {title}
-    </S.inquiryBtn_style>
+    </S.PostBtn>
   );
 };
