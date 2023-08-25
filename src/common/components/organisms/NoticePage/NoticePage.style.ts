@@ -8,18 +8,6 @@ export const NoticeSection = styled.section`
   padding: 70px 0;
   align-items: center;
   justify-content: center;
-
-  .container {
-    padding: 70px 0;
-
-    .notice-edit {
-      display: flex;
-      width: 100%;
-      max-width: 1170px;
-      margin: 0 auto 10px;
-      justify-content: flex-end;
-    }
-  }
 `;
 
 export const NoticeBox = styled.div`

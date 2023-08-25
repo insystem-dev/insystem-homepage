@@ -46,6 +46,7 @@ export const theme: DefaultTheme = {
     dateTxt: "#888888",
     footerTxt: "#686868",
     labelTxt: "#7c7c7c",
+    notiFixTxt: "#4e83e7",
 
     // BORDER
     linkBtnBorder: "#F2F3FC",
@@ -61,6 +62,7 @@ export const theme: DefaultTheme = {
     tagNewBg: "#F5B100",
     footerBg: "#FAFAFD",
     skeleton: "#e5e5e5",
+    notiFixBg: "#f6f6fc",
     none: "none",
 
     // GRID

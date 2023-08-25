@@ -16,21 +16,22 @@ export const TableTr = styled.tr`
   }
 
   &.notice-fixed {
-    color: #4e83e7;
+    color: ${(props) => props.theme.colors.notiFixTxt};
     font-weight: 600;
-    background: #fafafd;
+    background: ${(props) => props.theme.colors.footerBg};
 
     a {
-      color: #4e83e7;
+      color: ${(props) => props.theme.colors.notiFixTxt};
     }
 
     &:hover {
-      background: #f6f6fc;
+      background: ${(props) => props.theme.colors.notiFixBg};
     }
   }
 `;
 
 export const TableTd = styled.td`
+  font-family: Noto Sans KR;
   text-align: center;
 
   &.td-title {
