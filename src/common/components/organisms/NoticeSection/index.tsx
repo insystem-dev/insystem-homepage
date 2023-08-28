@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Fade } from "react-awesome-reveal";
 import NoticeBlock from "../../atoms/NoticeBlock";
+import { NoticeBtn } from "../../atoms/Button";
 import { notice } from "../../../data";
 import * as S from "./noticeSection.style";
-import { NoticeBtn } from "../../atoms/Button";
-import { useRouter } from "next/navigation";
 
 const NoticeSection = ({}) => {
   const Router = useRouter();

@@ -1,21 +1,17 @@
 "use client";
 
-import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { PostBtn } from "../../atoms/Button";
-import CustomFileInput from "../../atoms/CustomFileInput";
-import CustomPhoneInput from "../../atoms/CustomPhoneInput";
-import CustomTextAreaInput from "../../atoms/CustomTextAreaInput";
-import CustomTextInput from "../../atoms/CustomTextInput";
-import { Heading } from "../../atoms/Heading";
-import { InquiryText } from "../../atoms/Text";
-import { ContainerWrapper } from "../../molecules/Container";
-import * as S from "./inquiryPage.style";
 import Router from "next/router";
-
-import { InputSet } from "../../atoms/InputSet";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { InquiryBtn } from "../../atoms/Button";
+import Input from "../../atoms/Input";
+import InputFile from "../../atoms/Input/InputFile";
+import InputText from "../../atoms/Input/InputText";
+import InputTextArea from "../../atoms/Input/InputTextArea";
+import InputPhone from "../../atoms/Input/InputPhone";
+import * as S from "./inquiryPage.style";
 
 export type inQuiryPage_ty = {
   form?: Object;
@@ -94,159 +90,152 @@ const InquiryPage = ({ form, formSubmitTxt, btnForm }: inQuiryPage_ty) => {
     console.log(err);
   };
   return (
-    <S.InquiryWrapper>
-      <form onSubmit={handleSubmit(onSubmit, onError)}>
-        <ContainerWrapper>
-          <S.InquiryBox className="form">
-            <S.InquiryBox className="formWrap">
-              <Heading content="기본정보 입력" />
-              <InquiryText
-                className="formDescription"
-                content="원활한 문의 답변을 위해 아래의 기본정보를 입력해 주세요."
-              />
-              <S.InquiryBox className="row">
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="company"
-                  label="회사명"
-                  type="text"
-                  required={true}
-                />
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="incharge"
-                  label="담당자명"
-                  type="text"
-                  required={true}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row">
-                <CustomPhoneInput
-                  control={control}
-                  errors={errors}
-                  id="phone"
-                  label="전화번호"
-                  type="phone"
-                  required={true}
-                />
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="email"
-                  label="이메일"
-                  type="text"
-                  required={true}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row">
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="url"
-                  label="홈페이지"
-                  type="text"
-                  required={false}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row mt-50">
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="intype"
-                  label="문의유형"
-                  type="text"
-                  required={true}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row">
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="title"
-                  label="제목"
-                  type="text"
-                  required={true}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row">
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="reference01"
-                  label="참고사이트 1"
-                  type="text"
-                  required={false}
-                />
-                <CustomTextInput
-                  control={control}
-                  errors={errors}
-                  id="reference02"
-                  label="참고사이트 2"
-                  type="text"
-                  required={false}
-                />
-              </S.InquiryBox>
-            </S.InquiryBox>
-          </S.InquiryBox>
-          <S.InquiryBox className="form">
-            <S.InquiryBox className="formWrap">
-              <Heading content="문의사항" />
-              <S.InquiryBox className="row">
-                <CustomTextAreaInput
-                  control={control}
-                  errors={errors}
-                  id="textInput"
-                  placeholder="상담 및 견적 문의사항을 입력해 주세요."
-                  required={true}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row">
-                <CustomFileInput
-                  control={control}
-                  errors={errors}
-                  id="attach01"
-                  label="첨부파일 1"
-                  type="file"
-                  required={false}
-                />
-                <CustomFileInput
-                  control={control}
-                  errors={errors}
-                  id="attach02"
-                  label="첨부파일 2"
-                  type="file"
-                  required={false}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row">
-                <InputSet
-                  id="secureCode"
-                  label="자동등록방지"
-                  type="text"
-                  required={true}
-                />
-              </S.InquiryBox>
-              <S.InquiryBox className="row btn">
-                <div className="row_btn">
-                  <PostBtn
-                    title="작성완료"
-                    type="submit"
-                    color="white"
-                  ></PostBtn>
-                  <PostBtn title="초기화" type="button" color="blue"></PostBtn>
-                </div>
-                <InquiryText
-                  content="※ 제출된 문의사항은 내용 수정이 불가합니다."
-                  className="formSubmitText"
-                />
-              </S.InquiryBox>
-            </S.InquiryBox>
-          </S.InquiryBox>
-        </ContainerWrapper>
-      </form>
-    </S.InquiryWrapper>
+    <S.InquiryPage>
+      <S.InquiryForm onSubmit={handleSubmit(onSubmit, onError)}>
+        <S.InputGroupBox>
+          <S.InputGroupRow>
+            <S.InquiryFormTit>
+              기본정보 입력
+              <span>
+                원활한 문의 답변을 위해 아래의 기본정보를 입력해 주세요.
+              </span>
+            </S.InquiryFormTit>
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputText
+              control={control}
+              errors={errors}
+              id="company"
+              label="회사명"
+              type="text"
+              required={true}
+            />
+            <InputText
+              control={control}
+              errors={errors}
+              id="incharge"
+              label="담당자명"
+              type="text"
+              required={true}
+            />
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputPhone
+              control={control}
+              errors={errors}
+              id="phone"
+              label="전화번호"
+              type="phone"
+              required={true}
+            />
+            <InputText
+              control={control}
+              errors={errors}
+              id="email"
+              label="이메일"
+              type="text"
+              required={true}
+            />
+          </S.InputGroupRow>
+
+          <S.InputGroupRow>
+            <InputText
+              control={control}
+              errors={errors}
+              id="intype"
+              label="문의유형"
+              type="text"
+              required={true}
+            />
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputText
+              control={control}
+              errors={errors}
+              id="title"
+              label="제목"
+              type="text"
+              required={true}
+            />
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputText
+              control={control}
+              errors={errors}
+              id="url"
+              label="홈페이지"
+              type="text"
+              required={false}
+            />
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputText
+              control={control}
+              errors={errors}
+              id="reference01"
+              label="참고사이트 1"
+              type="text"
+              required={false}
+            />
+            <InputText
+              control={control}
+              errors={errors}
+              id="reference02"
+              label="참고사이트 2"
+              type="text"
+              required={false}
+            />
+          </S.InputGroupRow>
+        </S.InputGroupBox>
+        <S.InputGroupBox>
+          <S.InputGroupRow>
+            <S.InquiryFormTit>문의사항</S.InquiryFormTit>
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputTextArea
+              control={control}
+              errors={errors}
+              id="textInput"
+              placeholder="상담 및 견적 문의사항을 입력해 주세요."
+              required={true}
+            />
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <InputFile
+              control={control}
+              errors={errors}
+              id="attach01"
+              label="첨부파일-1"
+              type="file"
+              required={false}
+            />
+            <InputFile
+              control={control}
+              errors={errors}
+              id="attach02"
+              label="첨부파일-2"
+              type="file"
+              required={false}
+            />
+          </S.InputGroupRow>
+          <S.InputGroupRow>
+            <Input
+              id="secureCode"
+              label="자동등록방지"
+              type="text"
+              required={true}
+            />
+          </S.InputGroupRow>
+          <S.InputBtnRow>
+            <div>
+              <InquiryBtn title="작성완료" type="submit" color="primary" />
+              <InquiryBtn title="초기화" type="button" color="white" />
+            </div>
+            <span>※ 제출된 문의사항은 내용 수정이 불가합니다.</span>
+          </S.InputBtnRow>
+        </S.InputGroupBox>
+      </S.InquiryForm>
+    </S.InquiryPage>
   );
 };
 

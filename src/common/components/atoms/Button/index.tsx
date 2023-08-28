@@ -1,6 +1,8 @@
 import React, { ButtonHTMLAttributes } from "react";
+import { useRouter } from "next/navigation";
 import * as S from "./button.style";
 import IconArrow from "../../../../styles/assets/svg/icon-arrow.svg";
+import IconBack from "../../../../styles/assets/svg/icon-back.svg";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactElement | any;
@@ -57,4 +59,27 @@ export const PostBtn = ({ title, type, color, onClick }: ButtonProps) => {
       {title}
     </S.PostBtn>
   );
+};
+
+export const InquiryBtn = ({ title, type, color, onClick }: ButtonProps) => {
+  return (
+    <S.InquiryBtn type={type} color={color} onClick={onClick}>
+      {title}
+    </S.InquiryBtn>
+  );
+};
+
+export const BackBtn = () => {
+  const Router = useRouter();
+
+  return (
+    <S.BackBtn type="button" onClick={() => Router.back()}>
+      <IconBack />
+      <span>돌아가기</span>
+    </S.BackBtn>
+  );
+};
+
+export const LoginBtn = ({ type }: ButtonProps) => {
+  return <S.LoginBtn type={type}>로그인</S.LoginBtn>;
 };

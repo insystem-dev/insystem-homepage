@@ -1,31 +1,20 @@
 import React from "react";
 import { Controller } from "react-hook-form";
-import InputWrapper from "../Input/input.style";
-import InputSetWrapper from "../InputSet/inputSet.style";
+import Input from "..";
 
-export type customFileInput_ty = {
-  control: any, 
-  id: any, 
-  label: any, 
-  type: any, 
-  required: any,
-  errors?: any
-}
+export type InputFileProps = {
+  control: any;
+  id: any;
+  label: any;
+  type: any;
+  required: any;
+  errors?: any;
+};
 
-const CustomFileInput = ({ 
-  control, 
-  id, 
-  label, 
-  type, 
-  required 
-}: customFileInput_ty) => {
+const InputFile = ({ control, id, label, type, required }: InputFileProps) => {
   return (
-    <InputSetWrapper className="input-wrap">
-      <InputWrapper>
-        <label className="label-title">
-          {label}
-          {required && <span>*</span>}
-        </label>
+    <Input label={label} required={required}>
+      <>
         <Controller
           render={({ field: { onChange, value } }) => {
             return (
@@ -49,9 +38,9 @@ const CustomFileInput = ({
           name={id}
           defaultValue={false}
         />
-      </InputWrapper>
-    </InputSetWrapper>
+      </>
+    </Input>
   );
 };
 
-export default CustomFileInput;
+export default InputFile;

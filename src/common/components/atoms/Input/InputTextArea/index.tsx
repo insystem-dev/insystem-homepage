@@ -1,28 +1,29 @@
 import React from "react";
 import { Controller } from "react-hook-form";
-import TextAreaWrapper from "../TextArea/textArea.style";
+import Input from "..";
+import * as S from "../input.style";
 
-export type customTextAreaInput_ty = {
-  control: any, 
-  id: any,
-  placeholder: any, 
-  required: any,
-  errors?: any
-}
+export type InputTextAreaProps = {
+  control: any;
+  id: any;
+  placeholder: any;
+  required: any;
+  errors?: any;
+};
 
-const CustomTextAreaInput = ({ 
-  control, 
+const InputTextArea = ({
+  control,
   id,
-  placeholder, 
-  required
-}: customTextAreaInput_ty) => {
+  placeholder,
+  required,
+}: InputTextAreaProps) => {
   return (
-    <TextAreaWrapper>
+    <Input>
       <Controller
         render={({ field: { onChange, value } }) => {
           return (
-            <textarea
-              onChange={(e) => {
+            <S.TextArea
+              onChange={(e: any) => {
                 onChange(e.target.value);
               }}
               placeholder={placeholder}
@@ -35,8 +36,8 @@ const CustomTextAreaInput = ({
         name={id}
         defaultValue={false}
       />
-    </TextAreaWrapper>
+    </Input>
   );
 };
 
-export default CustomTextAreaInput;
+export default InputTextArea;

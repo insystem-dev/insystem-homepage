@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@hookform/resolvers": "^3.1.1",
+    "@looop/quill-image-resize-module-react": "^3.1.5",
     "@styled-system/theme-get": "^5.1.2",
     "@svgr/webpack": "^8.1.0",
     "@tanstack/react-query": "^4.29.19",
@@ -42,6 +43,7 @@
     "next-connect": "^1.0.0",
     "next-reveal": "^1.0.6",
     "nodemailer": "^6.9.3",
+    "quill-image-resize": "^3.0.9",
     "rc-drawer": "^6.3.0",
     "react": "18.2.0",
     "react-awesome-reveal": "^4.2.5",

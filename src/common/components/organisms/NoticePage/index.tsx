@@ -102,7 +102,7 @@ const NoticePage = () => {
             <PostBtn
               title="로그아웃"
               type="button"
-              color="secondary"
+              color="white"
               onClick={onClickLogout}
             />
           </S.NoticeBtnBox>

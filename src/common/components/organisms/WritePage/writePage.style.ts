@@ -1,6 +1,8 @@
+"use client";
+
 import styled from "styled-components";
 
-export const InquiryPage = styled.div`
+export const WriteSection = styled.section`
   display: flex;
   padding: 70px 0;
   background: ${(props) => props.theme.colors.footerBg};
@@ -8,21 +10,14 @@ export const InquiryPage = styled.div`
   align-items: center;
 `;
 
-export const InquiryForm = styled.form`
+export const WriteForm = styled.form`
   display: flex;
   width: 1240px;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-`;
-
-export const InputGroupBox = styled.div`
-  display: flex;
-  width: 100%;
   padding: 70px 0;
   background: ${(props) => props.theme.colors.white};
   box-shadow: ${(props) => props.theme.shadow.primary};
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 `;
 
@@ -53,14 +48,15 @@ export const InputBtnRow = styled.div`
   }
 `;
 
-export const InquiryFormTit = styled.div`
+export const WriteFormTit = styled.div`
   display: flex;
+  width: 100%;
   margin-bottom: 20px;
   color: ${(props) => props.theme.colors.darkTxt};
   font-size: 2.8rem;
   font-weight: 600;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
 
   span {
     color: ${(props) => props.theme.colors.unitTxt};

@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Controller } from "react-hook-form";
-import InputWrapper from "../Input/input.style";
-import InputSetWrapper from "../InputSet/inputSet.style";
+import Input from "..";
 
-export type customPhoneInput_ty = {
-  control: any, 
-  id: any, 
-  label: any, 
-  type: any, 
-  required: any,
-  errors?: any
-}
+export type InputPhoneProps = {
+  control: any;
+  id: any;
+  label: any;
+  type: any;
+  required: any;
+  errors?: any;
+};
 
-
-const CustomPhoneInput = ({ 
-  control, 
-  id, 
-  label, 
-  type, 
-  required 
-}: customPhoneInput_ty) => {
+const InputPhone = ({
+  control,
+  id,
+  label,
+  type,
+  required,
+}: InputPhoneProps) => {
   const [inputValue, setInputValue] = useState("");
 
   const handlePhoneChange = (e: any) => {
@@ -42,12 +40,8 @@ const CustomPhoneInput = ({
   }, [inputValue]);
 
   return (
-    <InputSetWrapper className="input-wrap">
-      <InputWrapper>
-        <label htmlFor="editor-title" className="label-title">
-          {label}
-          {required && <span>*</span>}
-        </label>
+    <Input label={label} required={required}>
+      <>
         <Controller
           render={({ field: { onChange, value } }) => {
             return (
@@ -68,9 +62,9 @@ const CustomPhoneInput = ({
           name={id}
           defaultValue={false}
         />
-      </InputWrapper>
-    </InputSetWrapper>
+      </>
+    </Input>
   );
 };
 
-export default CustomPhoneInput;
+export default InputPhone;

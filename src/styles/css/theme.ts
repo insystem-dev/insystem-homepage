@@ -24,7 +24,7 @@ export const theme: DefaultTheme = {
     secondary: "#0e2859",
     secondaryHover: "#0e2859",
     white: "#ffffff",
-    whiteActive: "#F6F7FA",
+    whiteHover: "#F6F7FA",
     black: "#000000",
     disabled: "#DDDDDD",
     delete: "#45536F",
@@ -45,7 +45,6 @@ export const theme: DefaultTheme = {
     commonTxt: "#3B3B3B",
     dateTxt: "#888888",
     footerTxt: "#686868",
-    labelTxt: "#7c7c7c",
     notiFixTxt: "#4e83e7",
 
     // BORDER

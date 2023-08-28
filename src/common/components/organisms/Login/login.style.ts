@@ -1,45 +1,30 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const LoginWrapper = styled.section`
-    display: flex;
-    flex: 1;
-    background: #FAFAFD;
-    flex-direction: column;
-
-    .container {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-
-        .login-box {
-            display: flex;
-            width: 500px;
-            margin: 0 auto;
-            padding: 50px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 2px 10px 0px rgba(0,0,0,.1);
-            flex-direction: column;
-
-            .login-tit {
-                margin-bottom: 40px;
-                font-size: 2.8rem;
-                font-weight: 500;
-                letter-spacing: -1.4px;
-            }
-
-            div {
-                &+ div {
-                    margin-top: 20px;
-                }
-            }
-
-            button {
-                margin-top: 40px;
-            }
-        }
-    }
+export const LoginSection = styled.section`
+  display: flex;
+  min-height: calc(100vh - 350px);
+  padding: 70px 0;
+  background: ${(props) => props.theme.colors.footerBg};
+  align-items: center;
+  justify-content: center;
 `;
 
-export default LoginWrapper;
+export const LoginForm = styled.form`
+  display: flex;
+  width: 500px;
+  padding: 50px;
+  background: ${(props) => props.theme.colors.white};
+  box-shadow: ${(props) => props.theme.shadow.navigation};
+  flex-direction: column;
+  gap: 20px;
+
+  button {
+    margin-top: 20px;
+  }
+`;
+
+export const LoginTit = styled.div`
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+`;
