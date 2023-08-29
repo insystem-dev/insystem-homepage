@@ -121,7 +121,7 @@ const Post = ({ data }: Post_props) => {
         content="해당 게시글을 삭제하시겠습니까?"
         clickBtn="삭제"
         open={show}
-        setShow={setShow}
+        onClose={setShow}
         onClick={onModalClick}
         edit={true}
       />

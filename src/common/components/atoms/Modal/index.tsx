@@ -1,11 +1,11 @@
 import React from "react";
+import { ModalBtn, PostBtn } from "../Button";
 import * as S from "./modal.style";
-import * as B from "../Button";
 
 export type modal_ty = {
   open?: any;
   modal?: any;
-  setShow?: any;
+  onClose?: any;
   title?: any;
   content?: any;
   edit?: any;
@@ -15,7 +15,7 @@ export type modal_ty = {
 
 const Modal = ({
   open,
-  setShow,
+  onClose,
   title,
   content,
   edit,
@@ -23,28 +23,23 @@ const Modal = ({
   onClick,
 }: modal_ty) => {
   return (
-    <S.ModalWrapper className={`${open && "open"}`}>
-      <S.ModalBox className="modal">
-        <span className="modal-title">{title}</span>
-        <span className="modal-content">{content}</span>
-        {edit ? (
-          <div className="modal-btn-set">
-            <B.PostBtn variant="filled" onClick={() => onClick()}>
-              {clickBtn}
-            </B.PostBtn>
-            <B.PostBtn variant="lined" onClick={() => setShow(false)}>
-              닫기
-            </B.PostBtn>
-          </div>
-        ) : (
-          <div className="modal-btn-set">
-            <B.PostBtn variant="lined" onClick={() => setShow(false)}>
-              닫기
-            </B.PostBtn>
-          </div>
-        )}
+    <S.ModalBackground className={`${open && "open"}`}>
+      <S.ModalBox>
+        <S.ModalTit>{title}</S.ModalTit>
+        <S.ModalContent>{content}</S.ModalContent>
+        <S.ModalFooter>
+          {edit && (
+            <ModalBtn
+              type="button"
+              onClick={onClick}
+              title={clickBtn}
+              color="secondary"
+            />
+          )}
+          <ModalBtn type="button" onClick={onClose} title="닫기" />
+        </S.ModalFooter>
       </S.ModalBox>
-    </S.ModalWrapper>
+    </S.ModalBackground>
   );
 };
 

@@ -162,10 +162,12 @@ export const BackBtn = styled.button`
   align-items: center;
   justify-content: center;
   gap: 5px;
+  transition: background 0.2s ease;
   cursor: pointer;
 
   &:hover {
     background: ${(props) => props.theme.colors.whiteHover};
+    transition: background 0.2s ease;
 
     svg {
       path:last-child {
@@ -193,4 +195,30 @@ export const LoginBtn = styled.button`
   background: ${(props) => props.theme.colors.primary};
   border: none;
   border-radius: 5px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.primaryHover};
+  }
+`;
+
+export const ModalBtn = styled.button<ButtonProps>`
+  height: 48px;
+  border: none;
+  color: ${(props) => props.theme.colors.white};
+  font-size: 1.8rem;
+  background: ${(props) =>
+    props.color ? props.theme.colors[props.color] : props.theme.colors.primary};
+  border-radius: 5px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) =>
+      props.color
+        ? props.theme.colors[props.color + "Hover"]
+        : props.theme.colors.primaryHover};
+    transition: background 0.2s ease;
+  }
 `;

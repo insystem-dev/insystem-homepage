@@ -83,3 +83,11 @@ export const BackBtn = () => {
 export const LoginBtn = ({ type }: ButtonProps) => {
   return <S.LoginBtn type={type}>로그인</S.LoginBtn>;
 };
+
+export const ModalBtn = ({ title, type, color, onClick }: ButtonProps) => {
+  return (
+    <S.ModalBtn type={type} onClick={onClick} color={color}>
+      {title}
+    </S.ModalBtn>
+  );
+};
