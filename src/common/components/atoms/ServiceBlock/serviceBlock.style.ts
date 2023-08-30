@@ -15,6 +15,7 @@ export const ServiceBlockLabel = styled.span`
 `;
 
 export const ServiceBlockTit = styled.div`
+  margin-top: 4px;
   color: ${(props) => props.theme.colors.darkTxt};
   font-family: Noto Sans KR;
   font-size: 2.8rem;
