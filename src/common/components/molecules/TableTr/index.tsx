@@ -19,11 +19,8 @@ const TableTr = ({ item }: any) => {
       )}
       {/* 제목 */}
       <S.TableTd className="td-title">
-        <Link
-          href="/notice/post/[id]"
-          as={`/notice/post/${item.id}`}
-          legacyBehavior
-        >
+        {/* 임시 메인 링크 */}
+        <Link href="/" as={`/`} legacyBehavior>
           <a> {item.title} </a>
         </Link>
       </S.TableTd>

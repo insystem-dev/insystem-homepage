@@ -1,6 +1,4 @@
 "use client";
-
-import { adItems } from "@/common/data/dummy";
 import React, { ReactElement, useEffect, useRef, useState } from "react";
 import SwiperCore, { Navigation, Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,6 +7,7 @@ import * as S from "./advertise.style";
 
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
+import { adItems } from "@/src/common/data/dummy";
 
 const advertisement = () => {
   SwiperCore.use([Autoplay, EffectFade]);
@@ -35,7 +34,7 @@ const advertisement = () => {
         <Swiper {...swiperSetting}>
           {adItems.map((item, idx) => {
             const image =
-              require(`@/styles/assets/image/ads/${item.name}.gif`).default;
+              require(`@/src/styles/assets/image/ads/${item.name}.gif`).default;
             return (
               <SwiperSlide key={idx}>
                 <a href={item.src} target="_blank">
