@@ -38,7 +38,8 @@ const NoticeBlock = ({ data }: noticeBolck) => {
 
   return (
     <S.NoticeBlock>
-      <Link href="/notice/post/[id]" as={`/board/${data.id}`} legacyBehavior>
+      {/* 임시 메인 링크 */}
+      <Link href="/" as={`/`} legacyBehavior>
         <S.NoticeBlockBox>
           <S.TitBox>
             {dateNew === true && <PostTag type="new" />}
