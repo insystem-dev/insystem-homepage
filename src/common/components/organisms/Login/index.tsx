@@ -13,7 +13,7 @@ import InputPassword from "../../atoms/Input/InputPassword";
 import { selectedUser } from "../../../../states/user";
 import * as S from "./login.style";
 
-// 로그인 컴포넌트
+// 로그인 컴포넌트 정의
 const Login = () => {
   const { status, data: userData } = useSession();
   const [user, setUser] = useRecoilState(selectedUser);
