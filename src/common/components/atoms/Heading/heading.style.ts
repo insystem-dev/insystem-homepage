@@ -18,7 +18,7 @@ export const HeadingBox = styled.h3<HeadingProps>`
       : props.theme.colors.primary};
 `;
 
-export const PageHeadingBox = styled.p<HeadingProps>`
+export const PageHeadingBox = styled.div<HeadingProps>`
   display: flex;
   color: ${(props) =>
     props.color == "white"

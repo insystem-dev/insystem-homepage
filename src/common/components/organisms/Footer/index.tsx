@@ -48,8 +48,8 @@ const Footer = () => {
                 (주)인시스템 대표자&nbsp;&nbsp;이근익
               </S.FooterInfoItem>
               <S.FooterInfoItem>
-                주소&nbsp;&nbsp;부산광역시 부산진구 범일로 176(범천동,
-                부산범일로얄펠리스 2차) 4층 408호, 인시스템
+                주소&nbsp;&nbsp;부산광역시 동구 조방로 22, 8층 803호 (범일동,
+                파크빌딩)
               </S.FooterInfoItem>
               <S.FooterInfoItem>
                 사업자등록번호&nbsp;&nbsp;536-86-00366

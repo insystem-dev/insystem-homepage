@@ -5,7 +5,7 @@ import { request } from "../../lib/api";
 function useBoardFetch() {
   return useQuery(
     [BOARD],
-    () => request({ method: "GET", url: `/api/${BOARD}` }),
+    // () => request({ method: "GET", url: `/api/${BOARD}` }),
     { onError: () => {} }
   );
 }

@@ -45,6 +45,7 @@ const BusinessSection = () => {
           {data.business.map((businessItem, idx) => {
             return (
               <PartBlock
+                key={businessItem.id || idx}
                 id={`businessItem-${businessItem.id}`}
                 title={businessItem.part}
                 subtitle={businessItem.sub}
