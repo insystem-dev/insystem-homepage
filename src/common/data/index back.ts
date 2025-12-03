@@ -15,7 +15,7 @@ const data = {
     },
     {
       id: 2,
-      label: "프로젝트",
+      label: "사업분야",
       path: "/service/healthcare",
       offset: "67",
     },
@@ -23,6 +23,12 @@ const data = {
       id: 3,
       label: "공지사항",
       path: "/notice",
+      offset: "67",
+    },
+    {
+      id: 4,
+      label: "문의하기",
+      path: "/inquiry",
       offset: "67",
     },
   ],

@@ -2,8 +2,8 @@
 
 import React from "react";
 import { SessionProvider } from "next-auth/react";
-import { PageHeader } from "../../../../common/components/organisms/PageHeader";
-import Post from "../../../../common/components/organisms/Post";
+import { PageHeader } from "../../../../shared/ui";
+import { Post } from "../../../../features/notice/ui";
 
 const Notice = ({ session, item }: any) => {
   return (

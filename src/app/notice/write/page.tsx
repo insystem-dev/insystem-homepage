@@ -2,8 +2,8 @@
 
 import React from "react";
 import { SessionProvider } from "next-auth/react";
-import { PageHeader } from "../../../common/components/organisms/PageHeader";
-import WritePage from "../../../common/components/organisms/WritePage";
+import { PageHeader } from "../../../shared/ui";
+import { WritePage } from "../../../features/notice/ui";
 
 const Write = ({}) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../../common/components/organisms/Login";
+import { Login } from "../../features/auth/ui";
 
 const Admin = ({}) => {
   return <Login />;

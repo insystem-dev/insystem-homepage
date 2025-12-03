@@ -1,5 +1,5 @@
 import React from "react";
-import { PageHeader } from "../../../common/components/organisms/PageHeader";
+import { PageHeader } from "../../../shared/ui";
 import DistributePage from "../../../common/components/organisms/DistributePage";
 
 const siPage = () => {

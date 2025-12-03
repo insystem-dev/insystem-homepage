@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import NoticePage from "../../common/components/organisms/NoticePage";
-import { PageHeader } from "../../common/components/organisms/PageHeader";
+import { NoticePage } from "../../features/notice/ui";
+import { PageHeader } from "../../shared/ui";
 import { SessionProvider } from "next-auth/react";
 
 const Notice = (session: any) => {
