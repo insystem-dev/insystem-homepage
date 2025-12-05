@@ -1,8 +1,6 @@
-import React from 'react';
-import MainPage from '../common/components/templates/MainPageTemplates';
+import React from "react";
+import { MainPage } from "@/features/home/ui";
 
 export default function Home() {
-  return (
-    <MainPage />
-  )
+  return <MainPage />;
 }

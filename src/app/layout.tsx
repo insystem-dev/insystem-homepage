@@ -1,163 +1,22 @@
-"use client";
+import "./globals.css";
+import "./tailwind.css";
+import { Gnb } from "@/widgets";
 
-import React from "react";
-import Sticky from "react-stickynode";
-import { RecoilRoot } from "recoil";
-import { usePathname } from "next/navigation";
-import { SessionProvider } from "next-auth/react";
-import { ThemeProvider } from "styled-components";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Navbar from "../common/components/organisms/Navbar";
-import Footer from "../common/components/organisms/Footer";
-import { DrawerProvider } from "../common/contexts/DrawerContext";
-import AuthGuard from "../common/components/templates/AuthGuard";
-import "../styles/css/flaticon.css";
-import { theme } from "../styles/css/theme";
-import { GlobalStyle } from "../styles/css/global.style";
-import ResetCSS from "../styles/css/style";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 0,
-      useErrorBoundary: false,
-      refetchOnWindowFocus: false, // 창에 포커스시 refetch 여부
-    },
-    mutations: {
-      useErrorBoundary: false,
-    },
-  },
-});
+export const metadata = {
+  title: "INSYSTEM",
+  description: "인시스템 홈페이지입니다.",
+};
 
 export default function RootLayout({
   children,
-  session,
 }: {
   children: React.ReactNode;
-  session: any;
 }) {
-  const router = usePathname();
-
   return (
     <html lang="en">
-      <title> (주)인시스템 | INSYSTEM </title>
-      <head>
-        <link
-          rel="apple-touch-icon"
-          sizes="57x57"
-          href="/apple-icon-57x57.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="60x60"
-          href="/apple-icon-60x60.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="72x72"
-          href="/apple-icon-72x72.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="76x76"
-          href="/apple-icon-76x76.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="114x114"
-          href="/apple-icon-114x114.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="120x120"
-          href="/apple-icon-120x120.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="144x144"
-          href="/apple-icon-144x144.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="152x152"
-          href="/apple-icon-152x152.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-icon-180x180.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/android-icon-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-          href="/favicon-96x96.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="description"
-          content="디지털 플랫폼 개발 전문기업, (주)인시스템 | 디지털 헬스케어, 디지털 물류 및 유통, 소프트웨어 개발, 홈페이지 제작"
-        />
-      </head>
-      <ResetCSS />
-      <GlobalStyle />
-      <body>
-        <ThemeProvider theme={theme}>
-          <QueryClientProvider client={queryClient}>
-            <RecoilRoot>
-              <SessionProvider session={session}>
-                <AuthGuard>
-                  {router?.includes("advertise") ? (
-                    <>{children}</>
-                  ) : (
-                    <>
-                      <Sticky
-                        top={0}
-                        innerZ={9999}
-                        activeClass="sticky-nav-active"
-                      >
-                        <DrawerProvider>
-                          <Navbar />
-                        </DrawerProvider>
-                      </Sticky>
-                      <div className="page-wrap">
-                        {children}
-                        <Footer />
-                      </div>
-                    </>
-                  )}
-                </AuthGuard>
-              </SessionProvider>
-            </RecoilRoot>
-          </QueryClientProvider>
-        </ThemeProvider>
+      <body className="bg-dark-950">
+        <Gnb />
+        {children}
       </body>
     </html>
   );
