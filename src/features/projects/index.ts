@@ -1,0 +1,9 @@
+export { default as ProjectsPage } from "./ui/ProjectsPage";
+export { default as RoutineCarePage } from "./ui/project-detail/RoutineCarePage";
+export { default as TmsPage } from "./ui/project-detail/TmsPage";
+export { default as SpineHealthPage } from "./ui/project-detail/SpineHealthPage";
+export { default as DiabetesFreePage } from "./ui/project-detail/DiabetesFreePage";
+export { default as DnMesPage } from "./ui/project-detail/DnMesPage";
+export { default as PortqmPage } from "./ui/project-detail/PortqmPage";
+export { default as ShipOperationPage } from "./ui/project-detail/ShipOperationPage";
+export { default as SmartShoesPage } from "./ui/project-detail/SmartShoesPage";

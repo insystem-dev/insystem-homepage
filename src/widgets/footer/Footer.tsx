@@ -1,7 +1,16 @@
+"use client";
+
 import React from "react";
 import FooterLogo from "@/shared/styles/assets/svg/footer-logo.svg";
 
 export const Footer = () => {
+  const handleGoToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="w-full bg-gradient-to-b from-black to-sky-950 py-16 px-8">
       <div className="max-w-[1440px] mx-auto">
@@ -16,7 +25,10 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex justify-start items-center gap-2 cursor-pointer hover:opacity-80">
+          <div
+            className="flex justify-start items-center gap-2 cursor-pointer hover:opacity-80"
+            onClick={handleGoToTop}
+          >
             <div className="text-neutral-50 text-2xl font-bold font-['Pretendard']">
               GO TOP
             </div>

@@ -17,15 +17,15 @@ export default function AboutPage() {
       <Gnb />
 
       {/* Hero Section */}
-      <section className="w-full relative bg-gradient-to-b from-black to-sky-950 overflow-hidden px-2 sm:px-4 md:px-8 min-h-screen lg:h-[1125px] flex flex-col justify-center pt-24 md:pt-20">
+      <section className="w-full relative bg-gradient-to-b from-black to-sky-950 overflow-hidden px-4 md:px-8 min-h-auto md:min-h-screen lg:h-[1125px] flex flex-col justify-center pt-20 md:pt-20 py-12 md:py-0">
         <div className="max-w-[1440px] mx-auto w-full relative">
           {/* Breadcrumb */}
-          <div className="flex justify-start items-center">
+          <div className="flex justify-start items-center mb-8 md:mb-0">
             <div className="text-zinc-200 text-xs md:text-sm font-normal font-['Pretendard']">
               홈
             </div>
             <svg
-              className="w-3 h-3 md:w-4 md:h-4 text-zinc-200"
+              className="w-3 h-3 md:w-4 md:h-4 text-zinc-200 mx-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -42,12 +42,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-12 md:gap-4 lg:gap-4 pt-2">
+          <div className="flex flex-col gap-8 md:gap-4 lg:gap-4 pt-2">
             {/* Top section: Left title + Right text */}
-            <div className="grid grid-cols-1 lg:grid-cols-11 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-11 items-start gap-6 md:gap-0">
               {/* Left - Title only (30%) */}
-              <div className="flex flex-col gap-6 md:gap-8 lg:col-span-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-50 font-['Pretendard'] leading-tight">
+              <div className="flex flex-col gap-4 md:gap-8 lg:col-span-4">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-50 font-['Pretendard'] leading-tight">
                   회사소개
                 </h1>
               </div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
               {/* Right - Main Description and Subtitle (70%) */}
               <div className="flex flex-col gap-2 md:gap-2 lg:col-span-7">
                 <div className="flex flex-col">
-                  <p className="text-2xl md:text-3xl lg:text-5xl font-bold font-['Pretendard'] leading-tight tracking-wide">
+                  <p className="text-xl md:text-3xl lg:text-5xl font-bold font-['Pretendard'] leading-tight tracking-wide">
                     <span className="text-sky-400">사람</span>
                     <span className="text-slate-50 ">
                       을 위한 기술로
@@ -64,16 +64,17 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-2xl md:text-3xl lg:text-5xl font-bold font-['Pretendard'] leading-tight tracking-wide">
+                  <p className="text-xl md:text-3xl lg:text-5xl font-bold font-['Pretendard'] leading-tight tracking-wide">
                     <span className="text-sky-400">산업과 일상의 문제</span>
                     <span className="text-slate-50">를 해결합니다.</span>
                   </p>
                 </div>
 
                 {/* Description Text */}
-                <div className="text-sm md:text-base lg:text-lg text-zinc-200 font-nomal font-['Pretendard'] leading-relaxed md:leading-8 py-10">
+                <div className="text-xs md:text-base lg:text-lg text-zinc-200 font-normal font-['Pretendard'] leading-relaxed md:leading-8 py-6 md:py-10">
                   우리는 현장의 문제를 데이터로 해석하고, 사람을 위한 경험과
-                  가치를 중심으로 플랫폼을 설계합니다. <br />
+                  가치를 중심으로 플랫폼을 설계합니다.{" "}
+                  <br className="hidden md:block" />
                   기술·디자인·연구개발이 하나의 흐름으로 연결된 구조를 기반으로
                   더 나은 운영과 일상의 변화를 만들어가는 개발 기업입니다.
                 </div>
@@ -129,43 +130,53 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Mobile/Tablet Circles - horizontal layout */}
-              <div className="lg:hidden grid grid-cols-3 gap-4 md:gap-6 w-full">
-                {[
-                  {
-                    title: "Value",
-                    subtitle: "사람 중심의 가치 추구",
-                  },
-                  {
-                    title: "Design",
-                    subtitle: "목적에 맞는 맞춤형 서비스 설계",
-                  },
-                  {
-                    title: "Technique",
-                    subtitle: "기술 혁신과 실용적 솔루션",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="aspect-square rounded-full border-2 border-blue-900 flex flex-col items-center justify-center gap-2 md:gap-3 p-3 md:p-6"
-                  >
-                    <h3
-                      className="text-lg md:text-2xl font-bold font-['Pretendard']"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(to right, #2FA7FF, #A9C7DD)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                      }}
+              {/* Mobile Circles - overlapping layout */}
+              <div className="lg:hidden relative w-full h-48 md:h-64 mt-8 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {[
+                    {
+                      title: "Value",
+                      subtitle: "사람 중심의 가치 추구",
+                      position:
+                        "absolute top-0 -translate-x-[140px] md:-translate-x-[200px]",
+                      size: "w-40 h-40 md:w-52 md:h-52",
+                    },
+                    {
+                      title: "Design",
+                      subtitle: "목적에 맞는 맞춤형 서비스 설계",
+                      position: "absolute top-0 translate-x-0",
+                      size: "w-40 h-40 md:w-52 md:h-52",
+                    },
+                    {
+                      title: "Technique",
+                      subtitle: "기술 혁신과 실용적 솔루션",
+                      position:
+                        "absolute top-0 translate-x-[140px] md:translate-x-[200px]",
+                      size: "w-40 h-40 md:w-52 md:h-52",
+                    },
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className={`${item.position} ${item.size} rounded-full border-2 border-blue-900 flex flex-col items-center justify-center gap-1 md:gap-2 p-2 md:p-4`}
                     >
-                      {item.title}
-                    </h3>
-                    <p className="text-center text-3xl md:text-sm font-medium text-slate-50 font-['Pretendard'] leading-tight">
-                      {item.subtitle}
-                    </p>
-                  </div>
-                ))}
+                      <h3
+                        className="text-xs md:text-base font-bold font-['Pretendard'] text-center"
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(to right, #2FA7FF, #A9C7DD)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-center text-[10px] md:text-xs font-medium text-slate-50 font-['Pretendard'] leading-tight line-clamp-2">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -177,10 +188,10 @@ export default function AboutPage() {
         <div className="w-full">
           {/* Header */}
           <div className="flex flex-col items-center gap-8 mb-16 pt-40 pb-10">
-            <div className="text-center text-orange-500 text-xl font-bold font-['Pretendard']">
+            <div className="text-center text-orange-500 text-xs md:text-xl font-bold font-['Pretendard']">
               Business
             </div>
-            <p className="max-w-[911px] text-5xl font-boldtext-center text-dark-950 font-['Pretendard'] leading-[62.4px] font-bold">
+            <p className="max-w-[911px] text-lg md:text-5xl font-boldtext-center text-dark-950 font-['Pretendard'] leading-tight md:leading-[62.4px] font-bold">
               인시스템은 세 가지 핵심 영역을 중심으로,
               <br />
               다양한 현장의 문제를 해결하고 있습니다.
@@ -188,10 +199,10 @@ export default function AboutPage() {
           </div>
 
           {/* Business Cards */}
-          <div className="flex flex-col gap-6 md:gap-0">
+          <div className="flex flex-col gap-0">
             {/* Digital Healthcare */}
             <div
-              className="relative flex flex-col items-start justify-center gap-9 px-8 md:px-[120px] py-12 bg-gradient-to-b from-black/40 to-black/40 border-b border-blue-900/30 overflow-hidden"
+              className="relative flex flex-col items-start justify-center gap-4 md:gap-9 px-4 md:px-8 lg:px-[120px] py-8 md:py-12 bg-gradient-to-b from-black/40 to-black/40 border-b border-blue-900/30 overflow-hidden min-h-64 md:min-h-auto"
               style={{
                 backgroundImage: `url(${sectionHealth.src})`,
                 backgroundSize: "cover",
@@ -200,25 +211,25 @@ export default function AboutPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
               <div className="relative z-10 flex flex-col gap-2 w-full">
-                <div className="text-2xl font-normal text-slate-400 font-['Pretendard'] leading-[32.4px]">
+                <div className="text-xs md:text-2xl font-normal text-slate-400 font-['Pretendard'] leading-[32.4px]">
                   디지털 헬스케어
                 </div>
-                <div className="text-4xl font-extrabold text-white font-['Pretendard'] leading-[41.4px]">
+                <div className="text-sm md:text-4xl font-extrabold text-white font-['Pretendard'] leading-[41.4px]">
                   Digital Healthcare
                 </div>
-                <p className="text-xl font-medium text-slate-400 font-['Pretendard'] leading-normal">
+                <p className="text-xs md:text-xl font-medium text-slate-400 font-['Pretendard'] leading-normal">
                   병원 · 사용자 데이터를 분석하여 개인 맞춤형 건강관리 서비스
                   제공
                 </p>
               </div>
-              <button className="relative z-10 px-6 py-3 bg-slate-100 text-slate-900 rounded-lg font-bold font-['Pretendard'] hover:bg-slate-200 transition-colors">
+              <button className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors">
                 View Projects
               </button>
             </div>
 
             {/* Port Logistics */}
             <div
-              className="relative flex flex-col items-start justify-center gap-9 px-8 md:px-[120px] py-12 bg-gradient-to-b from-black/40 to-black/40 border-b border-blue-900/30 overflow-hidden w-full"
+              className="relative flex flex-col items-start justify-center gap-4 md:gap-9 px-4 md:px-8 lg:px-[120px] py-8 md:py-12 bg-gradient-to-b from-black/40 to-black/40 border-b border-blue-900/30 overflow-hidden w-full min-h-64 md:min-h-auto"
               style={{
                 backgroundImage: `url(${sectionPort.src})`,
                 backgroundSize: "cover",
@@ -227,24 +238,24 @@ export default function AboutPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
               <div className="relative z-10 flex flex-col gap-2 w-full">
-                <div className="text-2xl font-normal text-slate-400 font-['Pretendard'] leading-[32.4px]">
+                <div className="text-xs md:text-2xl font-normal text-slate-400 font-['Pretendard'] leading-[32.4px]">
                   항만 물류
                 </div>
-                <div className="text-4xl font-extrabold text-white font-['Pretendard'] leading-[41.4px]">
+                <div className="text-sm md:text-4xl font-extrabold text-white font-['Pretendard'] leading-[41.4px]">
                   Port Logistics
                 </div>
-                <p className="text-xl font-medium text-slate-400 font-['Pretendard'] leading-normal">
+                <p className="text-xs md:text-xl font-medium text-slate-400 font-['Pretendard'] leading-normal">
                   항만 · 물류 · 검역을 통합 관리하는 물류 디지털 플랫폼
                 </p>
               </div>
-              <button className="relative z-10 px-6 py-3 bg-slate-100 text-slate-900 rounded-lg font-bold font-['Pretendard'] hover:bg-slate-200 transition-colors">
+              <button className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors">
                 View Projects
               </button>
             </div>
 
             {/* Smart Factory */}
             <div
-              className="relative flex flex-col items-start justify-center gap-9 px-8 md:px-[120px] py-12 bg-gradient-to-b from-black/40 to-black/40 overflow-hidden w-full"
+              className="relative flex flex-col items-start justify-center gap-4 md:gap-9 px-4 md:px-8 lg:px-[120px] py-8 md:py-12 bg-gradient-to-b from-black/40 to-black/40 overflow-hidden w-full min-h-64 md:min-h-auto"
               style={{
                 backgroundImage: `url(${sectionSmart.src})`,
                 backgroundSize: "cover",
@@ -253,17 +264,17 @@ export default function AboutPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
               <div className="relative z-10 flex flex-col gap-2 w-full">
-                <div className="text-2xl font-normal text-slate-400 font-['Pretendard'] leading-[32.4px]">
+                <div className="text-xs md:text-2xl font-normal text-slate-400 font-['Pretendard'] leading-[32.4px]">
                   스마트팩토리
                 </div>
-                <div className="text-4xl font-extrabold text-white font-['Pretendard'] leading-[41.4px]">
+                <div className="text-sm md:text-4xl font-extrabold text-white font-['Pretendard'] leading-[41.4px]">
                   Smart Factory
                 </div>
-                <p className="text-xl font-medium text-slate-400 font-['Pretendard'] leading-normal">
+                <p className="text-xs md:text-xl font-medium text-slate-400 font-['Pretendard'] leading-normal">
                   항만 · 물류 · 검역을 통합 관리하는 물류 디지털 플랫폼
                 </p>
               </div>
-              <button className="relative z-10 px-6 py-3 bg-slate-100 text-slate-900 rounded-lg font-bold font-['Pretendard'] hover:bg-slate-200 transition-colors">
+              <button className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors">
                 View Projects
               </button>
             </div>
@@ -276,16 +287,106 @@ export default function AboutPage() {
         <div className="w-full">
           {/* Header */}
           <div className="flex flex-col items-center gap-8 mb-16">
-            <div className="text-center text-orange-500 text-xl font-bold font-['Pretendard']">
+            <div className="text-center text-orange-500 text-xs md:text-xl font-bold font-['Pretendard']">
               History
             </div>
-            <h2 className="text-5xl font-bold text-slate-100 text-center font-['Pretendard']">
+            <h2 className="text-2xl md:text-5xl font-bold text-slate-100 text-center font-['Pretendard']">
               회사 연혁
             </h2>
           </div>
 
-          {/* Timeline Content */}
-          <div className="max-w-[1200px] mx-auto py-12">
+          {/* Mobile History Timeline */}
+          <div className="md:hidden max-w-full mx-auto px-4 py-8">
+            <div className="space-y-6">
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2025
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  루틴케어 개발, 청소년척추건강 플랫폼 개발, GGP 학습 플랫폼
+                  개발
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2024
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  AI 기반 식단관리 서비스, DN솔루션즈 MES 2차 프로젝트, 해군
+                  함정 정비지원 체계 개발
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2023
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  DN솔루션즈 MES 모바일 반응형 개발, 스마트 리테일 운영관리 SaaS
+                  개발
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2022
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  부산상공회의소 S-Space 본사 이전
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2021
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  한국연구재단 주민공감현장문제 해결사업, 비대면 감염병 관리
+                  시스템 개발
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2020
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  부산대병원 AI기반 당뇨병 예방·관리 시스템 개발 사업 참여
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2019
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  부산테크노파크 홈페이지 개발
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2018
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  시니어 피트니스 운동처방 APP 개발
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2017
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  부산 테크노파크(지사단지) 본사 이전
+                </p>
+              </div>
+              <div className="border-l-4 border-sky-400 pl-6 py-4">
+                <div className="text-sky-400 text-lg font-bold font-['Pretendard'] mb-2">
+                  2016
+                </div>
+                <p className="text-white text-sm font-medium font-['Pretendard']">
+                  (주)인시스템 창립
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop History Timeline */}
+          <div className="hidden md:block max-w-[1200px] mx-auto py-12">
             {/* 2025 - Right Image + Left Content */}
             <div className="mb-20 grid grid-cols-2 gap-12 items-end">
               <div className="flex items-start justify-center">

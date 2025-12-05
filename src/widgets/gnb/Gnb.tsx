@@ -55,7 +55,7 @@ export const Gnb = () => {
 
           {/* CTA Button */}
           <button
-            onClick={() => router.push("/inquiry")}
+            onClick={() => router.push("/contact")}
             className="w-36 h-12 px-6 py-2 bg-neutral-100 hover:bg-white rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.20)] flex justify-center items-center transition-all duration-300"
           >
             <span className="text-center text-neutral-800 text-xl font-bold font-['Pretendard']">
@@ -126,7 +126,7 @@ export const Gnb = () => {
           </Link>
           <button
             onClick={() => {
-              router.push("/inquiry");
+              router.push("/contact");
               setIsMenuOpen(false);
             }}
             className="p-3 w-full bg-neutral-100 hover:bg-white rounded-lg text-neutral-800 text-base font-bold font-['Pretendard'] transition-all duration-300"

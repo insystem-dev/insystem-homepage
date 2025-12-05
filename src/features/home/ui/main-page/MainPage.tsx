@@ -1,29 +1,22 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Footer } from "@/widgets";
+import { Footer, ProjectSection } from "@/widgets";
 import bgCard1 from "@/shared/styles/assets/image/bg-card1.png";
 import bgCard2 from "@/shared/styles/assets/image/bg-card2.png";
 import bgCard3 from "@/shared/styles/assets/image/bg-card3.png";
 import bgCard1Hover from "@/shared/styles/assets/image/bg-card1-hover.png";
 import bgCard2Hover from "@/shared/styles/assets/image/bg-card2-hover.png";
 import bgCard3Hover from "@/shared/styles/assets/image/bg-card3-hover.png";
-import project1 from "@/shared/styles/assets/image/project1.png";
-import project2 from "@/shared/styles/assets/image/project2.png";
-import project3 from "@/shared/styles/assets/image/project3.png";
-import project4 from "@/shared/styles/assets/image/project4.png";
-import project5 from "@/shared/styles/assets/image/project5.png";
-import project6 from "@/shared/styles/assets/image/project6.png";
-import project7 from "@/shared/styles/assets/image/project7.png";
-import project8 from "@/shared/styles/assets/image/project8.png";
-import project9 from "@/shared/styles/assets/image/project9.png";
 import process1 from "@/shared/styles/assets/image/process1.png";
 import process2 from "@/shared/styles/assets/image/process2.png";
 import process3 from "@/shared/styles/assets/image/process3.png";
 import { useEffect, useState } from "react";
 
 export default function MainPage() {
+  const router = useRouter();
   const [isMobile, setIsMobile] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [activeProcessIndex, setActiveProcessIndex] = useState(0);
@@ -45,17 +38,45 @@ export default function MainPage() {
             const index = entry.target.getAttribute("data-process-item");
             if (index) {
               setActiveProcessIndex(parseInt(index));
+              entry.target.classList.add("animate-in");
             }
           }
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.3,
       }
     );
 
     processItems.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
+  }, []);
+
+  // 스크롤 애니메이션 Intersection Observer
+  useEffect(() => {
+    const animatedElements = document.querySelectorAll(
+      ".section-title, .section-description, .business-card, .project-item, .project-button"
+    );
+
+    const scrollObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 화면에 보이면 클래스 추가
+            entry.target.classList.add("scroll-animate");
+          } else {
+            // 화면에서 사라지면 클래스 제거 (다시 스크롤해서 들어올 때 애니메이션 재작동)
+            entry.target.classList.remove("scroll-animate");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    animatedElements.forEach((el) => scrollObserver.observe(el));
+    return () => scrollObserver.disconnect();
   }, []);
 
   return (
@@ -102,10 +123,10 @@ export default function MainPage() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-4 md:px-0">
           {/* Section Header */}
           <div className="mb-8 md:mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-['Pretendard'] mb-3 md:mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-['Pretendard'] mb-3 md:mb-4 section-title">
               Business
             </h2>
-            <p className="text-base md:text-lg font-medium text-neutral-50 font-['Pretendard'] leading-6 md:leading-7 max-w-3xl">
+            <p className="text-base md:text-lg font-medium text-neutral-50 font-['Pretendard'] leading-6 md:leading-7 max-w-3xl section-description">
               인시스템은 산업과 일상을 연결하는 데이터 기반 플랫폼
               전문기업입니다.
               <br />세 가지 핵심 영역을 중심으로, 다양한 현장의 문제를 해결하고
@@ -117,7 +138,7 @@ export default function MainPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {/* Card 1: Digital Healthcare */}
             <div
-              className="rounded-3xl overflow-hidden h-[500px] md:h-[608px] relative group cursor-pointer"
+              className="rounded-3xl overflow-hidden h-[500px] md:h-[608px] relative group cursor-pointer business-card"
               onMouseEnter={() => setHoveredCard(0)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -164,7 +185,7 @@ export default function MainPage() {
 
             {/* Card 2: Port Logistics */}
             <div
-              className="rounded-3xl overflow-hidden h-[500px] md:h-[608px] relative group cursor-pointer"
+              className="rounded-3xl overflow-hidden h-[500px] md:h-[608px] relative group cursor-pointer business-card"
               onMouseEnter={() => setHoveredCard(1)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -211,7 +232,7 @@ export default function MainPage() {
 
             {/* Card 3: Smart Factory */}
             <div
-              className="rounded-3xl overflow-hidden h-[500px] md:h-[608px] relative group cursor-pointer"
+              className="rounded-3xl overflow-hidden h-[500px] md:h-[608px] relative group cursor-pointer business-card"
               onMouseEnter={() => setHoveredCard(2)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -260,143 +281,14 @@ export default function MainPage() {
       </section>
 
       {/* Project Section */}
-      <section className="w-full py-16 md:py-32 px-2 sm:px-4 md:px-8 bg-gradient-to-b from-sky-950 to-black">
-        <div className="max-w-[1440px] mx-auto">
-          {/* Section Header */}
-          <div className="mb-12 md:mb-32">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-['Pretendard']">
-              Project
-            </h2>
-          </div>
-
-          {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16">
-            {/* Portfolio Items */}
-            {[
-              {
-                title: "해군/해경 원격 함정운용지원체계",
-                category: "개발",
-                image: project1,
-              },
-              {
-                title: "DN솔루션즈 MES 개발 프로젝트",
-                category: "개발 · 디자인",
-                image: project2,
-              },
-              {
-                title: "물류운송관리시스템 (타이거페이스)",
-                category: "개발 · 디자인",
-                image: project3,
-              },
-              {
-                title: "물류운송관리시스템 (TMS)",
-                category: "개발 · 디자인 · 기획",
-                image: project4,
-              },
-              {
-                title: "항만 검역관리 시스템",
-                category: "개발 · 디자인 · 기획",
-                image: project5,
-              },
-              {
-                title: "AI 활용 건강 루틴 기반 리워드 플랫폼 [루틴케어]",
-                category: "개발 · 디자인 · 기획",
-                image: project6,
-              },
-              {
-                title: "AI기반 개인맞춤형 당뇨병 예방관리 시스템 [당뇨프리]",
-                category: "개발 · 디자인",
-                image: project7,
-              },
-              {
-                title: "AI기반 청소년 척추 질환 조기 진단 및 건강관리 플랫폼",
-                category: "개발 · 디자인",
-                image: project8,
-              },
-              {
-                title: "스마트 슈즈를 활용한 건강토큰 APP",
-                category: "개발 · 디자인",
-                image: project9,
-              },
-            ].map((project, index) => (
-              <div key={index} className="flex flex-col gap-2.5">
-                {/* Portfolio Image */}
-                <div className="w-full aspect-square bg-gray-700 rounded-lg overflow-hidden relative">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Portfolio Info */}
-                <div className="px-2 md:px-4 py-2 flex flex-col gap-2">
-                  <div className="flex justify-between items-start gap-2 md:gap-4">
-                    <h3 className="text-base md:text-xl font-semibold text-neutral-50 font-['Pretendard'] line-clamp-2">
-                      {project.title}
-                    </h3>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="flex-shrink-0 md:w-6 md:h-6"
-                    >
-                      <path
-                        d="M7 7H17M17 7V17M17 7L7 17"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-neutral-50"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-xs md:text-base font-semibold text-neutral-400 font-['Pretendard']">
-                    {project.category}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* All Projects Button */}
-          <div className="flex justify-center">
-            <button className="px-4 py-2 h-10 md:h-14 bg-gray-500 rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.20)] inline-flex justify-center items-center gap-2.5 hover:bg-gray-600 transition-colors">
-              <span className="text-neutral-50 text-base md:text-xl font-bold font-['Pretendard']">
-                All Projects
-              </span>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="md:w-6 md:h-6"
-              >
-                <path
-                  d="M7 7H17M17 7V17M17 7L7 17"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-neutral-50"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
+      <ProjectSection />
 
       {/* Process Section */}
       <section className="w-full py-12 md:py-32 px-4 sm:px-6 md:px-8 bg-black">
         <div className="max-w-[1440px] mx-auto">
           {/* Section Title */}
           <div className="mb-8 md:mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-['Pretendard']">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-['Pretendard'] section-title">
               Process
             </h2>
           </div>
@@ -420,13 +312,17 @@ export default function MainPage() {
             </div>
 
             {/* Text Content - Scrolling Items */}
-            <div className="w-full lg:w-[41%] flex flex-col gap-32">
+            <div
+              className="w-full lg:w-[41%] flex flex-col scroll-snap-type-y-mandatory lg:scroll-snap-type-y-mandatory"
+              style={{ scrollSnapType: "y mandatory" }}
+            >
               {/* Process Item 1 */}
               <div
-                className="flex flex-col justify-start gap-6 md:gap-8 lg:gap-12 text-center"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full py-20 lg:min-h-screen items-center"
                 data-process-item="0"
+                style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     UXUI Design & Data Architecture
                   </h3>
@@ -434,20 +330,21 @@ export default function MainPage() {
                     UXUI 디자인 · 데이터 분석
                   </p>
                 </div>
-                <div className="flex justify-center items-center w-full">
+                <div className="flex justify-center items-center w-full animate-in">
                   <div className="w-0.5 h-96 bg-neutral-200"></div>
                 </div>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-tight">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-tight animate-in">
                   데이터와 경험을 설계하고
                 </p>
               </div>
 
               {/* Process Item 2 */}
               <div
-                className="flex flex-col justify-start gap-6 md:gap-8 lg:gap-12 text-center"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full py-20 lg:min-h-screen items-center"
                 data-process-item="1"
+                style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     Development & Integration
                   </h3>
@@ -455,20 +352,21 @@ export default function MainPage() {
                     Front-end · Back-end 개발
                   </p>
                 </div>
-                <div className="flex justify-center items-center w-full">
+                <div className="flex justify-center items-center w-full animate-in">
                   <div className="w-0.5 h-96 bg-neutral-200"></div>
                 </div>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-tight">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-tight animate-in">
                   시스템을 통합하며
                 </p>
               </div>
 
               {/* Process Item 3 */}
               <div
-                className="flex flex-col justify-start gap-6 md:gap-8 lg:gap-12 text-center"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full py-20 lg:min-h-screen items-center"
                 data-process-item="2"
+                style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     Deployment & Operation
                   </h3>
@@ -476,10 +374,10 @@ export default function MainPage() {
                     배포 후 운영 · 유지 · 개선 프로세스
                   </p>
                 </div>
-                <div className="flex justify-center items-center w-full">
+                <div className="flex justify-center items-center w-full animate-in">
                   <div className="w-0.5 h-96 bg-neutral-200"></div>
                 </div>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-tight">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-tight animate-in">
                   지속적으로 개선합니다.
                 </p>
               </div>
@@ -504,9 +402,11 @@ export default function MainPage() {
                 새로운 프로젝트 제안을 기다립니다.
               </h2>
             </div>
-
             {/* Contact Button */}
-            <button className="h-12 px-4 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.08)] inline-flex justify-center items-center gap-2.5 transition-colors">
+            <button
+              onClick={() => router.push("/contact")}
+              className="h-12 px-4 py-2 bg-neutral-100 hover:bg-neutral-200 rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.08)] inline-flex justify-center items-center gap-2.5 transition-colors"
+            >
               <span className="text-neutral-800 text-xl font-bold font-['Pretendard']">
                 Contact us
               </span>
