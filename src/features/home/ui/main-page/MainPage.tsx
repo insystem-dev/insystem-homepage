@@ -90,7 +90,7 @@ export default function MainPage() {
           muted
           className="absolute inset-0 w-full h-full object-cover opacity-100"
         >
-          <source src="/hero-backgroud.mp4" type="video/mp4" />
+          <source src="/hero-background.mp4" type="video/mp4" />
         </video>
 
         {/* Content */}
