@@ -34,11 +34,11 @@ export const Footer = () => {
             </div>
             <div className="w-5 h-5 sm:w-6 sm:h-6 relative flex items-center justify-center">
               <svg
-                className="w-5 h-5"
-                viewBox="0 0 24 24"
+                className="w-64 h-8 animate-bounce"
+                viewBox="4 -12 24 24"
                 fill="none"
                 stroke="white"
-                strokeWidth="3"
+                strokeWidth="5"
               >
                 <polyline points="6 9 12 3 18 9"></polyline>
               </svg>
