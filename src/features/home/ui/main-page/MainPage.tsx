@@ -296,7 +296,7 @@ export default function MainPage() {
           {/* Sticky Scroll Container */}
           <div className="flex flex-col lg:flex-row justify-start items-start gap-6 md:gap-12 lg:gap-[4%]">
             {/* Visual Container - Sticky on Desktop only */}
-            <div className="hidden lg:block w-full lg:w-[55%] h-80 sm:h-96 md:h-[600px] lg:h-[700px] bg-black rounded-2xl overflow-hidden relative lg:sticky lg:top-20 flex-shrink-0">
+            <div className="hidden lg:block w-full lg:w-[55%] h-80 sm:h-96 md:h-[600px] lg:h-[700px] bg-black rounded-2xl overflow-hidden relative lg:sticky lg:top-40 flex-shrink-0">
               <Image
                 src={
                   activeProcessIndex === 0
@@ -362,7 +362,7 @@ export default function MainPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-col gap-2 animate-in">
+                <div className="flex flex-col gap-4 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     Development & Integration
                   </h3>
@@ -380,7 +380,7 @@ export default function MainPage() {
 
               {/* Process Item 3 */}
               <div
-                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full lg:min-h-screen items-center"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full lg:min-h-screen items-center py-10"
                 data-process-item="2"
                 style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
@@ -422,10 +422,10 @@ export default function MainPage() {
           <div className="flex flex-col justify-center items-center gap-8">
             {/* Top Section */}
             <div className="flex flex-col justify-center items-center gap-4">
-              <p className="text-center text-2xl font-semibold text-neutral-50 font-['Pretendard'] leading-9">
+              <p className="text-center text-base sm:text-lg md:text-2xl font-semibold text-neutral-50 font-['Pretendard'] leading-9">
                 디지털 헬스케어부터 산업·물류 플랫폼까지
               </p>
-              <h2 className="text-center text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-[54px]">
+              <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-50 font-['Pretendard'] leading-[54px]">
                 새로운 프로젝트 제안을 기다립니다.
               </h2>
             </div>
@@ -456,7 +456,7 @@ export default function MainPage() {
 
             {/* Bottom Section */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-2">
-              <p className="text-center sm:text-left text-2xl font-medium text-neutral-100 font-['Pretendard']">
+              <p className="text-center sm:text-left text-base sm:text-lg md:text-2xl font-medium text-neutral-100 font-['Pretendard']">
                 데이터로 세상을 연결하는 기술 파트너, INSYSTEM
               </p>
             </div>
