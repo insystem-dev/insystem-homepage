@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
 import { Gnb } from "@/widgets";
 import sectionHealth from "@/shared/styles/assets/image/section-health.png";
 import sectionPort from "@/shared/styles/assets/image/section-port.jpg";
@@ -11,6 +14,7 @@ import history2016 from "@/shared/styles/assets/image/history-2016.png";
 import { Footer } from "@/widgets";
 
 export default function AboutPage() {
+  const router = useRouter();
   return (
     <div className="w-full min-h-screen">
       {/* Header */}
@@ -222,7 +226,10 @@ export default function AboutPage() {
                   제공
                 </p>
               </div>
-              <button className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors">
+              <button
+                onClick={() => router.push("/projects/diabetes-free")}
+                className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors"
+              >
                 View Projects
               </button>
             </div>
@@ -248,7 +255,10 @@ export default function AboutPage() {
                   항만 · 물류 · 검역을 통합 관리하는 물류 디지털 플랫폼
                 </p>
               </div>
-              <button className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors">
+              <button
+                onClick={() => router.push("/projects/portqm")}
+                className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors"
+              >
                 View Projects
               </button>
             </div>
@@ -274,7 +284,10 @@ export default function AboutPage() {
                   항만 · 물류 · 검역을 통합 관리하는 물류 디지털 플랫폼
                 </p>
               </div>
-              <button className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors">
+              <button
+                onClick={() => router.push("/projects/dn-mes")}
+                className="relative z-10 px-3 md:px-6 py-2 md:py-3 bg-slate-100 text-slate-900 rounded-lg font-bold text-xs md:text-base font-['Pretendard'] hover:bg-slate-200 transition-colors"
+              >
                 View Projects
               </button>
             </div>

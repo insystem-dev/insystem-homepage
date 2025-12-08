@@ -148,12 +148,12 @@ export default function ProjectsPage() {
 
         {/* Filter Tabs */}
         <div className="max-w-[1440px] mx-auto px-8 mb-16">
-          <div className="flex gap-4 border-b border-neutral-700 pb-4">
+          <div className="flex gap-4 border-b border-neutral-700 pb-4 overflow-x-auto md:overflow-x-visible scrollbar-hide">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-3 text-2xl font-['Pretendard'] transition-all whitespace-nowrap ${
+                className={`px-4 py-3 text-base md:text-2xl font-['Pretendard'] transition-all whitespace-nowrap flex-shrink-0 ${
                   activeCategory === cat
                     ? "border-b-4 border-sky-400 text-neutral-50 font-bold"
                     : "text-neutral-50 font-medium hover:text-sky-400"
@@ -239,28 +239,30 @@ export default function ProjectsPage() {
         </div>
 
         {/* Load More Button */}
-        <div className="flex justify-center mb-32">
-          <button className="px-3 py-1.5 rounded-full border border-white flex justify-center items-center gap-2.5 hover:bg-white/10 transition-colors group">
-            <span className="text-white text-lg font-semibold font-['Pretendard'] leading-7 group-hover:text-sky-400">
-              More
-            </span>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6 9L12 15L18 9"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinejoin="round"
-                className="text-white group-hover:text-sky-400"
-              />
-            </svg>
-          </button>
-        </div>
+        {filteredProjects.length > 9 && (
+          <div className="flex justify-center mb-32">
+            <button className="px-3 py-1.5 rounded-full border border-white flex justify-center items-center gap-2.5 hover:bg-white/10 transition-colors group">
+              <span className="text-white text-lg font-semibold font-['Pretendard'] leading-7 group-hover:text-sky-400">
+                More
+              </span>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                  className="text-white group-hover:text-sky-400"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Footer */}

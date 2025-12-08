@@ -295,8 +295,8 @@ export default function MainPage() {
 
           {/* Sticky Scroll Container */}
           <div className="flex flex-col lg:flex-row justify-start items-start gap-6 md:gap-12 lg:gap-[4%]">
-            {/* Visual Container - Sticky on Desktop */}
-            <div className="w-full lg:w-[55%] h-80 sm:h-96 md:h-[600px] lg:h-[700px] bg-black rounded-2xl overflow-hidden relative lg:sticky lg:top-20 flex-shrink-0">
+            {/* Visual Container - Sticky on Desktop only */}
+            <div className="hidden lg:block w-full lg:w-[55%] h-80 sm:h-96 md:h-[600px] lg:h-[700px] bg-black rounded-2xl overflow-hidden relative lg:sticky lg:top-20 flex-shrink-0">
               <Image
                 src={
                   activeProcessIndex === 0
@@ -313,7 +313,7 @@ export default function MainPage() {
 
             {/* Text Content - Scrolling Items */}
             <div
-              className="w-full lg:w-[41%] flex flex-col scroll-snap-type-y-mandatory lg:scroll-snap-type-y-mandatory"
+              className="w-full lg:w-[41%] flex flex-col"
               style={{ scrollSnapType: "y mandatory" }}
             >
               {/* Process Item 1 */}
@@ -322,6 +322,15 @@ export default function MainPage() {
                 data-process-item="0"
                 style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
+                {/* Mobile Image */}
+                <div className="lg:hidden w-full h-64 sm:h-80 bg-black rounded-2xl overflow-hidden relative mb-4">
+                  <Image
+                    src={process1}
+                    alt="UXUI Design visualization"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="flex flex-col gap-2 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     UXUI Design & Data Architecture
@@ -340,10 +349,19 @@ export default function MainPage() {
 
               {/* Process Item 2 */}
               <div
-                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full py-20 lg:min-h-screen items-center"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full lg:min-h-screen items-center"
                 data-process-item="1"
                 style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
+                {/* Mobile Image */}
+                <div className="lg:hidden w-full h-64 sm:h-80 bg-black rounded-2xl overflow-hidden relative mb-4">
+                  <Image
+                    src={process2}
+                    alt="Development visualization"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="flex flex-col gap-2 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     Development & Integration
@@ -362,10 +380,19 @@ export default function MainPage() {
 
               {/* Process Item 3 */}
               <div
-                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full py-20 lg:min-h-screen items-center"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full lg:min-h-screen items-center"
                 data-process-item="2"
                 style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
+                {/* Mobile Image */}
+                <div className="lg:hidden w-full h-64 sm:h-80 bg-black rounded-2xl overflow-hidden relative mb-4">
+                  <Image
+                    src={process3}
+                    alt="Deployment visualization"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="flex flex-col gap-2 animate-in">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 font-['Pretendard'] leading-tight">
                     Deployment & Operation
