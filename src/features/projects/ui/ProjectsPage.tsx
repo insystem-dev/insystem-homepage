@@ -28,54 +28,63 @@ const allProjects = [
     title: "해군/해경 원격 함정운용지원체계",
     category: "항만 물류 · 국방",
     image: project1,
+    slug: "ship-operation",
   },
   {
     id: 2,
     title: "DN솔루션즈 MES 개발 프로젝트",
     category: "스마트 팩토리",
     image: project2,
+    slug: "dn-mes",
   },
   {
     id: 3,
     title: "물류운송관리시스템 (타이거페이스)",
     category: "항만 물류 · 국방",
     image: project3,
+    slug: "tiger-face",
   },
   {
     id: 4,
     title: "물류운송관리시스템 (TMS)",
     category: "항만 물류 · 국방",
     image: project4,
+    slug: "tms",
   },
   {
     id: 5,
     title: "항만 검역관리 시스템",
     category: "항만 물류 · 국방",
     image: project5,
+    slug: "portqm",
   },
   {
     id: 6,
     title: "AI 활용 건강 루틴 기반 리워드 플랫폼 [루틴케어]",
     category: "디지털 헬스케어",
     image: project6,
+    slug: "routine-care",
   },
   {
     id: 7,
     title: "AI기반 개인맞춤형 당뇨병 예방관리 시스템 [당뇨프리]",
     category: "디지털 헬스케어",
     image: project7,
+    slug: "diabetes-free",
   },
   {
     id: 8,
     title: "AI기반 청소년 척추 질환 조기 진단 및 건강관리 플랫폼",
     category: "디지털 헬스케어",
     image: project8,
+    slug: "spine-health",
   },
   {
     id: 9,
     title: "스마트 슈즈를 활용한 건강토큰 APP",
     category: "디지털 헬스케어",
     image: project9,
+    slug: "smart-shoes",
   },
 ];
 
@@ -173,25 +182,7 @@ export default function ProjectsPage() {
                 key={project.id}
                 className="flex flex-col gap-4 cursor-pointer group"
                 onClick={() => {
-                  if (project.id === 6) {
-                    router.push("/projects/routine-care");
-                  } else if (project.id === 1) {
-                    router.push("/projects/ship-operation");
-                  } else if (project.id === 2) {
-                    router.push("/projects/dn-mes");
-                  } else if (project.id === 3) {
-                    router.push("/projects/spine-health");
-                  } else if (project.id === 4) {
-                    router.push("/projects/tms");
-                  } else if (project.id === 5) {
-                    router.push("/projects/portqm");
-                  } else if (project.id === 7) {
-                    router.push("/projects/diabetes-free");
-                  } else if (project.id === 8) {
-                    router.push("/projects/spine-health");
-                  } else if (project.id === 9) {
-                    router.push("/projects/smart-shoes");
-                  }
+                  router.push(`/projects/${project.slug}`);
                 }}
               >
                 {/* Image */}

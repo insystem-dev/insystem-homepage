@@ -11,6 +11,11 @@ export const Gnb = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // 프로젝트 디테일 페이지에서는 Gnb 숨기기
+  if (pathname.startsWith("/projects/")) {
+    return null;
+  }
+
   return (
     <nav className="w-full fixed top-0 left-0 right-0 z-50 pt-4 px-4">
       {/* Desktop Gnb */}

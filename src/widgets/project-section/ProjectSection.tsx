@@ -34,49 +34,62 @@ export const ProjectSection = () => {
               title: "해군/해경 원격 함정운용지원체계",
               category: "개발",
               image: project1,
+              slug: "ship-operation",
             },
             {
               title: "DN솔루션즈 MES 개발 프로젝트",
               category: "개발 · 디자인",
               image: project2,
+              slug: "dn-mes",
             },
             {
               title: "물류운송관리시스템 (타이거페이스)",
               category: "개발 · 디자인",
               image: project3,
+              slug: "tiger-face",
             },
             {
               title: "물류운송관리시스템 (TMS)",
               category: "개발 · 디자인 · 기획",
               image: project4,
+              slug: "tms",
             },
             {
               title: "항만 검역관리 시스템",
               category: "개발 · 디자인 · 기획",
               image: project5,
+              slug: "portqm",
             },
             {
               title: "AI 활용 건강 루틴 기반 리워드 플랫폼 [루틴케어]",
               category: "개발 · 디자인 · 기획",
               image: project6,
+              slug: "routine-care",
             },
             {
               title: "AI기반 개인맞춤형 당뇨병 예방관리 시스템 [당뇨프리]",
               category: "개발 · 디자인",
               image: project7,
+              slug: "diabetes-free",
             },
             {
               title: "AI기반 청소년 척추 질환 조기 진단 및 건강관리 플랫폼",
               category: "개발 · 디자인",
               image: project8,
+              slug: "spine-health",
             },
             {
               title: "스마트 슈즈를 활용한 건강토큰 APP",
               category: "개발 · 디자인",
               image: project9,
+              slug: "smart-shoes",
             },
           ].map((project, index) => (
-            <div key={index} className="flex flex-col gap-2.5 project-item">
+            <div
+              key={index}
+              className="flex flex-col gap-2.5 project-item cursor-pointer"
+              onClick={() => router.push(`/projects/${project.slug}`)}
+            >
               {/* Portfolio Image */}
               <div className="w-full aspect-square bg-gray-700 rounded-lg overflow-hidden relative">
                 <Image

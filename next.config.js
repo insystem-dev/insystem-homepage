@@ -11,6 +11,7 @@ const nextConfig = {
   images: {
     domains: ["philip-api.insystem.kr", "localhost"],
     formats: ["image/avif", "image/webp"],
+    unoptimized: process.env.NODE_ENV === "development",
   },
   webpack: (config) => {
     config.module.rules.push({
@@ -18,6 +19,10 @@ const nextConfig = {
       use: ["@svgr/webpack"],
     });
     return config;
+  },
+  onDemandEntries: {
+    maxInactiveAge: 60 * 1000,
+    pagesBufferLength: 5,
   },
 };
 

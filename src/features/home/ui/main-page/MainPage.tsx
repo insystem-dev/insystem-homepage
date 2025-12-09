@@ -98,13 +98,16 @@ export default function MainPage() {
           {/* Main Title */}
           <h1 className="max-w-full md:w-[694px] text-center text-slate-50 text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-['Pretendard'] leading-tight">
             인간 중심의 기술,
-            <br />
+          </h1>
+          <h1 className="max-w-full md:w-[694px] text-center text-slate-50 text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-['Pretendard'] leading-tight">
             현장을 이해하는 개발
           </h1>
           {/* Subtitle */}
           <p className="max-w-full md:w-[694px] text-center text-zinc-200 text-sm sm:text-base md:text-lg lg:text-xl font-medium font-['Pretendard']">
-            항만 · 물류부터 디지털 헬스케어까지, 데이터 기반 플랫폼으로 세상을
-            연결합니다.
+            항만 · 물류부터 디지털 헬스케어까지,
+            <span className="hidden sm:inline"> </span>
+            <br className="sm:hidden" />
+            데이터 기반 플랫폼으로 세상을 연결합니다.
           </p>
         </div>
 
