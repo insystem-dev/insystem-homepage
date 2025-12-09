@@ -21,7 +21,7 @@ export default function ProjectDetailTemplate({
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-black to-sky-950">
+    <div className="w-full min-h-screen bg-gradient-to-b from-black to-sky-950 break-words:keep-all">
       {/* Thumbnail Section - Desktop */}
       {thumbImage && (
         <div className="hidden md:block w-full h-[700px] bg-slate-900 overflow-hidden">
@@ -146,7 +146,7 @@ export default function ProjectDetailTemplate({
       {/* Back Button */}
       <button
         onClick={handleGoBack}
-        className="fixed left-[85px] top-[100px] z-40 w-12 h-12 bg-slate-800 rounded-full shadow-lg hover:bg-slate-700 transition-colors flex items-center justify-center"
+        className="fixed left-4 top-4 z-40 w-12 h-12 bg-slate-800 rounded-full shadow-lg hover:bg-slate-700 transition-colors flex items-center justify-center md:left-[85px] md:top-[100px]"
         aria-label="Go back"
       >
         <svg

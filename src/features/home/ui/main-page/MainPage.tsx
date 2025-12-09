@@ -297,9 +297,9 @@ export default function MainPage() {
           </div>
 
           {/* Sticky Scroll Container */}
-          <div className="flex flex-col lg:flex-row justify-start items-start gap-6 md:gap-12 lg:gap-[4%]">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-6 md:gap-12 lg:gap-[4%]">
             {/* Visual Container - Sticky on Desktop only */}
-            <div className="hidden lg:block w-full lg:w-[55%] h-80 sm:h-96 md:h-[600px] lg:h-[700px] bg-black rounded-2xl overflow-hidden relative lg:sticky lg:top-40 flex-shrink-0">
+            <div className="hidden lg:block lg:w-[55%] h-80 sm:h-96 md:h-[538px] lg:h-[538px] bg-black rounded-2xl overflow-hidden relative lg:sticky lg:top-40 flex-shrink-0">
               <Image
                 src={
                   activeProcessIndex === 0
@@ -383,7 +383,7 @@ export default function MainPage() {
 
               {/* Process Item 3 */}
               <div
-                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full lg:min-h-screen items-center py-10"
+                className="flex flex-col justify-center gap-6 md:gap-8 lg:gap-12 text-center w-full lg:min-h-screen items-center py-20"
                 data-process-item="2"
                 style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
               >
