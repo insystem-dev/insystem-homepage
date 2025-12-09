@@ -24,14 +24,13 @@ export default function ProjectDetailTemplate({
     <div className="w-full min-h-screen bg-gradient-to-b from-black to-sky-950">
       {/* Thumbnail Section - Desktop */}
       {thumbImage && (
-        <div className="hidden md:block w-full h-96 bg-slate-900 overflow-hidden">
+        <div className="hidden md:block w-full h-[700px] bg-slate-900 overflow-hidden">
           <Image
             src={thumbImage}
             alt="프로젝트 썸네일"
             width={1920}
-            height={1080}
+            height={700}
             className="w-full h-full object-cover"
-            style={{ width: "100%", height: "100%" }}
             priority
           />
         </div>
@@ -46,7 +45,6 @@ export default function ProjectDetailTemplate({
             width={1080}
             height={1080}
             className="w-full h-full object-cover"
-            style={{ width: "100%", height: "100%" }}
             priority
           />
         </div>
@@ -141,7 +139,6 @@ export default function ProjectDetailTemplate({
             width={1440}
             height={800}
             className="w-full h-auto object-cover rounded-lg"
-            style={{ width: "100%", height: "auto" }}
           />
         </div>
       </section>

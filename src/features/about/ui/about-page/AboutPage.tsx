@@ -191,7 +191,7 @@ export default function AboutPage() {
       <section className="w-full bg-x02-gray-dark">
         <div className="w-full">
           {/* Header */}
-          <div className="flex flex-col items-center gap-8 mb-16 pt-40 pb-10">
+          <div className="flex flex-col items-center gap-8 mb-16 pt-12 md:pt-20 pb-0 md:pb-5 ">
             <div className="text-center text-orange-500 text-xs md:text-xl font-bold font-['Pretendard']">
               Business
             </div>
