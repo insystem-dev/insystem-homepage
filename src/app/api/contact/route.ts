@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "help@insystem.kr",
-      subject: `[Contact] ${subject} - ${name}`,
+      subject: `[홈페이지 문의] ${subject} - ${name}`,
       html: `
         <h2>새로운 연락 요청</h2>
         <p><strong>이름:</strong> ${name}</p>
