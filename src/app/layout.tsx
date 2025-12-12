@@ -12,7 +12,7 @@ export const metadata = {
     siteName: "INSYSTEM",
     images: [
       {
-        url: "/og-image.png",
+        url: "/footer-logo.svg",
         width: 1200,
         height: 630,
         alt: "INSYSTEM",
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "INSYSTEM",
     description: "사람을 위한 기술로 산업과 일상의 문제를 해결합니다.",
-    images: ["/og-image.png"],
+    images: ["/footer-logo.svg"],
   },
   icons: {
     icon: "/favicon.ico",
