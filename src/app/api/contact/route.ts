@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // 관리자에게 보낼 이메일
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "contact@resend.dev",
       to: "help@insystem.kr",
       subject: `[홈페이지 문의] ${subject} - ${name}`,
       html: `
