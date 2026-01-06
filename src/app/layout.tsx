@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./tailwind.css";
 import { Gnb } from "@/widgets";
+import { Analytics } from "./analytics";
 
 export const metadata = {
   title: "INSYSTEM",
@@ -40,7 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head />
       <body className="bg-dark-950">
+        <Analytics />
         <Gnb />
         {children}
       </body>

@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     // 사용자에게 보낼 이메일 (자동 응답)
     // TODO: insystem.kr 도메인 검증 완료 후 활성화
     // await resend.emails.send({
-    //   from: "noreply@insystem.kr",
+    //   from: "help@insystem.kr",
     //   to: email,
     //   subject: "인시스템 - 연락 감사합니다",
     //   html: `
