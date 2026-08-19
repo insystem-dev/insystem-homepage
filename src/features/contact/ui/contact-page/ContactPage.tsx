@@ -90,7 +90,7 @@ export default function ContactPage() {
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center font-['Pretendard']">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center font-pretendard">
               Contact Us
             </h1>
           </div>
@@ -103,10 +103,10 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="flex flex-col gap-8">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-neutral-100 mb-8 font-['Pretendard']">
+                  <h2 className="text-2xl md:text-3xl font-bold text-neutral-100 mb-8 font-pretendard">
                     Get in Touch
                   </h2>
-                  <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-['Pretendard']">
+                  <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-pretendard">
                     프로젝트 문의, 협력 제안, 기술 상담 등 다양한 주제로
                     저희에게 연락주세요. 빠른 시간 내에 답변해드리겠습니다.
                   </p>
@@ -133,10 +133,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-neutral-100 font-['Pretendard']">
+                      <h3 className="text-lg font-semibold text-neutral-100 font-pretendard">
                         Email
                       </h3>
-                      <p className="text-neutral-300 font-['Pretendard']">
+                      <p className="text-neutral-300 font-pretendard">
                         help@insystem.kr
                       </p>
                     </div>
@@ -161,10 +161,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-neutral-100 font-['Pretendard']">
+                      <h3 className="text-lg font-semibold text-neutral-100 font-pretendard">
                         Phone
                       </h3>
-                      <p className="text-neutral-300 font-['Pretendard']">
+                      <p className="text-neutral-300 font-pretendard">
                         051-714-6120
                       </p>
                     </div>
@@ -195,10 +195,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-neutral-100 font-['Pretendard']">
+                      <h3 className="text-lg font-semibold text-neutral-100 font-pretendard">
                         Address
                       </h3>
-                      <p className="text-neutral-300 font-['Pretendard']">
+                      <p className="text-neutral-300 font-pretendard">
                         부산광역시 동구 조방로 22, 8층 803호 (범일동, 파크빌딩)
                       </p>
                     </div>
@@ -213,7 +213,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Name
                       </label>
@@ -224,14 +224,14 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Email
                       </label>
@@ -242,7 +242,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -252,7 +252,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Phone
                       </label>
@@ -262,14 +262,14 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="+82-10-0000-0000"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="company"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Company
                       </label>
@@ -279,7 +279,7 @@ export default function ContactPage() {
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="Your company"
                       />
                     </div>
@@ -288,7 +288,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                      className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                     >
                       Subject
                     </label>
@@ -299,7 +299,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                       placeholder="Subject"
                     />
                   </div>
@@ -307,7 +307,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                      className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                     >
                       Message
                     </label>
@@ -318,7 +318,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors resize-none font-['Pretendard']"
+                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors resize-none font-pretendard"
                       placeholder="Your message..."
                     />
                   </div>
@@ -326,19 +326,19 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors font-['Pretendard']"
+                    className="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors font-pretendard"
                   >
                     {loading ? "전송 중..." : "Send Message"}
                   </button>
 
                   {error && (
-                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm font-['Pretendard']">
+                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm font-pretendard">
                       {error}
                     </div>
                   )}
 
                   {submitted && (
-                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm font-['Pretendard']">
+                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm font-pretendard">
                       메시지가 전송되었습니다. 감사합니다!
                     </div>
                   )}

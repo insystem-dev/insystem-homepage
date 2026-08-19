@@ -13,21 +13,27 @@ import project7 from "@/shared/styles/assets/image/project7.png";
 import project8 from "@/shared/styles/assets/image/project8.png";
 import project9 from "@/shared/styles/assets/image/project9.png";
 
+// 모바일에서 온전히 노출할 프로젝트 개수
+const MOBILE_VISIBLE_COUNT = 4;
+// 그 다음 아이템을 살짝 보여주는 높이(px). 이 위로 그라데이션이 덮인다.
+const MOBILE_PEEK_HEIGHT = 160;
+
 export const ProjectSection = () => {
   const router = useRouter();
 
   return (
-    <section className="w-full py-16 md:py-32 px-2 sm:px-4 md:px-8 bg-gradient-to-b from-sky-950 to-black">
+    <section className="w-full py-16 md:py-32 px-4 sm:px-4 md:px-8 bg-gradient-to-b from-sky-950 to-black">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Header */}
-        <div className="mb-12 md:mb-32">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-['Pretendard'] section-title">
+        <div className="mb-8 md:mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 font-pretendard section-title">
             Project
           </h2>
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16">
+        <div className="relative mb-8 md:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Portfolio Items */}
           {[
             {
@@ -87,7 +93,21 @@ export const ProjectSection = () => {
           ].map((project, index) => (
             <div
               key={index}
-              className="flex flex-col gap-2.5 project-item cursor-pointer"
+              className={`flex-col gap-2.5 project-item cursor-pointer ${
+                // 모바일: 4개 온전히 노출 -> 5번째는 살짝만 -> 나머지는 숨김
+                index < MOBILE_VISIBLE_COUNT
+                  ? "flex"
+                  : index === MOBILE_VISIBLE_COUNT
+                  ? "flex project-item-peek"
+                  : "hidden md:flex"
+              }`}
+              style={
+                index === MOBILE_VISIBLE_COUNT
+                  ? ({
+                      "--peek-h": `${MOBILE_PEEK_HEIGHT}px`,
+                    } as React.CSSProperties)
+                  : undefined
+              }
               onClick={() => router.push(`/projects/${project.slug}`)}
             >
               {/* Portfolio Image */}
@@ -104,7 +124,7 @@ export const ProjectSection = () => {
               {/* Portfolio Info */}
               <div className="px-2 md:px-4 py-2 flex flex-col gap-2">
                 <div className="flex justify-between items-start gap-2 md:gap-4">
-                  <h3 className="text-base md:text-xl font-semibold text-neutral-50 font-['Pretendard'] line-clamp-2">
+                  <h3 className="text-base md:text-xl font-semibold text-neutral-50 font-pretendard line-clamp-2">
                     {project.title}
                   </h3>
                   <svg
@@ -125,21 +145,51 @@ export const ProjectSection = () => {
                     />
                   </svg>
                 </div>
-                <p className="text-xs md:text-base font-semibold text-neutral-400 font-['Pretendard']">
+                <p className="text-xs md:text-base font-semibold text-neutral-400 font-pretendard">
                   {project.category}
                 </p>
               </div>
             </div>
-          ))}
+            ))}
+          </div>
+
+          {/* 모바일: 5번째 아이템 위를 덮는 페이드 + 더보기 */}
+          <div
+            className="md:hidden absolute inset-x-0 bottom-0 flex items-end justify-center project-peek-fade"
+            style={{ height: `${MOBILE_PEEK_HEIGHT}px` }}
+          >
+            <button
+              onClick={() => router.push("/projects")}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-neutral-50 text-base font-bold font-pretendard hover:opacity-80 transition-opacity"
+            >
+              더보기
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* All Projects Button */}
-        <div className="flex justify-center">
+        {/* All Projects Button (데스크톱) */}
+        <div className="hidden md:flex justify-center">
           <button
             onClick={() => router.push("/projects")}
             className="px-4 py-2 h-10 md:h-14 bg-gray-500 rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.20)] inline-flex justify-center items-center gap-2.5 hover:bg-gray-600 transition-colors project-button"
           >
-            <span className="text-neutral-50 text-base md:text-xl font-bold font-['Pretendard']">
+            <span className="text-neutral-50 text-base md:text-xl font-bold font-pretendard">
               All Projects
             </span>
             <svg

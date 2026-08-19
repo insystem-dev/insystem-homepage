@@ -58,10 +58,10 @@ export default function ProjectDetailTemplate({
             <div className="flex-1 flex flex-col justify-start items-start gap-8 md:gap-4">
               {/* Project Title */}
               <div className="flex flex-col justify-start items-start gap-2 w-full">
-                <p className="text-slate-50 text-base font-semibold font-['Pretendard']">
+                <p className="text-slate-50 text-base font-semibold font-pretendard">
                   {category}
                 </p>
-                <h1 className="text-slate-50 text-3xl md:text-5xl font-bold font-['Pretendard']">
+                <h1 className="text-slate-50 text-3xl md:text-5xl font-bold font-pretendard">
                   {title}
                 </h1>
               </div>
@@ -70,7 +70,7 @@ export default function ProjectDetailTemplate({
               <div className="flex flex-col justify-start items-start gap-4 w-full">
                 {/* Work Scope */}
                 <div className="flex flex-col justify-start items-start gap-2.5">
-                  <span className="text-gray-500 text-base font-medium font-['Pretendard']">
+                  <span className="text-gray-500 text-base font-medium font-pretendard">
                     작업 범위
                   </span>
                   <div className="flex flex-wrap justify-start items-center gap-2">
@@ -79,7 +79,7 @@ export default function ProjectDetailTemplate({
                         key={index}
                         className="px-3 py-1.5 bg-indigo-100/60 rounded-lg"
                       >
-                        <span className="text-gray-900 text-sm font-medium font-['Pretendard']">
+                        <span className="text-gray-900 text-sm font-medium font-pretendard">
                           {scope.label}
                         </span>
                       </div>
@@ -89,7 +89,7 @@ export default function ProjectDetailTemplate({
 
                 {/* Service Platform */}
                 <div className="flex flex-col justify-start items-start gap-2.5 w-full">
-                  <span className="text-gray-500 text-base font-medium font-['Pretendard']">
+                  <span className="text-gray-500 text-base font-medium font-pretendard">
                     서비스 플랫폼
                   </span>
                   <div className="flex flex-col justify-center items-start gap-2.5 w-full">
@@ -98,7 +98,7 @@ export default function ProjectDetailTemplate({
                         key={index}
                         className="flex flex-col md:flex-row md:justify-start md:items-center md:gap-4 w-auto md:w-full"
                       >
-                        <span className="text-zinc-200 text-base font-medium font-['Pretendard']">
+                        <span className="text-zinc-200 text-base font-medium font-pretendard">
                           {platform.name}
                         </span>
                         <div className="flex gap-3 md:gap-2">
@@ -107,7 +107,7 @@ export default function ProjectDetailTemplate({
                               key={platIndex}
                               className="px-3 py-1.5 bg-indigo-100/60 rounded-lg"
                             >
-                              <span className="text-gray-900 text-sm font-medium font-['Pretendard']">
+                              <span className="text-gray-900 text-sm font-medium font-pretendard">
                                 {plat.label}
                               </span>
                             </div>
@@ -122,7 +122,7 @@ export default function ProjectDetailTemplate({
 
             {/* Right Description */}
             <div className="flex-1 w-full md:w-auto pt-4">
-              <p className="text-slate-50 text-base md:text-lg font-medium font-['Pretendard'] leading-6 md:leading-7">
+              <p className="text-slate-50 text-base md:text-lg font-medium font-pretendard leading-6 md:leading-7">
                 {description}
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function ProjectDetailTemplate({
       </section>
 
       {/* Project Content Section */}
-      <section className="w-full px-8 py-24 bg-gradient-to-l from-black to-sky-950">
+      <section className="w-full px-4 md:px-8 py-24 bg-gradient-to-l from-black to-sky-950">
         <div className="max-w-[1440px] mx-auto">
           <Image
             src={contentImage}

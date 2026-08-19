@@ -38,7 +38,7 @@ export const Gnb = () => {
           <div className="flex justify-start items-center gap-28">
             <Link
               href="/about"
-              className={`p-2 text-center text-lg font-medium font-['Pretendard'] transition-colors ${
+              className={`p-2 text-center text-lg font-medium font-pretendard transition-colors ${
                 pathname === "/about"
                   ? "text-sky-400 font-bold"
                   : "text-neutral-50 hover:text-blue-400"
@@ -48,7 +48,7 @@ export const Gnb = () => {
             </Link>
             <Link
               href="/projects"
-              className={`p-2 text-center text-lg font-medium font-['Pretendard'] transition-colors ${
+              className={`p-2 text-center text-lg font-medium font-pretendard transition-colors ${
                 pathname === "/projects"
                   ? "text-sky-400 font-bold"
                   : "text-neutral-50 hover:text-blue-400"
@@ -63,7 +63,7 @@ export const Gnb = () => {
             onClick={() => router.push("/contact")}
             className="w-36 h-12 px-6 py-2 bg-neutral-100 hover:bg-white rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.20)] flex justify-center items-center transition-all duration-300"
           >
-            <span className="text-center text-neutral-800 text-xl font-bold font-['Pretendard']">
+            <span className="text-center text-neutral-800 text-xl font-bold font-pretendard">
               문의하기
             </span>
           </button>
@@ -117,14 +117,14 @@ export const Gnb = () => {
         <div className="md:hidden fixed top-20 left-4 right-4 bg-gray-900/95 backdrop-blur-sm rounded-2xl p-4 flex flex-col gap-4 z-40">
           <Link
             href="/about"
-            className="p-3 text-center text-neutral-50 text-base font-medium font-['Pretendard'] hover:text-blue-400 hover:bg-gray-800 rounded-lg transition-colors"
+            className="p-3 text-center text-neutral-50 text-base font-medium font-pretendard hover:text-blue-400 hover:bg-gray-800 rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             회사소개
           </Link>
           <Link
             href="/projects"
-            className="p-3 text-center text-neutral-50 text-base font-medium font-['Pretendard'] hover:text-blue-400 hover:bg-gray-800 rounded-lg transition-colors"
+            className="p-3 text-center text-neutral-50 text-base font-medium font-pretendard hover:text-blue-400 hover:bg-gray-800 rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             프로젝트
@@ -134,7 +134,7 @@ export const Gnb = () => {
               router.push("/contact");
               setIsMenuOpen(false);
             }}
-            className="p-3 w-full bg-neutral-100 hover:bg-white rounded-lg text-neutral-800 text-base font-bold font-['Pretendard'] transition-all duration-300"
+            className="p-3 w-full bg-neutral-100 hover:bg-white rounded-lg text-neutral-800 text-base font-bold font-pretendard transition-all duration-300"
           >
             문의하기
           </button>

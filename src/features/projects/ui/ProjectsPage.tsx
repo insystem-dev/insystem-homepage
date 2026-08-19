@@ -114,7 +114,7 @@ export default function ProjectsPage() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-black to-sky-950 overflow-hidden">
       {/* GNB */}
-      <div className="w-full pt-5 px-8 fixed top-0 z-50 flex justify-center">
+      <div className="w-full pt-5 px-4 md:px-8 fixed top-0 z-50 flex justify-center">
         <div className="w-full max-w-[1440px]">
           <Gnb />
         </div>
@@ -123,18 +123,16 @@ export default function ProjectsPage() {
       {/* Main Content */}
       <div className="w-full pt-32">
         {/* Page Title Section */}
-        <div className="max-w-[1440px] mx-auto px-8 mb-12">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 mb-12">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-6">
-            <span className="text-zinc-200 text-sm font-normal font-['Pretendard']">
+            <span className="text-zinc-200 text-xs md:text-sm font-normal font-pretendard">
               홈
             </span>
             <svg
-              width="16"
-              height="16"
               viewBox="0 0 24 24"
               fill="none"
-              className="text-zinc-200"
+              className="w-3 h-3 md:w-4 md:h-4 text-zinc-200"
             >
               <path
                 d="M9 6L15 12L9 18"
@@ -144,25 +142,25 @@ export default function ProjectsPage() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-zinc-200 text-sm font-semibold font-['Pretendard']">
+            <span className="text-zinc-200 text-xs md:text-sm font-normal font-pretendard">
               프로젝트
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-6xl font-black text-slate-50 font-['Pretendard'] leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-slate-50 font-pretendard leading-tight">
             프로젝트
           </h1>
         </div>
 
         {/* Filter Tabs */}
-        <div className="max-w-[1440px] mx-auto px-8 mb-16">
-          <div className="flex gap-4 border-b border-neutral-700 pb-4 overflow-x-auto md:overflow-x-visible scrollbar-hide">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 mb-16">
+          <div className="flex gap-2 md:gap-4 border-b border-neutral-700 pb-4 overflow-x-auto md:overflow-x-visible scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-3 text-base md:text-2xl font-['Pretendard'] transition-all whitespace-nowrap flex-shrink-0 ${
+                className={`px-2 md:px-4 py-3 text-base md:text-2xl font-pretendard transition-all whitespace-nowrap flex-shrink-0 ${
                   activeCategory === cat
                     ? "border-b-4 border-sky-400 text-neutral-50 font-bold"
                     : "text-neutral-50 font-medium hover:text-sky-400"
@@ -175,7 +173,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="max-w-[1440px] mx-auto px-8 mb-16">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <div
@@ -199,9 +197,9 @@ export default function ProjectsPage() {
                 {/* Info */}
                 <div className="px-4 py-2 flex flex-col gap-2">
                   <div className="flex justify-between items-start gap-4">
-                    <h3 className="text-xl font-semibold text-neutral-50 font-['Pretendard'] line-clamp-2 group-hover:text-sky-400 transition-colors">
+                    <h2 className="text-xl font-semibold text-neutral-50 font-pretendard line-clamp-2 group-hover:text-sky-400 transition-colors">
                       {project.title}
-                    </h3>
+                    </h2>
                     <svg
                       width="24"
                       height="24"
@@ -220,7 +218,7 @@ export default function ProjectsPage() {
                       />
                     </svg>
                   </div>
-                  <p className="text-base font-semibold text-neutral-400 font-['Pretendard']">
+                  <p className="text-base font-semibold text-neutral-400 font-pretendard">
                     개발 · 디자인
                   </p>
                 </div>
@@ -233,7 +231,7 @@ export default function ProjectsPage() {
         {filteredProjects.length > 9 && (
           <div className="flex justify-center mb-32">
             <button className="px-3 py-1.5 rounded-full border border-white flex justify-center items-center gap-2.5 hover:bg-white/10 transition-colors group">
-              <span className="text-white text-lg font-semibold font-['Pretendard'] leading-7 group-hover:text-sky-400">
+              <span className="text-white text-lg font-semibold font-pretendard leading-7 group-hover:text-sky-400">
                 More
               </span>
               <svg
