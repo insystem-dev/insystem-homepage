@@ -428,16 +428,9 @@ export default function AboutPage() {
                         index > 0 ? "-ml-[4.545%]" : ""
                       }`}
                     >
-                      <h2
-                        className="text-base font-bold font-pretendard text-center"
-                        style={{
-                          backgroundImage:
-                            "linear-gradient(to right, #2FA7FF, #A9C7DD)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }}
-                      >
+                      {/* 모바일은 그라데이션(배경) 대신 단색 텍스트 색을 쓴다.
+                          강제 다크모드가 배경을 어둡게 처리해 글자가 묻히는 것을 피하기 위함. */}
+                      <h2 className="text-base font-bold font-pretendard text-center text-[#2FA7FF]">
                         {item.title}
                       </h2>
                       <p className="w-[100px] text-center text-xs font-medium text-slate-50 font-pretendard leading-tight break-keep">
