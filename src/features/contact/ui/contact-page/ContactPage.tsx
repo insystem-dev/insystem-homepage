@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Footer, Gnb } from "@/widgets";
-import contactHeaderImage from "@/shared/styles/assets/image/page-header/page-header-img01.jpg";
+import contactHeaderImage from "@/shared/styles/assets/image/page-header/page-header-img01.webp";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

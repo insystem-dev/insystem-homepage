@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
-import logo from "../../shared/styles/assets/image/logo.png";
+import logo from "../../shared/styles/assets/image/logo.webp";
 
 export const Gnb = () => {
   const router = useRouter();

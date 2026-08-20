@@ -3,14 +3,14 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Gnb } from "@/widgets";
-import sectionHealth from "@/shared/styles/assets/image/section-health.png";
-import sectionPort from "@/shared/styles/assets/image/section-port.jpg";
-import sectionSmart from "@/shared/styles/assets/image/section-smart.png";
-import history2025 from "@/shared/styles/assets/image/history-2025.png";
-import history2022 from "@/shared/styles/assets/image/history-2022.jpg";
-import history2021 from "@/shared/styles/assets/image/history-2021.png";
-import history2020 from "@/shared/styles/assets/image/history-2020.png";
-import history2016 from "@/shared/styles/assets/image/history-2016.png";
+import sectionHealth from "@/shared/styles/assets/image/section-health.webp";
+import sectionPort from "@/shared/styles/assets/image/section-port.webp";
+import sectionSmart from "@/shared/styles/assets/image/section-smart.webp";
+import history2025 from "@/shared/styles/assets/image/history-2025.webp";
+import history2022 from "@/shared/styles/assets/image/history-2022.webp";
+import history2021 from "@/shared/styles/assets/image/history-2021.webp";
+import history2020 from "@/shared/styles/assets/image/history-2020.webp";
+import history2016 from "@/shared/styles/assets/image/history-2016.webp";
 import { Footer } from "@/widgets";
 
 type HistoryEntry = {

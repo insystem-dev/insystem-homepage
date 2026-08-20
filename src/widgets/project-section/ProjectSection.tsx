@@ -3,15 +3,15 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import project1 from "@/shared/styles/assets/image/project1.png";
-import project2 from "@/shared/styles/assets/image/project2.png";
-import project3 from "@/shared/styles/assets/image/project3.png";
-import project4 from "@/shared/styles/assets/image/project4.png";
-import project5 from "@/shared/styles/assets/image/project5.png";
-import project6 from "@/shared/styles/assets/image/project6.png";
-import project7 from "@/shared/styles/assets/image/project7.png";
-import project8 from "@/shared/styles/assets/image/project8.png";
-import project9 from "@/shared/styles/assets/image/project9.png";
+import project1 from "@/shared/styles/assets/image/project1.webp";
+import project2 from "@/shared/styles/assets/image/project2.webp";
+import project3 from "@/shared/styles/assets/image/project3.webp";
+import project4 from "@/shared/styles/assets/image/project4.webp";
+import project5 from "@/shared/styles/assets/image/project5.webp";
+import project6 from "@/shared/styles/assets/image/project6.webp";
+import project7 from "@/shared/styles/assets/image/project7.webp";
+import project8 from "@/shared/styles/assets/image/project8.webp";
+import project9 from "@/shared/styles/assets/image/project9.webp";
 
 // 모바일에서 온전히 노출할 프로젝트 개수
 const MOBILE_VISIBLE_COUNT = 4;

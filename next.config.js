@@ -11,7 +11,9 @@ const nextConfig = {
   images: {
     domains: ["philip-api.insystem.kr", "localhost"],
     formats: ["image/avif", "image/webp"],
-    unoptimized: process.env.NODE_ENV === "development",
+    // 에셋을 WebP 로 사전 최적화했으므로 Vercel Image Optimization 을 사용하지 않는다.
+    // (최적화 쿼터 소진 시 /_next/image 가 402 를 반환해 이미지가 깨지던 문제 회피)
+    unoptimized: true,
   },
   webpack: (config) => {
     config.module.rules.push({

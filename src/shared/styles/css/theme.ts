@@ -1,10 +1,10 @@
 import { DefaultTheme } from "styled-components";
-import AboutBG from "../assets/image/page-header/page-header-img01.jpg";
-import HealthBG from "../assets/image/page-header/page-header-img0201.jpg";
-import PortBG from "../assets/image/page-header/page-header-img0202.jpg";
-import SiBG from "../assets/image/page-header/page-header-img0203.jpg";
-import NoticeBG from "../assets/image/page-header/page-header-img03.jpg";
-import InquiryBG from "../assets/image/page-header/page-header-img04.jpg";
+import AboutBG from "../assets/image/page-header/page-header-img01.webp";
+import HealthBG from "../assets/image/page-header/page-header-img0201.webp";
+import PortBG from "../assets/image/page-header/page-header-img0202.webp";
+import SiBG from "../assets/image/page-header/page-header-img0203.webp";
+import NoticeBG from "../assets/image/page-header/page-header-img03.webp";
+import InquiryBG from "../assets/image/page-header/page-header-img04.webp";
 
 export const theme: DefaultTheme = {
   gradient: {

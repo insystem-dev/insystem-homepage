@@ -2,35 +2,35 @@ import { StaticImageData } from "next/image";
 import { ProjectDetailProps } from "@/features/projects/types/project-detail";
 
 // Import all project detail images
-import shipoperationContent from "@/shared/styles/assets/image/shipoperation-detail.png";
-import dnmesContent from "@/shared/styles/assets/image/dnmes-detail.png";
-import tigerContent from "@/shared/styles/assets/image/tiger-detail.png";
-import tmsContent from "@/shared/styles/assets/image/tms-detail.png";
-import portqmContent from "@/shared/styles/assets/image/portqm-detail.png";
-import routinecareContent from "@/shared/styles/assets/image/routinecare-detail.png";
-import diabetesContent from "@/shared/styles/assets/image/diabetesfree-detail.png";
-import spinehealthContent from "@/shared/styles/assets/image/spinehealth-detail.png";
-import smartshoesContent from "@/shared/styles/assets/image/smartshoes-detail.png";
+import shipoperationContent from "@/shared/styles/assets/image/shipoperation-detail.webp";
+import dnmesContent from "@/shared/styles/assets/image/dnmes-detail.webp";
+import tigerContent from "@/shared/styles/assets/image/tiger-detail.webp";
+import tmsContent from "@/shared/styles/assets/image/tms-detail.webp";
+import portqmContent from "@/shared/styles/assets/image/portqm-detail.webp";
+import routinecareContent from "@/shared/styles/assets/image/routinecare-detail.webp";
+import diabetesContent from "@/shared/styles/assets/image/diabetesfree-detail.webp";
+import spinehealthContent from "@/shared/styles/assets/image/spinehealth-detail.webp";
+import smartshoesContent from "@/shared/styles/assets/image/smartshoes-detail.webp";
 // Import all project thumb images
-import shipoperationThumb from "@/shared/styles/assets/image/shipoperation-thumb-1920.png";
-import dnmesThumb from "@/shared/styles/assets/image/dnmes-thumb-1920.png";
-import tigerThumb from "@/shared/styles/assets/image/tiger-thumb-1920.png";
-import tmsThumb from "@/shared/styles/assets/image/tms-thumb-1920.png";
-import portqmThumb from "@/shared/styles/assets/image/portqm-thumb-1920.png";
-import routinecareThumb from "@/shared/styles/assets/image/routinecare-thumb-1920.png";
-import diabetesThumb from "@/shared/styles/assets/image/diabetesfree-thumb-1920.png";
-import spinehealthThumb from "@/shared/styles/assets/image/spinehealth-thumb-1920.png";
-import smartshoesThumb from "@/shared/styles/assets/image/smartshoes-thumb-1920.png";
+import shipoperationThumb from "@/shared/styles/assets/image/shipoperation-thumb-1920.webp";
+import dnmesThumb from "@/shared/styles/assets/image/dnmes-thumb-1920.webp";
+import tigerThumb from "@/shared/styles/assets/image/tiger-thumb-1920.webp";
+import tmsThumb from "@/shared/styles/assets/image/tms-thumb-1920.webp";
+import portqmThumb from "@/shared/styles/assets/image/portqm-thumb-1920.webp";
+import routinecareThumb from "@/shared/styles/assets/image/routinecare-thumb-1920.webp";
+import diabetesThumb from "@/shared/styles/assets/image/diabetesfree-thumb-1920.webp";
+import spinehealthThumb from "@/shared/styles/assets/image/spinehealth-thumb-1920.webp";
+import smartshoesThumb from "@/shared/styles/assets/image/smartshoes-thumb-1920.webp";
 // Import all project thumb mobile images
-import shipoperationThumbM from "@/shared/styles/assets/image/shipoperation-thumb-1080.png";
-import dnmesThumbM from "@/shared/styles/assets/image/dnmes-thumb-1080.png";
-import tigerThumbM from "@/shared/styles/assets/image/tiger-thumb-1080.png";
-import tmsThumbM from "@/shared/styles/assets/image/tms-thumb-1080.png";
-import portqmThumbM from "@/shared/styles/assets/image/portqm-thumb-1080.png";
-import routinecareThumbM from "@/shared/styles/assets/image/routinecare-thumb-1080.png";
-import diabetesThumbM from "@/shared/styles/assets/image/diabetesfree-thumb-1080.png";
-import spinehealthThumbM from "@/shared/styles/assets/image/spinehealth-thumb-1080.png";
-import smartshoesThumbM from "@/shared/styles/assets/image/smartshoes-thumb-1080.png";
+import shipoperationThumbM from "@/shared/styles/assets/image/shipoperation-thumb-1080.webp";
+import dnmesThumbM from "@/shared/styles/assets/image/dnmes-thumb-1080.webp";
+import tigerThumbM from "@/shared/styles/assets/image/tiger-thumb-1080.webp";
+import tmsThumbM from "@/shared/styles/assets/image/tms-thumb-1080.webp";
+import portqmThumbM from "@/shared/styles/assets/image/portqm-thumb-1080.webp";
+import routinecareThumbM from "@/shared/styles/assets/image/routinecare-thumb-1080.webp";
+import diabetesThumbM from "@/shared/styles/assets/image/diabetesfree-thumb-1080.webp";
+import spinehealthThumbM from "@/shared/styles/assets/image/spinehealth-thumb-1080.webp";
+import smartshoesThumbM from "@/shared/styles/assets/image/smartshoes-thumb-1080.webp";
 
 export interface ProjectData extends ProjectDetailProps {
   slug: string;

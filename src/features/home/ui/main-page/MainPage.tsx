@@ -4,15 +4,15 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Footer, ProjectSection } from "@/widgets";
-import bgCard1 from "@/shared/styles/assets/image/bg-card1.png";
-import bgCard2 from "@/shared/styles/assets/image/bg-card2.png";
-import bgCard3 from "@/shared/styles/assets/image/bg-card3.png";
-import bgCard1Hover from "@/shared/styles/assets/image/bg-card1-hover.png";
-import bgCard2Hover from "@/shared/styles/assets/image/bg-card2-hover.png";
-import bgCard3Hover from "@/shared/styles/assets/image/bg-card3-hover.png";
-import process1 from "@/shared/styles/assets/image/process1.png";
-import process2 from "@/shared/styles/assets/image/process2.png";
-import process3 from "@/shared/styles/assets/image/process3.png";
+import bgCard1 from "@/shared/styles/assets/image/bg-card1.webp";
+import bgCard2 from "@/shared/styles/assets/image/bg-card2.webp";
+import bgCard3 from "@/shared/styles/assets/image/bg-card3.webp";
+import bgCard1Hover from "@/shared/styles/assets/image/bg-card1-hover.webp";
+import bgCard2Hover from "@/shared/styles/assets/image/bg-card2-hover.webp";
+import bgCard3Hover from "@/shared/styles/assets/image/bg-card3-hover.webp";
+import process1 from "@/shared/styles/assets/image/process1.webp";
+import process2 from "@/shared/styles/assets/image/process2.webp";
+import process3 from "@/shared/styles/assets/image/process3.webp";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -308,7 +308,7 @@ export default function MainPage() {
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center gap-4 md:gap-8">
           {/* Main Title — h1 은 페이지당 하나로 유지 */}
-          <h1 className="max-w-full md:w-[694px] text-center text-slate-50 text-[2rem] sm:text-4xl md:text-6xl lg:text-7xl font-bold font-pretendard leading-snug">
+          <h1 className="max-w-full md:w-[694px] text-center text-slate-50 text-[2rem] sm:text-4xl md:text-6xl lg:text-7xl font-bold font-pretendard leading-snug sm:leading-tight md:leading-tight lg:leading-tight">
             인간 중심의 기술,
             <br />
             현장을 이해하는 개발
