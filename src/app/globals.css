@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 사이트가 자체 다크 테마를 갖고 있음을 브라우저에 알린다.
+   선언이 없으면 Android Chrome 의 Auto Dark Theme 이 페이지 색을 임의로
+   반전시켜, CSS 필터로 흰색 처리한 로고가 다시 어둡게 표시된다. */
+:root {
+  color-scheme: dark;
+}
+
+/* 사이트가 다크 테마를 직접 처리한다는 신호.
+   삼성 인터넷 / Chrome 등의 강제 다크모드는 이 선언이 있으면
+   자체 색 반전 알고리즘을 적용하지 않는다. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0a0e27;
+    color: #fafafa;
+  }
+}
+
+/* Pretendard Variable self-host (SIL OFL 1.1).
+   가변 폰트 하나로 45~920 weight 를 모두 커버한다.
+   next/font 는 SWC 가 필요한데 이 프로젝트는 styled-components 용
+   커스텀 .babelrc 를 쓰고 있어 @font-face 로 직접 선언한다. */
+@font-face {
+  font-family: "Pretendard";
+  /* woff2-variations 를 인식하지 못하는 구형 Safari 를 위해 woff2 도 함께 선언한다 */
+  src: url("/fonts/PretendardVariable.woff2") format("woff2-variations"),
+    url("/fonts/PretendardVariable.woff2") format("woff2");
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Scroll animation - 전체 섹션 */
 @keyframes slideUpIn {
   from {
@@ -32,28 +67,6 @@
 
 .section-description.scroll-animate {
   animation: slideUpIn 0.8s ease-out 0.1s forwards;
-}
-
-/* 비즈니스 카드들 - 초기 상태: 숨김 */
-.business-card {
-  opacity: 0;
-  transform: translateY(60px);
-}
-
-.business-card.scroll-animate {
-  animation: slideUpIn 0.8s ease-out forwards;
-}
-
-.business-card:nth-child(1).scroll-animate {
-  animation-delay: 0.2s;
-}
-
-.business-card:nth-child(2).scroll-animate {
-  animation-delay: 0.3s;
-}
-
-.business-card:nth-child(3).scroll-animate {
-  animation-delay: 0.4s;
 }
 
 /* 프로젝트 아이템들 - 초기 상태: 숨김 */
@@ -112,20 +125,248 @@
   animation: slideUpIn 0.8s ease-out 0.6s forwards;
 }
 
-/* Process 아이템 자식들 */
-[data-process-item] > div {
+/* Project 섹션 — 모바일에서 다음 아이템을 살짝 보여주고 아래로 흐리게 사라지게 한다.
+   단색 오버레이 대신 mask 를 써서 섹션 배경 그라데이션이 그대로 비치게 한다. */
+@media (max-width: 767px) {
+  /* flex 컨테이너에 max-height 를 주면 자식이 clip 되지 않고 압축된다.
+     (이미지가 정사각 -> 납작하게 찌그러지고 제목까지 노출됨)
+     자식의 shrink 를 막아야 자연 크기를 유지한 채 잘린다. */
+  .project-item-peek > * {
+    flex-shrink: 0;
+  }
+
+  .project-item-peek {
+    max-height: var(--peek-h, 160px);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 30%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 30%,
+      transparent 100%
+    );
+  }
+}
+
+/* ============================================================
+   Process — 화면 전체를 하나의 고정 scene 으로 두고
+   같은 좌표에서 비주얼/텍스트만 전환한다.
+   레이아웃 좌표(타이틀, 비주얼, 세로선, 여백)는 건드리지 않는다.
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  .process-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    /* 기존 섹션 md:py-32 의 상단 값을 그대로 옮겨 h2 의 Y 좌표를 유지한다 */
+    padding-top: 8rem;
+    overflow: hidden;
+  }
+
+  .process-scroll-track {
+    position: relative;
+  }
+
+  /* 3단계 × 90vh = 270vh 의 진행 거리 */
+  .process-step {
+    height: 90vh;
+  }
+}
+
+/* 비주얼 전환 — 프레임은 고정, 이미지 내부에서만 crossfade.
+   translate 는 사용하지 않는다(위치 이동 금지). */
+.process-visual-layer {
   opacity: 0;
-  transform: translateY(60px);
+  filter: blur(10px);
+  transform: scale(0.97);
+  transition: opacity 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-[data-process-item].animate-in > div:nth-child(1) {
-  animation: slideUpIn 0.8s ease-out 0.1s forwards !important;
+.process-visual-layer.is-active {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
 }
 
-[data-process-item].animate-in > div:nth-child(2) {
-  animation: slideUpIn 0.8s ease-out 0.2s forwards !important;
+/* 텍스트 전환 — 좌표 유지, 미세한 blur / opacity / translateY 만 */
+.process-text {
+  transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-[data-process-item].animate-in > div:nth-child(3) {
-  animation: slideUpIn 0.8s ease-out 0.3s forwards !important;
+/* 진입 전 — 아래에서 올라오며 나타나도록 시작 지점을 잡는다 */
+.process-text[data-phase="idle"] {
+  opacity: 0;
+  filter: blur(3px);
+  transform: translateY(6px);
+}
+
+.process-text[data-phase="out"] {
+  opacity: 0;
+  filter: blur(3px);
+  transform: translateY(-4px);
+}
+
+.process-text[data-phase="in"] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-visual-layer {
+    filter: none;
+    transform: none;
+  }
+
+  .process-visual-layer.is-active {
+    filter: none;
+    transform: none;
+  }
+
+  .process-text[data-phase="idle"],
+  .process-text[data-phase="out"],
+  .process-text[data-phase="in"] {
+    filter: none;
+    transform: none;
+  }
+}
+
+
+/* ============================================================
+   Business 카드 전용 모션
+   - appear: IntersectionObserver 자동 재생이 아니라
+             GSAP ScrollTrigger(pin + scrub) 기반 scroll-linked 이동.
+             카드 transform 은 JS 가 소유하므로 CSS 로 건드리지 않는다.
+   - hover : normal <-> hover 이미지 crossfade
+   ============================================================ */
+
+.business-section {
+  position: relative;
+  /* 모바일 카드 높이. md 이상은 아래에서 디자인 원본 608px 로 덮어쓴다. */
+  --business-card-h: 420px;
+}
+
+/* 디자인 원본 카드 높이. 뷰포트에 따라 축소하지 않는다. */
+@media (min-width: 768px) {
+  .business-section {
+    --business-card-h: 608px;
+  }
+}
+
+/* pin 되는 무대. 이 안에서 title / line 은 고정, 카드만 움직인다. */
+.business-stage {
+  position: relative;
+  padding: 48px 0;
+}
+
+@media (min-width: 768px) {
+  .business-stage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 카드를 축소하지 않으므로, 장면이 한 화면보다 크면 stage 가 그만큼 커진다 */
+    min-height: 100vh;
+    /* 시작 위치(화면 아래)의 카드를 가려주는 clipping. 이것 자체가 reveal 이다. */
+    overflow: hidden;
+  }
+}
+
+/* 그리드 셀. 계단 오프셋을 소유하며 스크롤 모션에는 관여하지 않는다. */
+.business-col {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .business-col {
+    margin-top: var(--card-offset, 0px);
+  }
+}
+
+/* 스크롤 progress 로 translateY 되는 대상. transform 은 GSAP 이 소유한다.
+   opacity 로 숨기지 않는다 — 처음부터 불투명하고, 화면 밖에 있을 뿐이다. */
+.business-card {
+  position: relative;
+  height: var(--business-card-h);
+  will-change: transform;
+}
+
+.business-card-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* normal / hover 이미지는 같은 자리에 겹쳐 둔다 */
+.business-card-front,
+.business-card-hover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.business-card-front {
+  opacity: 1;
+}
+
+.business-card-hover {
+  opacity: 0;
+}
+
+.business-card-outline {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hover 는 정밀 포인터 환경에서만. 터치 기기에는 가짜 hover 를 만들지 않는다 */
+@media (hover: hover) and (pointer: fine) {
+  /* 두 이미지는 확대/축소 없이 원본 크기 그대로 opacity 만 교차한다.
+     in / out 모두 1200ms 동일. */
+  .business-card-front,
+  .business-card-hover {
+    transition: opacity 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .business-card-outline {
+    transition: opacity 380ms ease;
+  }
+
+  .business-card:hover .business-card-front,
+  .business-card:focus-visible .business-card-front {
+    opacity: 0;
+  }
+
+  .business-card:hover .business-card-hover,
+  .business-card:focus-visible .business-card-hover {
+    opacity: 1;
+  }
+
+  .business-card:hover .business-card-outline,
+  .business-card:focus-visible .business-card-outline {
+    opacity: 1;
+    transition: opacity 450ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* crossfade / outline 은 이동이 없는 순수 fade 라 그대로 둔다. */
+  .business-card-front,
+  .business-card-hover,
+  .business-card-outline {
+    transform: none;
+  }
 }

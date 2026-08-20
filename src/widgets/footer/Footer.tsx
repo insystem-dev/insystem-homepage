@@ -2,6 +2,7 @@
 
 import React from "react";
 import FooterLogo from "@/shared/styles/assets/svg/footer-logo.svg";
+import IconChevronUp from "@/shared/styles/assets/svg/icon-chevron-up.svg";
 
 export const Footer = () => {
   const handleGoToTop = () => {
@@ -12,15 +13,15 @@ export const Footer = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-b from-black to-sky-950 py-16 px-8">
+    <div className="w-full bg-gradient-to-b from-black to-sky-950 py-16 px-4 md:px-8">
       <div className="max-w-[1440px] mx-auto">
         {/* Top Section with Policy Links and Go Top */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12 pb-8 sm:pb-12 border-b border-neutral-700 gap-4">
           <div className="flex gap-4 sm:gap-10 text-xs sm:text-base">
-            <div className="text-neutral-200 font-medium font-['Pretendard'] cursor-pointer hover:text-neutral-50">
+            <div className="text-neutral-200 font-medium font-pretendard cursor-pointer hover:text-neutral-50">
               이용약관
             </div>
-            <div className="text-neutral-200 font-medium font-['Pretendard'] cursor-pointer hover:text-neutral-50">
+            <div className="text-neutral-200 font-medium font-pretendard cursor-pointer hover:text-neutral-50">
               개인정보 처리방침
             </div>
           </div>
@@ -29,19 +30,11 @@ export const Footer = () => {
             className="flex items-center gap-2 cursor-pointer hover:opacity-80"
             onClick={handleGoToTop}
           >
-            <div className="text-neutral-50 text-lg sm:text-2xl font-bold font-['Pretendard']">
+            <div className="text-neutral-50 text-lg sm:text-2xl font-bold font-pretendard">
               GO TOP
             </div>
             <div className="w-5 h-5 sm:w-6 sm:h-6 relative flex items-center justify-center">
-              <svg
-                className="w-64 h-8 animate-bounce"
-                viewBox="4 -12 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="5"
-              >
-                <polyline points="6 9 12 3 18 9"></polyline>
-              </svg>
+              <IconChevronUp className="w-full h-full" />
             </div>
           </div>
         </div>
@@ -53,14 +46,14 @@ export const Footer = () => {
             <div className="flex flex-col gap-4 md:gap-6">
               {/* Company Info */}
               <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2.5">
-                <div className="text-neutral-50 text-sm sm:text-base font-bold font-['Pretendard']">
+                <div className="text-neutral-50 text-sm sm:text-base font-bold font-pretendard">
                   (주)인시스템
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="text-neutral-400 text-xs sm:text-sm font-normal font-['Pretendard']">
+                  <div className="text-neutral-400 text-xs sm:text-sm font-normal font-pretendard">
                     대표
                   </div>
-                  <div className="text-neutral-50 text-xs sm:text-sm font-normal font-['Pretendard']">
+                  <div className="text-neutral-50 text-xs sm:text-sm font-normal font-pretendard">
                     이근익
                   </div>
                 </div>
@@ -68,10 +61,10 @@ export const Footer = () => {
 
               {/* Address */}
               <div className="flex flex-col sm:flex-row sm:gap-2">
-                <div className="text-neutral-400 text-xs sm:text-sm font-normal font-['Pretendard'] whitespace-nowrap">
+                <div className="text-neutral-400 text-xs sm:text-sm font-normal font-pretendard whitespace-nowrap">
                   주소
                 </div>
-                <div className="text-neutral-50 text-xs sm:text-sm font-normal font-['Pretendard']">
+                <div className="text-neutral-50 text-xs sm:text-sm font-normal font-pretendard">
                   부산광역시 동구 조방로 22, 8층 803호 (범일동, 파크빌딩)
                 </div>
               </div>
@@ -80,10 +73,10 @@ export const Footer = () => {
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
                   <div className="flex items-center gap-1">
-                    <div className="text-neutral-400 font-normal font-['Pretendard']">
+                    <div className="text-neutral-400 font-normal font-pretendard">
                       E-Mail
                     </div>
-                    <div className="text-neutral-50 font-normal font-['Pretendard']">
+                    <div className="text-neutral-50 font-normal font-pretendard">
                       help@insystem.kr
                     </div>
                   </div>
@@ -91,10 +84,10 @@ export const Footer = () => {
                   <div className="text-neutral-400">|</div>
 
                   <div className="flex items-center gap-1">
-                    <div className="text-neutral-400 font-normal font-['Pretendard']">
+                    <div className="text-neutral-400 font-normal font-pretendard">
                       대표전화
                     </div>
-                    <div className="text-neutral-50 font-normal font-['Pretendard']">
+                    <div className="text-neutral-50 font-normal font-pretendard">
                       051-714-6120
                     </div>
                   </div>
@@ -102,10 +95,10 @@ export const Footer = () => {
                   <div className="text-neutral-400">|</div>
 
                   <div className="flex items-center gap-1">
-                    <div className="text-neutral-400 font-normal font-['Pretendard']">
+                    <div className="text-neutral-400 font-normal font-pretendard">
                       FAX
                     </div>
-                    <div className="text-neutral-50 font-normal font-['Pretendard']">
+                    <div className="text-neutral-50 font-normal font-pretendard">
                       051-714-6121
                     </div>
                   </div>
@@ -113,10 +106,10 @@ export const Footer = () => {
 
                 <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
                   <div className="flex items-center gap-1">
-                    <div className="text-neutral-400 font-normal font-['Pretendard']">
+                    <div className="text-neutral-400 font-normal font-pretendard">
                       법인등록번호
                     </div>
-                    <div className="text-neutral-50 font-normal font-['Pretendard']">
+                    <div className="text-neutral-50 font-normal font-pretendard">
                       194211-0253914
                     </div>
                   </div>
@@ -124,10 +117,10 @@ export const Footer = () => {
                   <div className="text-neutral-400">|</div>
 
                   <div className="flex items-center gap-1">
-                    <div className="text-neutral-400 font-normal font-['Pretendard']">
+                    <div className="text-neutral-400 font-normal font-pretendard">
                       사업자등록번호
                     </div>
-                    <div className="text-neutral-50 font-normal font-['Pretendard']">
+                    <div className="text-neutral-50 font-normal font-pretendard">
                       536-86-00366
                     </div>
                   </div>
@@ -135,7 +128,7 @@ export const Footer = () => {
               </div>
 
               {/* Copyright */}
-              <div className="text-neutral-500 text-xs sm:text-sm font-normal font-['Pretendard'] pt-2 sm:pt-4">
+              <div className="text-neutral-500 text-xs sm:text-sm font-normal font-pretendard pt-2 sm:pt-4">
                 Copyright ⓒ INSYSTEM. All Rights Reserved.
               </div>
             </div>

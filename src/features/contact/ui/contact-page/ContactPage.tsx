@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
+const EMAIL_RE = /^[^s@]+@[^s@]+.[^s@]{2,}$/;
 import Image from "next/image";
 import { Footer, Gnb } from "@/widgets";
-import contactHeaderImage from "@/shared/styles/assets/image/page-header/page-header-img01.jpg";
+import contactHeaderImage from "@/shared/styles/assets/image/page-header/page-header-img01.webp";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,6 +15,8 @@ export default function ContactPage() {
     company: "",
     subject: "",
     message: "",
+    // 허니팟 — 사람에게는 보이지 않는 필드. 봇이 채우면 서버에서 걸러낸다.
+    website: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -35,6 +39,13 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!EMAIL_RE.test(formData.email.trim())) {
+      setError("이메일 형식이 올바르지 않습니다.");
+      setTimeout(() => setError(null), 5000);
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -63,6 +74,7 @@ export default function ContactPage() {
           company: "",
           subject: "",
           message: "",
+          website: "",
         });
       }, 3000);
     } catch (err) {
@@ -90,7 +102,7 @@ export default function ContactPage() {
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center font-['Pretendard']">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center font-pretendard">
               Contact Us
             </h1>
           </div>
@@ -103,10 +115,10 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="flex flex-col gap-8">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-neutral-100 mb-8 font-['Pretendard']">
-                    Get in Touch
+                  <h2 className="text-2xl md:text-3xl font-bold text-neutral-100 mb-8 font-pretendard">
+                    Contact
                   </h2>
-                  <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-['Pretendard']">
+                  <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-pretendard">
                     프로젝트 문의, 협력 제안, 기술 상담 등 다양한 주제로
                     저희에게 연락주세요. 빠른 시간 내에 답변해드리겠습니다.
                   </p>
@@ -116,7 +128,7 @@ export default function ContactPage() {
                   {/* Contact Info Items */}
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500/20">
                         <svg
                           className="h-6 w-6 text-white"
                           fill="none"
@@ -133,10 +145,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-neutral-100 font-['Pretendard']">
+                      <h3 className="text-lg font-semibold text-neutral-100 font-pretendard">
                         Email
                       </h3>
-                      <p className="text-neutral-300 font-['Pretendard']">
+                      <p className="text-neutral-300 font-pretendard">
                         help@insystem.kr
                       </p>
                     </div>
@@ -144,7 +156,7 @@ export default function ContactPage() {
 
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500/20">
                         <svg
                           className="h-6 w-6 text-white"
                           fill="none"
@@ -161,10 +173,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-neutral-100 font-['Pretendard']">
+                      <h3 className="text-lg font-semibold text-neutral-100 font-pretendard">
                         Phone
                       </h3>
-                      <p className="text-neutral-300 font-['Pretendard']">
+                      <p className="text-neutral-300 font-pretendard">
                         051-714-6120
                       </p>
                     </div>
@@ -172,7 +184,7 @@ export default function ContactPage() {
 
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500/20">
                         <svg
                           className="h-6 w-6 text-white"
                           fill="none"
@@ -195,10 +207,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-neutral-100 font-['Pretendard']">
+                      <h3 className="text-lg font-semibold text-neutral-100 font-pretendard">
                         Address
                       </h3>
-                      <p className="text-neutral-300 font-['Pretendard']">
+                      <p className="text-neutral-300 font-pretendard">
                         부산광역시 동구 조방로 22, 8층 803호 (범일동, 파크빌딩)
                       </p>
                     </div>
@@ -209,11 +221,22 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* 허니팟 — 화면과 스크린리더 양쪽에서 숨긴다 */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleInputChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute h-0 w-0 overflow-hidden opacity-0"
+                  />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Name
                       </label>
@@ -224,14 +247,14 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Email
                       </label>
@@ -242,7 +265,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -252,7 +275,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Phone
                       </label>
@@ -262,14 +285,14 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="+82-10-0000-0000"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="company"
-                        className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                        className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                       >
                         Company
                       </label>
@@ -279,7 +302,7 @@ export default function ContactPage() {
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                        className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                         placeholder="Your company"
                       />
                     </div>
@@ -288,7 +311,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                      className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                     >
                       Subject
                     </label>
@@ -299,7 +322,7 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-['Pretendard']"
+                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors font-pretendard"
                       placeholder="Subject"
                     />
                   </div>
@@ -307,7 +330,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-neutral-100 mb-2 font-['Pretendard']"
+                      className="block text-sm font-medium text-neutral-100 mb-2 font-pretendard"
                     >
                       Message
                     </label>
@@ -318,7 +341,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors resize-none font-['Pretendard']"
+                      className="w-full px-4 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-50 placeholder-neutral-500 focus:outline-none focus:border-blue-500 transition-colors resize-none font-pretendard"
                       placeholder="Your message..."
                     />
                   </div>
@@ -326,19 +349,19 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors font-['Pretendard']"
+                    className="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors font-pretendard"
                   >
                     {loading ? "전송 중..." : "Send Message"}
                   </button>
 
                   {error && (
-                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm font-['Pretendard']">
+                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm font-pretendard">
                       {error}
                     </div>
                   )}
 
                   {submitted && (
-                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm font-['Pretendard']">
+                    <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm font-pretendard">
                       메시지가 전송되었습니다. 감사합니다!
                     </div>
                   )}

@@ -4,6 +4,7 @@ import { Gnb } from "@/widgets";
 import { Analytics } from "./analytics";
 
 export const metadata = {
+  colorScheme: "dark",
   title: "INSYSTEM",
   description: "인시스템 홈페이지입니다.",
   openGraph: {
@@ -40,9 +41,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head />
-      <body className="bg-dark-950">
+    <html lang="ko">
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/PretendardVariable.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="bg-dark-950 font-pretendard">
         <Analytics />
         <Gnb />
         {children}
