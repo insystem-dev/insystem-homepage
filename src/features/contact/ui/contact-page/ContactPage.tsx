@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
+const EMAIL_RE = /^[^s@]+@[^s@]+.[^s@]{2,}$/;
 import Image from "next/image";
 import { Footer, Gnb } from "@/widgets";
 import contactHeaderImage from "@/shared/styles/assets/image/page-header/page-header-img01.webp";
@@ -13,6 +15,8 @@ export default function ContactPage() {
     company: "",
     subject: "",
     message: "",
+    // 허니팟 — 사람에게는 보이지 않는 필드. 봇이 채우면 서버에서 걸러낸다.
+    website: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -35,6 +39,13 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!EMAIL_RE.test(formData.email.trim())) {
+      setError("이메일 형식이 올바르지 않습니다.");
+      setTimeout(() => setError(null), 5000);
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -63,6 +74,7 @@ export default function ContactPage() {
           company: "",
           subject: "",
           message: "",
+          website: "",
         });
       }, 3000);
     } catch (err) {
@@ -104,7 +116,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-8">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-neutral-100 mb-8 font-pretendard">
-                    Get in Touch
+                    Contact
                   </h2>
                   <p className="text-neutral-300 text-base md:text-lg leading-relaxed font-pretendard">
                     프로젝트 문의, 협력 제안, 기술 상담 등 다양한 주제로
@@ -116,7 +128,7 @@ export default function ContactPage() {
                   {/* Contact Info Items */}
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500/70">
                         <svg
                           className="h-6 w-6 text-white"
                           fill="none"
@@ -144,7 +156,7 @@ export default function ContactPage() {
 
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500/70">
                         <svg
                           className="h-6 w-6 text-white"
                           fill="none"
@@ -172,7 +184,7 @@ export default function ContactPage() {
 
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500">
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500/70">
                         <svg
                           className="h-6 w-6 text-white"
                           fill="none"
@@ -209,6 +221,17 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* 허니팟 — 화면과 스크린리더 양쪽에서 숨긴다 */}
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleInputChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute h-0 w-0 overflow-hidden opacity-0"
+                  />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
