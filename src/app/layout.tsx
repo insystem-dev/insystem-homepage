@@ -4,6 +4,7 @@ import { Gnb } from "@/widgets";
 import { Analytics } from "./analytics";
 
 export const metadata = {
+  colorScheme: "dark",
   title: "INSYSTEM",
   description: "인시스템 홈페이지입니다.",
   openGraph: {

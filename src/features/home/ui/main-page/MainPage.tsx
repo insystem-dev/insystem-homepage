@@ -373,7 +373,7 @@ export default function MainPage() {
                           alt={`${card.alt} background`}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 33vw"
-                          className="object-cover"
+                          className="object-cover object-top"
                         />
                       </div>
 
@@ -383,7 +383,7 @@ export default function MainPage() {
                           alt={`${card.alt} hover`}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 33vw"
-                          className="object-cover"
+                          className="object-cover object-top"
                         />
                       </div>
 
