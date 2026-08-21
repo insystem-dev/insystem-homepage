@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 const EMAIL_RE = /^[^s@]+@[^s@]+.[^s@]{2,}$/;
 import Image from "next/image";
-import { Footer, Gnb } from "@/widgets";
+import { Footer } from "@/widgets";
 import contactHeaderImage from "@/shared/styles/assets/image/page-header/page-header-img01.webp";
 
 export default function ContactPage() {
@@ -89,7 +89,6 @@ export default function ContactPage() {
 
   return (
     <>
-      <Gnb />
       <main>
         {/* Header Section */}
         <section className="w-full h-96 md:h-[500px] relative">

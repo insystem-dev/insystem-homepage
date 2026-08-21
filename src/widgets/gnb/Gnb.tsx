@@ -47,6 +47,16 @@ export const Gnb = () => {
               회사소개
             </Link>
             <Link
+              href="/fde"
+              className={`p-2 text-center text-lg font-medium font-pretendard transition-colors ${
+                pathname === "/fde"
+                  ? "text-sky-400 font-bold"
+                  : "text-neutral-50 hover:text-blue-400"
+              }`}
+            >
+              FDE 서비스
+            </Link>
+            <Link
               href="/projects"
               className={`p-2 text-center text-lg font-medium font-pretendard transition-colors ${
                 pathname === "/projects"
@@ -63,7 +73,7 @@ export const Gnb = () => {
             onClick={() => router.push("/contact")}
             className="w-36 h-12 px-6 py-2 bg-neutral-100 hover:bg-white rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.20)] flex justify-center items-center transition-all duration-300"
           >
-            <span className="text-center text-neutral-800 text-xl font-bold font-pretendard">
+            <span className="text-center text-neutral-800 text-base font-bold font-pretendard">
               문의하기
             </span>
           </button>
@@ -121,6 +131,13 @@ export const Gnb = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             회사소개
+          </Link>
+          <Link
+            href="/fde"
+            className="p-3 text-center text-neutral-50 text-base font-medium font-pretendard hover:text-blue-400 hover:bg-gray-800 rounded-lg transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            FDE 서비스
           </Link>
           <Link
             href="/projects"

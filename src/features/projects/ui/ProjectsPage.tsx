@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Gnb } from "@/widgets";
 import { Footer } from "@/widgets";
 import project1 from "@/shared/styles/assets/image/project1.webp";
 import project2 from "@/shared/styles/assets/image/project2.webp";
@@ -113,19 +112,12 @@ export default function ProjectsPage() {
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-black to-sky-950 overflow-hidden">
-      {/* GNB */}
-      <div className="w-full pt-5 px-4 md:px-8 fixed top-0 z-50 flex justify-center">
-        <div className="w-full max-w-[1440px]">
-          <Gnb />
-        </div>
-      </div>
-
       {/* Main Content */}
-      <div className="w-full pt-32">
+      <div className="w-full pt-32 md:pt-56">
         {/* Page Title Section */}
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 mb-12">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 mb-24">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-[10px]">
             <span className="text-zinc-200 text-xs md:text-sm font-normal font-pretendard">
               홈
             </span>

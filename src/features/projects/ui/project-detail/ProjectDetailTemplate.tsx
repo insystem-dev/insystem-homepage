@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Footer, Gnb } from "@/widgets";
+import { Footer } from "@/widgets";
 import { ProjectDetailProps } from "@/features/projects/types/project-detail";
 
 export default function ProjectDetailTemplate({

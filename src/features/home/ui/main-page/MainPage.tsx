@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Footer, ProjectSection } from "@/widgets";
+import { useScrollReveal } from "@/shared/lib/useScrollReveal";
 import bgCard1 from "@/shared/styles/assets/image/bg-card1.webp";
 import bgCard2 from "@/shared/styles/assets/image/bg-card2.webp";
 import bgCard3 from "@/shared/styles/assets/image/bg-card3.webp";
@@ -144,54 +145,9 @@ export default function MainPage() {
     return () => window.clearTimeout(timer);
   }, [activeProcessIndex, processDisplayIndex]);
 
-  // 스크롤 애니메이션 Intersection Observer
-  //
-  // 관찰 대상에 직접 transform 이 걸리면 threshold 경계에서 intersection 상태가
-  // 계속 뒤집히고, exit 시 class 를 제거하면 그대로 re-trigger loop 가 된다.
-  // 그래서 (1) 진입 시 1회만 실행하고 바로 unobserve, class 는 제거하지 않으며
-  //        (2) 타이틀류는 움직이지 않는 부모 wrapper 를 관찰하고
-  //            transform 은 그 안의 title 에만 적용한다.
-  useEffect(() => {
-    // 관찰 대상(key) -> class 를 붙일 실제 애니메이션 대상(value)
-    const targets = new Map<Element, Element[]>();
-
-    const register = (observed: Element, animated: Element) => {
-      const list = targets.get(observed);
-      if (list) list.push(animated);
-      else targets.set(observed, [animated]);
-    };
-
-    // 타이틀 / 설명: 고정 wrapper 를 관찰해 observer 와 animated element 를 분리
-    document
-      .querySelectorAll(".section-title, .section-description")
-      .forEach((el) => register(el.parentElement ?? el, el));
-
-    // 개별 순차 등장이 필요한 요소는 자기 자신을 관찰 (one-shot 이라 loop 없음)
-    document
-      .querySelectorAll(".project-item, .project-button")
-      .forEach((el) => register(el, el));
-
-    const scrollObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          targets
-            .get(entry.target)
-            ?.forEach((el) => el.classList.add("scroll-animate"));
-
-          // one-shot: 한 번 등장하면 해제. 화면에서 벗어나도 되돌리지 않는다.
-          scrollObserver.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    targets.forEach((_animated, observed) => scrollObserver.observe(observed));
-    return () => scrollObserver.disconnect();
-  }, []);
+  // 스크롤 등장 애니메이션
+  // (.section-title / .section-description / .project-item / .project-button)
+  useScrollReveal();
 
   // Business 카드: 시간 기반 reveal 이 아니라 스크롤 진행량이 곧 progress 인
   // pinned scene. 섹션이 화면에 고정된 채, 스크롤한 만큼만 카드가 올라온다.
@@ -531,7 +487,7 @@ export default function MainPage() {
         <div className="w-full max-w-[1440px] mx-auto relative z-10">
           <div className="flex flex-col justify-center items-center gap-[15px] md:gap-8">
             {/* Top Section */}
-            <div className="flex flex-col justify-center items-center gap-0 md:gap-4">
+            <div className="flex flex-col justify-center items-center gap-0">
               <p className="text-center text-[14px] md:text-2xl font-semibold text-neutral-50 font-pretendard leading-[1.5] md:leading-9 tracking-normal">
                 디지털 헬스케어부터 산업·물류 플랫폼까지
               </p>
@@ -544,7 +500,7 @@ export default function MainPage() {
               onClick={() => router.push("/contact")}
               className="h-6 md:h-12 px-2 md:px-4 py-1 md:py-2 bg-neutral-100 hover:bg-neutral-200 rounded-[2px] md:rounded-lg shadow-[0px_0px_20px_0px_rgba(255,255,255,0.08)] inline-flex justify-center items-center gap-[5px] md:gap-2.5 transition-colors"
             >
-              <span className="text-neutral-800 text-[10px] md:text-xl font-bold font-pretendard tracking-normal">
+              <span className="text-neutral-800 text-[10px] md:text-base font-bold font-pretendard tracking-normal">
                 Contact us
               </span>
               <svg

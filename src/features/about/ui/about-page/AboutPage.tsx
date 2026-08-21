@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-import { Gnb } from "@/widgets";
 import sectionHealth from "@/shared/styles/assets/image/section-health.webp";
 import sectionPort from "@/shared/styles/assets/image/section-port.webp";
 import sectionSmart from "@/shared/styles/assets/image/section-smart.webp";
@@ -286,14 +285,11 @@ export default function AboutPage() {
   const router = useRouter();
   return (
     <div className="w-full min-h-screen">
-      {/* Header */}
-      <Gnb />
-
       {/* Hero Section */}
       <section className="w-full relative bg-gradient-to-b from-black to-sky-950 overflow-hidden px-4 md:px-8 min-h-auto md:min-h-screen lg:h-[1125px] flex flex-col justify-center pt-20 md:pt-20 py-12 md:py-0">
         <div className="max-w-[1440px] mx-auto w-full relative">
           {/* Breadcrumb */}
-          <div className="flex justify-start items-center mb-8 md:mb-0">
+          <div className="flex justify-start items-center mb-0">
             <div className="text-zinc-200 text-xs md:text-sm font-normal font-pretendard">
               홈
             </div>
@@ -315,7 +311,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-8 md:gap-4 lg:gap-4 pt-2">
+          <div className="flex flex-col gap-8 md:gap-4 lg:gap-4 pt-[10px]">
             {/* Top section: Left title + Right text */}
             <div className="grid grid-cols-1 lg:grid-cols-11 items-start gap-6 md:gap-0">
               {/* Left - Title only (30%) */}
@@ -326,9 +322,9 @@ export default function AboutPage() {
               </div>
 
               {/* Right - Main Description and Subtitle (70%) */}
-              <div className="flex flex-col gap-2 md:gap-2 lg:col-span-7">
+              <div className="flex flex-col gap-1 lg:col-span-7">
                 <div className="flex flex-col">
-                  <p className="text-xl md:text-3xl lg:text-5xl font-bold font-pretendard leading-tight tracking-wide">
+                  <p className="text-xl md:text-[32px] font-bold font-pretendard leading-tight tracking-wide">
                     <span className="text-sky-400">사람</span>
                     <span className="text-slate-50 ">
                       을 위한 기술로
@@ -337,14 +333,14 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xl md:text-3xl lg:text-5xl font-bold font-pretendard leading-tight tracking-wide">
+                  <p className="text-xl md:text-[32px] font-bold font-pretendard leading-tight tracking-wide">
                     <span className="text-sky-400">산업과 일상의 문제</span>
                     <span className="text-slate-50">를 해결합니다.</span>
                   </p>
                 </div>
 
                 {/* Description Text */}
-                <div className="text-xs md:text-base lg:text-lg text-zinc-200 font-normal font-pretendard leading-relaxed md:leading-8 py-6 md:py-10">
+                <div className="text-xs md:text-base lg:text-lg text-zinc-200 font-normal font-pretendard leading-relaxed md:leading-8 pt-4 pb-6 md:pb-10">
                   우리는 현장의 문제를 데이터로 해석하고, 사람을 위한 경험과
                   가치를 중심으로 플랫폼을 설계합니다.{" "}
                   <br className="hidden md:block" />
@@ -453,7 +449,7 @@ export default function AboutPage() {
             <div className="text-center text-orange-500 text-xs md:text-xl font-bold font-pretendard">
               Business
             </div>
-            <h2 className="max-w-[911px] text-lg md:text-5xl text-center text-dark-950 font-pretendard leading-tight md:leading-[62.4px] font-bold">
+            <h2 className="max-w-[911px] text-lg md:text-[32px] text-center text-dark-950 font-pretendard leading-tight font-bold">
               인시스템은 세 가지 핵심 영역을 중심으로,
               <br />
               다양한 현장의 문제를 해결하고 있습니다.
