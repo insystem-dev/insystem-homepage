@@ -50,6 +50,7 @@ Thumbs.db
 *.wmv
 
 .env
+.env*.local
 # TypeScript incremental build info
 tsconfig.tsbuildinfo
 

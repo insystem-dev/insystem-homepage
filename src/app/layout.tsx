@@ -1,6 +1,8 @@
 import "./globals.css";
 import "./tailwind.css";
+import { cookies } from "next/headers";
 import { Gnb } from "@/widgets";
+import { STAFF_COOKIE, isStaffKey } from "@/shared/lib/maintenance";
 import { Analytics } from "./analytics";
 
 export const metadata = {
@@ -40,6 +42,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // 점검 기간: 직원 우회 쿠키가 있을 때만 GNB 표시 (재오픈 시 조건 제거)
+  const isStaff = isStaffKey(cookies().get(STAFF_COOKIE)?.value);
+
   return (
     <html lang="ko">
       <head>
@@ -53,7 +58,7 @@ export default function RootLayout({
       </head>
       <body className="bg-dark-950 font-pretendard">
         <Analytics />
-        <Gnb />
+        {isStaff && <Gnb />}
         {children}
       </body>
     </html>
